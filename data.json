@@ -1,0 +1,50 @@
+{
+  "name": "Security Deva Data File",
+  "describe": "The main Data file for Security Deva",
+  "copyright": "Copyright (c)2023 Quinn Michaels. All rights reserved.",
+  "DATA": {
+    "agent": {
+      "uid": 1428999402013,
+      "key": "security",
+      "prompt": {
+        "emoji": "🚨",
+        "text": "security",
+        "colors": {
+          "label": {
+            "R": 0,
+            "G": 150,
+            "B": 255
+          },
+          "text": {
+            "R": 101,
+            "G": 192,
+            "B": 255
+          }
+        }
+      },
+      "voice": {
+        "speech": "Joey",
+        "speed": 1
+      },
+      "profile": {
+        "name": "Security Deva",
+        "describe": "The Security Deva",
+        "emoji": "/public/devas/deva/emoji.png",
+        "avatar": "/public/devas/deva/avatar.png",
+        "background": "/public/devas/deva/background.png",
+        "gender": "male"
+      }
+    },
+    "vars": {
+      "messages": {
+        "init": "🟠 INIT",
+        "start": "🔵 START",
+        "enter": "🟢 ENTER",
+        "stop": "🔴 STOP",
+        "exit": "🟡 EXIT",
+        "done": "🟣 DONE",
+        "error": "💣 ERROR!"
+      }
+    }
+  }
+}
