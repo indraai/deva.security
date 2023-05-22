@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const package = require('../../package.json');
+const package = require('./package.json');
 const info = {
   name: package.name,
   version: package.version,
