@@ -1,20 +1,20 @@
-## :name:
+## Security Deva
 p:Copyright (c):year: :copyright:
 
-p:This is the main help file for :name:. :describe:
+p:This is the main help file for Security Deva. :describe:
 
-uid: :uid:
-key: :key:
-name: :name:
-describe: :describe:
+uid: 2280985632217
+key: SecurityDeva
+name: Security Deva
+describe: The Security Deva
 
 ### Methods
 
 cmd:#:key: uid
-p:Generate a unique id from the :name:.
+p:Generate a unique id from the Security Deva.
 
 cmd:#:key: status
-p:Return the status for the :name:.
+p:Return the status for the Security Deva.
 
 cmd:#:key: help
-p:Get help using the :name:
+p:Get help using the Security Deva
