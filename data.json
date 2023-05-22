@@ -5,10 +5,10 @@
   "DATA": {
     "agent": {
       "uid": 1428999402013,
-      "key": "security",
+      "key": "SecurityDeva",
       "prompt": {
         "emoji": "🚨",
-        "text": "security",
+        "text": "SecurityDeva",
         "colors": {
           "label": {
             "R": 0,
