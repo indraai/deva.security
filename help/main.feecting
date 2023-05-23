@@ -4,17 +4,17 @@ p:Copyright (c):year: :copyright:
 p:This is the main help file for Security Deva. :describe:
 
 id: 6507120243760
-key: SecurityDeva
+key: security
 name: Security Deva
 describe: The Security Deva
 
 ### Methods
 
-cmd:#:key: uid
+cmd:#security uid
 p:Generate a unique id from the Security Deva.
 
-cmd:#:key: status
+cmd:#security status
 p:Return the status for the Security Deva.
 
-cmd:#:key: help
+cmd:#security help
 p:Get help using the Security Deva
