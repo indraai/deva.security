@@ -42,15 +42,11 @@ const SECURITY = new Deva({
   deva: {},
   func: {
     sec_question(packet) {
-      const trigger = packet.q.text.includes(this.vars.trigger);
-      if (!trigger) return;
       const agent = this.agent();
       const security = this.security();
       security.personal.answers.push(packet);
     },
     sec_answer(packet) {
-      const trigger = packet.a.text.includes(this.vars.trigger);
-      if (!trigger) return;
       const agent = this.agent();
       const security = this.security();
       security.personal.answers.push(packet);
@@ -96,10 +92,10 @@ const SECURITY = new Deva({
   },
   onDone(data) {
     this.listen('devacore:question', packet => {
-      return this.func.sec_question(packet);
+      if (packet.q.text.includes(this.vars.trigger)) return this.func.sec_question(packet);
     });
     this.listen('devacore:answer', packet => {
-      return this.func.sec_answer(packet);
+      if (packet.a.text.includes(this.vars.trigger)) return this.func.sec_answer(packet);
     });
     return Promise.resolve(data);
   }
