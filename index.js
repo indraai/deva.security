@@ -8,8 +8,6 @@ const path = require('path');
 const package = require('./package.json');
 const info = {
   id: package.id,
-  name: package.name,
-  describe: package.description,
   version: package.version,
   url: package.homepage,
   git: package.repository.url,
@@ -28,7 +26,6 @@ const SECURITY = new Deva({
   agent: {
     id: agent.id,
     key: agent.key,
-    describe: agent.describe,
     prompt: agent.prompt,
     voice: agent.voice,
     profile: agent.profile,
@@ -43,7 +40,22 @@ const SECURITY = new Deva({
   listeners: {},
   modules: {},
   deva: {},
-  func: {},
+  func: {
+    sec_question(packet) {
+      const trigger = packet.q.text.includes(this.vars.trigger);
+      if (!trigger) return;
+      const agent = this.agent();
+      const security = this.security();
+      security.personal.answers.push(packet);
+    },
+    sec_answer(packet) {
+      const trigger = packet.a.text.includes(this.vars.trigger);
+      if (!trigger) return;
+      const agent = this.agent();
+      const security = this.security();
+      security.personal.answers.push(packet);
+    },
+  },
   methods: {
     /**************
     method: uid
@@ -82,5 +94,14 @@ const SECURITY = new Deva({
       });
     }
   },
+  onDone(data) {
+    this.listen('devacore:question', packet => {
+      return this.func.sec_question(packet);
+    });
+    this.listen('devacore:answer', packet => {
+      return this.func.sec_answer(packet);
+    });
+    return Promise.resolve(data);
+  }
 });
 module.exports = SECURITY
