@@ -44,7 +44,7 @@ const SECURITY = new Deva({
     sec_question(packet) {
       const agent = this.agent();
       const security = this.security();
-      security.personal.answers.push(packet);
+      security.personal.questions.push(packet);
     },
     sec_answer(packet) {
       const agent = this.agent();
