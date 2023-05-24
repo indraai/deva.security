@@ -92,10 +92,12 @@ const SECURITY = new Deva({
   },
   onDone(data) {
     this.listen('devacore:question', packet => {
-      if (packet.q.text.includes(this.vars.trigger)) return this.func.sec_question(packet);
+      const {text} - packet.a;
+      if (text && text.includes(this.vars.trigger)) return this.func.sec_question(packet);
     });
     this.listen('devacore:answer', packet => {
-      if (packet.a.text.includes(this.vars.trigger)) return this.func.sec_answer(packet);
+      const {text} - packet.a;
+      if (text && text.includes(this.vars.trigger)) return this.func.sec_answer(packet);
     });
     return Promise.resolve(data);
   }
