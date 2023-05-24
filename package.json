@@ -23,7 +23,7 @@
     "url": "https://github.com/indraai/SecurityDeva/issues"
   },
   "homepage": "https://github.com/indraai/SecurityDeva#readme",
-  "dependencies": {
-    "@indra.ai/deva": "^1.1.46"
+  "devDependencies": {
+    "@indra.ai/deva": "^1.1.55"
   }
 }
