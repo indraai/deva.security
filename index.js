@@ -32,8 +32,16 @@ const SECURITY = new Deva({
     translate(input) {
       return input.trim();
     },
-    parse(input) {
-      return input.trim();
+    parse(input, route=false) {
+      // with the parse method we are going to take the input with a
+      // values object to provide the personalization
+      let output = input;
+      if (route) for (let x in route) {
+        const key = `::${x}::`;
+        const value = route[x];
+        output = output.replace(key, value);
+      }
+      return output.trim();
     }
   },
   vars,
@@ -51,38 +59,52 @@ const SECURITY = new Deva({
       const security = this.security();
       // security.personal.answers.push(opts);
     },
-    async template(packet) {
+    async template(packet, route) {
       const agent = this.agent();
       const header = await this.question(this.vars.template.header.call);
       const footer = await this.question(this.vars.template.footer.call);
-      return [
-        `${this.vars.template.header.begin}:${header.id}`,
-        header.a.text,
-        `${this.vars.template.header.end}:${this.hash(header.a.text)}`,
-        '',
-        `${this.vars.template.content.begin}:${packet.id}`,
-        '',
-        this.vars.routes[this.vars.chat].greeting,
+      const greeting = await this.question(this.vars.template.content.greeting);
+      const signature = await this.question(this.vars.template.content.signature);
+      const message = [
+        greeting.a.text,
         '',
         packet.q.text,
         '',
-        this.vars.template.content.sig,
+        signature.a.text,
+      ].join('\n');
+      const header_parsed = this._agent.parse(header.a.text, route);
+      const header_hash = this.hash(header_parsed);
+      const footer_parsed = this._agent.parse(footer.a.text, route);
+      const footer_hash = this.hash(footer_parsed);
+      const message_parsed = this._agent.parse(message, route);
+      const message_hash = this.hash(message_parsed)
+
+      const template = [
+        `${this.vars.template.header.begin}:${header.id}`,
+        header_parsed,
+        `${this.vars.template.header.end}:${header_hash}`,
         '',
-        `${this.vars.template.content.end}:${this.hash(packet.q.text)}`,
+        `${this.vars.template.content.begin}:${packet.id}`,
+        '',
+        message_parsed,
+        '',
+        `${this.vars.template.content.end}:${message_hash}`,
         '',
         `${this.vars.template.footer.begin}${footer.id}`,
-        footer.a.text,
-        `${this.vars.template.footer.end}:${this.hash(footer.a.text)}`,
+        footer_parsed,
+        `${this.vars.template.footer.end}:${this.hash(footer_hash)}`,
       ].join('\n');
+      return template;
     },
     async chat(packet) {
-      if (packet.q.meta.params[1]) this.vars.chat = packet.q.meta.params[1];
-      const route = this.vars.routes[this.vars.chat].cmd;
-      const question = await this.func.template(packet);
-
+      const param = packet.q.meta.params[1] || false;
+      const local_route = param || this.vars.route;
+      const route = this.config.routes[local_route];
+      const question = await this.func.template(packet, route);
       return new Promise((resolve, reject) => {
-        if (!packet.q.text) return reject(this._messages.notext);
-        this.question(`${route} ${question}`).then(answer => {
+        if (!packet.q.text) return resolve(this._messages.notext);
+        if (!param && route.puppet) this.question(`${route.puppet} ${question}`)
+        this.question(`${route.call} ${question}`).then(answer => {
           return this.question(`#feecting parse ${answer.a.text}`);
         }).then(parsed => {
           return resolve({

@@ -48,17 +48,7 @@
         "signature": "@Security"
       },
       "trigger": "@SECURITY",
-      "chat": "api",
-      "routes": {
-        "api": {
-          "cmd": "#open chat",
-          "greeting": "Hello @api,"
-        },
-        "ui": {
-          "cmd": "#puppet chat",
-          "greeting": "Hi @ui,"
-        }
-      },
+      "route": "api",
       "template": {
         "header": {
           "call": "#docs view devas/security/main:header",
@@ -71,7 +61,8 @@
           "end": "::END:FOOTER"
         },
         "content": {
-          "sig": "Thank you,\n@Security",
+          "greeting": "#docs view devas/security/main:greeting",
+          "signature": "#docs view devas/security/main:signature",
           "begin": "::BEGIN:SECURITY",
           "end": "::END:SECURITY"
         }
