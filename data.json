@@ -52,11 +52,11 @@
       "routes": {
         "api": {
           "cmd": "#open chat",
-          "greeting": "Dear #ChatGPT.API,"
+          "greeting": "Hello @api,"
         },
         "ui": {
           "cmd": "#puppet chat",
-          "greeting": "Greetings #ChatGPT.UI,"
+          "greeting": "Hi @ui,"
         }
       },
       "template": {
