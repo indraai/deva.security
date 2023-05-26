@@ -49,6 +49,16 @@
       },
       "trigger": "@SECURITY",
       "chat": "api",
+      "routes": {
+        "api": {
+          "cmd": "#open chat",
+          "greeting": "Dear #ChatGPT.API,"
+        },
+        "ui": {
+          "cmd": "#puppet chat",
+          "greeting": "Greetings #ChatGPT.UI,"
+        }
+      },
       "template": {
         "header": {
           "call": "#docs view devas/security/main:header",
@@ -60,12 +70,8 @@
           "begin": "::BEGIN:FOOTER",
           "end": "::END:FOOTER"
         },
-        "routes": {
-          "api": "#open chat",
-          "ui": "#puppuet chat"
-        },
         "content": {
-          "sig": "\nThank you,\n@Security",
+          "sig": "Thank you,\n@Security",
           "begin": "::BEGIN:SECURITY",
           "end": "::END:SECURITY"
         }

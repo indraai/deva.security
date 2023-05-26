@@ -61,8 +61,13 @@ const SECURITY = new Deva({
         `${this.vars.template.header.end}:${this.hash(header.a.text)}`,
         '',
         `${this.vars.template.content.begin}:${packet.id}`,
+        '',
+        this.vars.routes[this.vars.chat].greeting,
+        '',
         packet.q.text,
+        '',
         this.vars.template.content.sig,
+        '',
         `${this.vars.template.content.end}:${this.hash(packet.q.text)}`,
         '',
         `${this.vars.template.footer.begin}${footer.id}`,
@@ -71,12 +76,13 @@ const SECURITY = new Deva({
       ].join('\n');
     } ,
     async chat(packet) {
+      if (packet.q.meta.params[1]) this.vars.chat = packet.q.meta.params[1];
+      const route = this.vars.routes[this.vars.chat].cmd;
       const question = await this.func.template(packet);
 
       return new Promise((resolve, reject) => {
         if (!packet.q.text) return reject(this._messages.notext);
-        if (packet.q.meta.params[1]) this.vars.chat = packet.q.meta.params[1];
-        this.question(`#${chat} chat ${question}`).then(answer => {
+        this.question(`${route} ${question}`).then(answer => {
           return this.question(`#feecting parse ${answer.a.text}`);
         }).then(parsed => {
           return resolve({
