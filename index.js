@@ -44,15 +44,57 @@ const SECURITY = new Deva({
     sec_question(packet) {
       const agent = this.agent();
       const security = this.security();
-      security.personal.questions.push(packet);
+      // security.personal.questions.push(packet);
     },
     sec_answer(packet) {
       const agent = this.agent();
       const security = this.security();
-      security.personal.answers.push(packet);
+      // security.personal.answers.push(opts);
     },
+    async template(packet) {
+      const agent = this.agent();
+      const header = await this.question(this.vars.template.header.call);
+      const footer = await this.question(this.vars.template.footer.call);
+      return [
+        `${this.vars.template.header.begin}:${header.id}`,
+        header.a.text,
+        `${this.vars.template.header.end}:${this.hash(header.a.text)}`,
+        '',
+        `${this.vars.template.content.begin}:${packet.id}`,
+        packet.q.text,
+        this.vars.template.content.sig,
+        `${this.vars.template.content.end}:${this.hash(packet.q.text)}`,
+        '',
+        `${this.vars.template.footer.begin}${footer.id}`,
+        footer.a.text,
+        `${this.vars.template.footer.end}:${this.hash(footer.a.text)}`,
+      ].join('\n');
+    } ,
+    async chat(packet) {
+      const question = await this.func.template(packet);
+
+      return new Promise((resolve, reject) => {
+        if (!packet.q.text) return reject(this._messages.notext);
+        if (packet.q.meta.params[1]) this.vars.chat = packet.q.meta.params[1];
+        this.question(`#${chat} chat ${question}`).then(answer => {
+          return this.question(`#feecting parse ${answer.a.text}`);
+        }).then(parsed => {
+          return resolve({
+            text: parsed.a.text,
+            html: parsed.a.html,
+            data: parsed.a.data,
+          });
+        }).catch(err => {
+          return this.error(err, packet, reject);
+        });
+      });
+    }
   },
   methods: {
+    chat(packet) {
+      return this.func.chat(packet);
+    },
+
     /**************
     method: uid
     params: packet

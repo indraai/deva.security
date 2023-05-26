@@ -47,7 +47,29 @@
         "abel": "🔐SECURITY",
         "signature": "@Security"
       },
-      "trigger": "@SECURITY" 
+      "trigger": "@SECURITY",
+      "chat": "api",
+      "template": {
+        "header": {
+          "call": "#docs view devas/security/main:header",
+          "begin": "::BEGIN:HEADER",
+          "end": "::END:HEADER"
+        },
+        "footer": {
+          "call": "#docs view devas/security/main:footer",
+          "begin": "::BEGIN:FOOTER",
+          "end": "::END:FOOTER"
+        },
+        "routes": {
+          "api": "#open chat",
+          "ui": "#puppuet chat"
+        },
+        "content": {
+          "sig": "\nThank you,\n@Security",
+          "begin": "::BEGIN:SECURITY",
+          "end": "::END:SECURITY"
+        }
+      }
     }
   }
 }
