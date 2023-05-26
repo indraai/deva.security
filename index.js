@@ -1,10 +1,8 @@
 // Copyright (c)2023 Quinn Michaels
 // Security Deva
 // Security Deva Manages Security in deva.world.
-
 const fs = require('fs');
 const path = require('path');
-
 const package = require('./package.json');
 const info = {
   id: package.id,
