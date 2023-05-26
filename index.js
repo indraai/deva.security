@@ -74,7 +74,7 @@ const SECURITY = new Deva({
         footer.a.text,
         `${this.vars.template.footer.end}:${this.hash(footer.a.text)}`,
       ].join('\n');
-    } ,
+    },
     async chat(packet) {
       if (packet.q.meta.params[1]) this.vars.chat = packet.q.meta.params[1];
       const route = this.vars.routes[this.vars.chat].cmd;
@@ -94,9 +94,14 @@ const SECURITY = new Deva({
           return this.error(err, packet, reject);
         });
       });
-    }
+    },
   },
   methods: {
+    /**************
+    func: chat
+    params: packet
+    describe: The chat relay interface to talk with the @api and @ui
+    ***************/
     chat(packet) {
       return this.func.chat(packet);
     },
