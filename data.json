@@ -11,14 +11,14 @@
         "text": "security",
         "colors": {
           "label": {
-            "R": 255,
-            "G": 84,
-            "B": 0
+            "R": 251,
+            "G": 177,
+            "B": 78
           },
           "text": {
-            "R": 255,
-            "G": 84,
-            "B": 0
+            "R": 251,
+            "G": 177,
+            "B": 78
           }
         }
       },
@@ -29,9 +29,9 @@
       "profile": {
         "name": "Security Deva",
         "describe": "The Security Deva",
-        "emoji": "/public/devas/deva/emoji.png",
-        "avatar": "/public/devas/deva/avatar.png",
-        "background": "/public/devas/deva/background.png",
+        "emoji": "/public/devas/security/emoji.png",
+        "avatar": "/public/devas/security/avatar.png",
+        "background": "/public/devas/security/background.png",
         "gender": "male"
       }
     },
