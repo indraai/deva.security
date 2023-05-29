@@ -75,7 +75,7 @@ const SECURITY = new Deva({
       const message_parsed = this._agent.parse(message, route);
       const message_hash = this.hash(message_parsed)
       const template = [
-        `${this.vars.template.header.begin}:${header.id}`,
+        `${this.vars.template.header.begin}:${packet.id}`,
         header_parsed,
         `${this.vars.template.header.end}:${header_hash}`,
         '',
@@ -85,7 +85,7 @@ const SECURITY = new Deva({
         '',
         `${this.vars.template.content.end}:${message_hash}`,
         '',
-        `${this.vars.template.footer.begin}${footer.id}`,
+        `${this.vars.template.footer.begin}:${packet.id}`,
         footer_parsed,
         `${this.vars.template.footer.end}:${this.hash(footer_hash)}`,
       ].join('\n');
