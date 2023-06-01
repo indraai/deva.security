@@ -1,12 +1,14 @@
-## Security Deva
-p:Copyright (c):year: :copyright:
+image: ::agent_avatar::
+
+## Security Deva Help
 
 p:This is the main help file for Security Deva. :describe:
 
-id: 6507120243760
-key: security
-name: Security Deva
-describe: The Security Deva
+id: ::agent_id::
+key: #::agent_key::
+name: ::agent_name::
+emoji: ::agent_emoji::
+describe: ::agent_describe::
 
 ### Methods
 
@@ -18,3 +20,11 @@ p:Return the status for the Security Deva.
 
 cmd:#security help
 p:Get help using the Security Deva
+
+---
+
+#color = ::agent_color::
+#bgcolor = ::agent_bgcolor::
+#bg = ::agent_background::
+
+copyright: (c)2023 Quinn Michaels

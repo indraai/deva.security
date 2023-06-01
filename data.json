@@ -22,17 +22,16 @@
           }
         }
       },
-      "voice": {
-        "speech": "Joey",
-        "speed": 1
-      },
       "profile": {
         "name": "Security Deva",
         "describe": "The Security Deva",
         "emoji": "/public/devas/security/emoji.png",
         "avatar": "/public/devas/security/avatar.png",
         "background": "/public/devas/security/background.png",
-        "gender": "male"
+        "color": "#fbb14e",
+        "bgcolor": "black",
+        "gender": "male",
+        "voice": "Joey"
       }
     },
     "vars": {
@@ -49,6 +48,11 @@
       },
       "trigger": "@SECURITY",
       "route": "api",
+      "context": {
+        "uid": "Security Deva generating uid",
+        "status": "Security Deva getting status",
+        "help": "Security Deva asking for help"
+      },
       "template": {
         "header": {
           "call": "#docs view devas/security/main:header",
