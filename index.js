@@ -46,14 +46,8 @@ const SECURITY = new Deva({
   modules: {},
   deva: {},
   func: {
-    sec_question(packet) {
-      const agent = this.agent();
-      const security = this.security();
-    },
-    sec_answer(packet) {
-      const agent = this.agent();
-      const security = this.security();
-    },
+    sec_question(packet) {return;},
+    sec_answer(packet) {return;},
     async template(packet, route) {
       const agent = this.agent();
       const header = await this.question(this.vars.template.header.call);
