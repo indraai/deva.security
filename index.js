@@ -146,7 +146,7 @@ const SECURITY = new Deva({
     help(packet) {
       this.context('help');
       return new Promise((resolve, reject) => {
-        this.lib.help(packet.q.text, __dirname).then(help => {
+        this.help(packet.q.text, __dirname).then(help => {
           return this.question(`#feecting parse ${help}`);
         }).then(parsed => {
           return resolve({
