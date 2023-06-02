@@ -48,76 +48,8 @@ const SECURITY = new Deva({
   func: {
     sec_question(packet) {return;},
     sec_answer(packet) {return;},
-    async template(packet, route) {
-      const agent = this.agent();
-      const header = await this.question(this.vars.template.header.call);
-      const footer = await this.question(this.vars.template.footer.call);
-      const greeting = await this.question(this.vars.template.content.greeting);
-      const signature = await this.question(this.vars.template.content.signature);
-      const message = [
-        greeting.a.text,
-        '',
-        packet.q.text,
-        '',
-        signature.a.text,
-      ].join('\n');
-      const header_parsed = this._agent.parse(header.a.text, route);
-      const header_hash = this.hash(header_parsed);
-      const footer_parsed = this._agent.parse(footer.a.text, route);
-      const footer_hash = this.hash(footer_parsed);
-      const message_parsed = this._agent.parse(message, route);
-      const message_hash = this.hash(message_parsed)
-      const template = [
-        `${this.vars.template.header.begin}:${packet.id}`,
-        header_parsed,
-        `${this.vars.template.header.end}:${header_hash}`,
-        '',
-        `${this.vars.template.content.begin}:${packet.id}`,
-        '',
-        message_parsed,
-        '',
-        `${this.vars.template.content.end}:${message_hash}`,
-        '',
-        `${this.vars.template.footer.begin}:${packet.id}`,
-        footer_parsed,
-        `${this.vars.template.footer.end}:${this.hash(footer_hash)}`,
-      ].join('\n');
-      return template;
-    },
-    async chat(packet) {
-      const param = packet.q.meta.params[1] || false;
-      const local_route = param || this.vars.route;
-      const route = this.config.routes[local_route];
-      const question = await this.func.template(packet, route);
-      let question_puppet = false;
-      if (route.puppet_key) question_puppet = await this.func.template(packet, this.config.routes[route.puppet_key]);
-      return new Promise((resolve, reject) => {
-        if (!packet.q.text) return resolve(this._messages.notext);
-        if (!param && route.puppet_key) this.question(`${route.puppet} ${question_puppet}`)
-        this.question(`${route.call} ${question}`).then(answer => {
-          return this.question(`#feecting parse ${answer.a.text}`);
-        }).then(parsed => {
-          return resolve({
-            text: parsed.a.text,
-            html: parsed.a.html,
-            data: parsed.a.data,
-          });
-        }).catch(err => {
-          return this.error(err, packet, reject);
-        });
-      });
-    },
   },
   methods: {
-    /**************
-    func: chat
-    params: packet
-    describe: The chat relay interface to talk with the @api and @ui
-    ***************/
-    chat(packet) {
-      return this.func.chat(packet);
-    },
-
     /**************
     method: uid
     params: packet

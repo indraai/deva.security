@@ -30,7 +30,7 @@
         "background": "/public/devas/security/background.png",
         "color": "#fbb14e",
         "bgcolor": "black",
-        "gender": "male",
+        "gender": "deva",
         "voice": "Joey"
       }
     },
@@ -47,29 +47,10 @@
         "signature": "@Security"
       },
       "trigger": "@SECURITY",
-      "route": "api",
       "context": {
         "uid": "Security Deva generating uid",
         "status": "Security Deva getting status",
         "help": "Security Deva asking for help"
-      },
-      "template": {
-        "header": {
-          "call": "#docs view devas/security/main:header",
-          "begin": "::BEGIN:HEADER",
-          "end": "::END:HEADER"
-        },
-        "footer": {
-          "call": "#docs view devas/main:footer",
-          "begin": "::BEGIN:FOOTER",
-          "end": "::END:FOOTER"
-        },
-        "content": {
-          "greeting": "#docs view devas/security/main:greeting",
-          "signature": "#docs view devas/security/main:signature",
-          "begin": "::BEGIN:SECURITY",
-          "end": "::END:SECURITY"
-        }
       }
     }
   }
