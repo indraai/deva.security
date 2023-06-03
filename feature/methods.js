@@ -5,6 +5,7 @@ module.exports = {
   describe: The global security feature that installs with every agent
   ***************/
   security(packet) {
+    this.context('feature');
     const security = this.security();
     const data = {};
     return new Promise((resolve, reject) => {
@@ -29,5 +30,15 @@ module.exports = {
         return this.error(err, packet, reject);
       })
     });
+  },
+  /**************
+  method: uid
+  params: packet
+  describe: Return a system id to the user from the Log Buddy.
+  ***************/
+  uid(packet) {
+    this.context('uid');
+    this.feature('security');
+    return Promise.resolve(this.uid());
   },
 }

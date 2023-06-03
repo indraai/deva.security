@@ -48,9 +48,12 @@
       },
       "trigger": "@SECURITY",
       "context": {
-        "uid": "Security Deva generating uid",
-        "status": "Security Deva getting status",
-        "help": "Security Deva asking for help"
+        "uid": "generating uid",
+        "status": "getting status",
+        "info": "getting info",
+        "feature": "accessing feature",
+        "issue": "has issues",
+        "help": "asking for help"
       }
     }
   }
