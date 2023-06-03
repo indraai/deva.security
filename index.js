@@ -6,6 +6,8 @@ const path = require('path');
 const package = require('./package.json');
 const info = {
   id: package.id,
+  name: package.name,
+  describe: package.description,
   version: package.version,
   url: package.homepage,
   git: package.repository.url,
@@ -39,6 +41,9 @@ const SECURITY = new Deva({
         output = output.replace(key, value);
       }
       return output.trim();
+    },
+    process(input) {
+      return input.trim();
     }
   },
   vars,
@@ -57,7 +62,7 @@ const SECURITY = new Deva({
     ***************/
     uid(packet) {
       this.context('uid');
-      return Promise.resolve({text:this.uid()});
+      return Promise.resolve(this.uid());
     },
 
     /**************
