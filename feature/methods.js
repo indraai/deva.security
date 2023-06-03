@@ -5,10 +5,10 @@ module.exports = {
   describe: The global security feature that installs with every agent
   ***************/
   security(packet) {
-    this.context('feature');
     const security = this.security();
     const data = {};
     return new Promise((resolve, reject) => {
+      this.context('feature');
       this.question(`#docs raw feature/security`).then(doc => {
         data.doc = doc.a.data;
         const info = [
@@ -37,8 +37,34 @@ module.exports = {
   describe: Return a system id to the user from the Log Buddy.
   ***************/
   uid(packet) {
-    this.context('uid');
     this.feature('security');
+    this.context('uid');
     return Promise.resolve(this.uid());
   },
+
+  /**************
+  method: md5 hash
+  params: packet
+  describe: Return system md5 hash for the based deva.
+  ***************/
+  hash(packet) {
+    this.feature('security');
+    this.context('hash');
+    const hash = this.hash(packet.q.text, 'md5');
+    return Promise.resolve(hash);
+  },
+
+  /**************
+  method: md5 cipher
+  params: packet
+  describe: Return system md5 hash for the based deva.
+  ***************/
+  cipher(packet) {
+    this.feature('security');
+    this.context('cipher');
+    const data = this.cipher(packet.q.text);
+    const cipher = `cipher: ${data.encrypted}`;
+    return Promise.resolve(cipher);
+  },
+
 }
