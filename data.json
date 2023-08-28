@@ -46,6 +46,10 @@
         "abel": "🔐SECURITY",
         "signature": "@Security"
       },
+      "live": {
+        "profile": "security",
+        "history": []
+      },
       "trigger": "@SECURITY",
       "context": {
         "uid": "generating uid",
