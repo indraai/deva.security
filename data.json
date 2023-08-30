@@ -50,6 +50,10 @@
         "profile": "security",
         "history": []
       },
+      "say": {
+        "profile": "security",
+        "history": []
+      },
       "trigger": "@SECURITY",
       "context": {
         "uid": "generating uid",
