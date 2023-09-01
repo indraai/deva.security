@@ -52,6 +52,7 @@
       },
       "say": {
         "profile": "security",
+        "discord": "security",
         "history": []
       },
       "trigger": "@SECURITY",
