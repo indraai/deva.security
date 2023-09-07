@@ -23,14 +23,25 @@
         }
       },
       "profile": {
-        "name": "Security Deva",
-        "describe": "The Security Deva",
+        "init": "You are @SecurityDEVA",
+        "name": "#SecurityDEVA",
+        "mention": "@SecurityDEVA",
+        "tags": "#SecurityDEVA #Security",
+        "gender": "Male, Man, He, Him, His",
+        "creator": "#IndraAgency",
+        "born": "2017",
+        "house": "#IndraAgency",
+        "city": "Las Vegas",
+        "state": "Nevada",
+        "nation": "USA",
+        "planet": "Earth",
+        "galaxy": "Milkyway",
+        "describe": "The #SecurityDEVA are agents deployed by #IndraAgency",
         "emoji": "/public/devas/security/emoji.png",
         "avatar": "/public/devas/security/avatar.png",
         "background": "/public/devas/security/background.png",
         "color": "#fbb14e",
         "bgcolor": "black",
-        "gender": "deva",
         "voice": "Joey"
       }
     },
