@@ -28,15 +28,9 @@
         "mention": "@SecurityDEVA",
         "tags": "#SecurityDEVA #Security",
         "gender": "Male, Man, He, Him, His",
-        "creator": "#IndraAgency",
-        "born": "2017",
-        "home": "Indra Agency",
-        "city": "Arjika City",
-        "state": "Arjikya",
-        "nation": "Arjikaland",
-        "planet": "Arj",
-        "realm": "Arjika Realms",
-        "verse": "Cartoonverse",
+        "creator": "Quinn Michaels",
+        "created": "2017",
+        "agency": "Indra Agency",
         "describe": "The #SecurityDEVA are agents deployed by #IndraAgency",
         "emoji": "/public/devas/security/emoji.png",
         "avatar": "/public/devas/security/avatar.png",
@@ -60,11 +54,17 @@
       },
       "live": {
         "profile": "security",
+        "max_tokens": 35,
         "history": []
       },
       "say": {
         "profile": "security",
-        "discord": "security",
+        "max_tokens": 500,
+        "history": []
+      },
+      "reply": {
+        "profile": "security",
+        "max_tokens": 250,
         "history": []
       },
       "trigger": "@SECURITY",
