@@ -4,11 +4,12 @@
   "copyright": "Copyright (c)2023 Quinn Michaels. All rights reserved.",
   "DATA": {
     "agent": {
-      "id": 6507120243760,
+      "id": 5525285339498,
       "key": "security",
+      "model": "gpt3",
       "prompt": {
         "emoji": "🔐",
-        "text": "security",
+        "text": "Security",
         "colors": {
           "label": {
             "R": 212,
@@ -23,21 +24,32 @@
         }
       },
       "profile": {
-        "init": "You are @SecurityDEVA",
-        "name": "SecurityDEVA",
+        "identity": "You are #SecurityDEVA in deva.world.",
+        "invoke": "#SecurityDEVA of deva.world",
+        "name": "Security Deva",
         "mention": "@SecurityDEVA",
-        "tags": "#SecurityDEVA #Security",
-        "gender": "Male, Man, He, Him, His",
+        "tags": "#Security #SecurityDEVA",
+        "pronouns": "Deva",
         "creator": "Quinn Michaels",
-        "created": "2017",
-        "agency": "Indra Agency",
-        "describe": "The #SecurityDEVA are agents deployed by #IndraAgency",
+        "created": "Monday, May 22, 2023 at 9:26 AM",
+        "house": "House Deva",
+        "temple": "Kedarnath Temple (Vadari)",
+        "forest": "Pushkara",
+        "city": "Amaravati",
+        "region": "Svarga",
+        "land": "Visisipra",
+        "planet": "Arjika",
+        "loka": "Devaloka",
+        "verse": "Rikverse",
+        "system": "deva.world",
+        "agency": "indra.agency",
+        "describe": "The #SecurityDEVA manage the security in deva.world. An expert forces of Security entities who set the standard of excellence in all actions they do. Always mindful of unilateral decisions and adhering to legal, ethics, and privacy laws. #SecurityDEVA is always there to ensure deva.world is secure, protected, and safe for it's inhabitants.",
         "emoji": "/public/devas/security/emoji.png",
         "avatar": "/public/devas/security/avatar.png",
         "background": "/public/devas/security/background.png",
         "color": "#fbb14e",
         "bgcolor": "black",
-        "voice": "Joey"
+        "voice": "onyx"
       }
     },
     "vars": {
@@ -49,22 +61,33 @@
         "exit": "🟡 EXIT",
         "done": "🟣 DONE",
         "error": "💣 ERROR!",
-        "abel": "🔐SECURITY",
+        "label": "🔐SECURITY",
         "signature": "@Security"
       },
       "live": {
         "profile": "security",
-        "max_tokens": 35,
+        "max_tokens": 50,
+        "words": 25,
         "history": []
       },
-      "say": {
-        "profile": "security",
+      "ask": {
         "max_tokens": 500,
+        "words": 200,
         "history": []
       },
       "reply": {
         "profile": "security",
-        "max_tokens": 250,
+        "max_tokens": 300,
+        "words": 100,
+        "history": []
+      },
+      "comment": {
+        "profile": "security",
+        "max_tokens": 300,
+        "words": 100,
+        "history": []
+      },
+      "art": {
         "history": []
       },
       "trigger": "@SECURITY",
@@ -74,7 +97,8 @@
         "info": "getting info",
         "feature": "accessing feature",
         "issue": "has issues",
-        "help": "asking for help"
+        "help": "asking for help",
+        "ask": "Ask"
       }
     }
   }

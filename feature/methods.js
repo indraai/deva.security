@@ -39,6 +39,7 @@ module.exports = {
   describe: Return a system id to the user from the Log Buddy.
   ***************/
   uid(packet) {
+    this.feature('security');
     const id = this.uid();
     return Promise.resolve(id);
   },
@@ -49,6 +50,7 @@ module.exports = {
   describe: Return system md5 hash for the based deva.
   ***************/
   hash(packet) {
+    this.feature('security');
     const hash = this.hash(packet.q.text, 'md5');
     return Promise.resolve(hash);
   },
@@ -59,6 +61,7 @@ module.exports = {
   describe: Return system md5 hash for the based deva.
   ***************/
   cipher(packet) {
+    this.feature('security');
     const data = this.cipher(packet.q.text);
     const cipher = `cipher: ${data.encrypted}`;
     return Promise.resolve(cipher);

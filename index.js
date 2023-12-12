@@ -1,8 +1,6 @@
 // Copyright (c)2023 Quinn Michaels
 // Security Deva
 // Security Deva Manages Security in deva.world.
-const fs = require('fs');
-const path = require('path');
 const package = require('./package.json');
 const info = {
   id: package.id,
@@ -18,8 +16,7 @@ const info = {
   copyright: package.copyright,
 };
 
-const data_path = path.join(__dirname, 'data.json');
-const {agent,vars} = require(data_path).DATA;
+const {agent,vars} = require('./data.json').DATA;
 
 const Deva = require('@indra.ai/deva');
 const SECURITY = new Deva({
@@ -49,10 +46,5 @@ const SECURITY = new Deva({
     sec_answer(packet) {return;},
   },
   methods: {},
-  onDone(data) {
-    this.listen('devacore:question', this.func.sec_question);
-    this.listen('devacore:answer', this.func.sec_answer);
-    return Promise.resolve(data);
-  }
 });
 module.exports = SECURITY
