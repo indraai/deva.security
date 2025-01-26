@@ -5,7 +5,7 @@
   "author": "Quinn Michaels",
   "license": "MIT",
   "copyright": "2025",
-  "description": "The Security Deva handles the Security for deva.world.",
+  "description": "The Security Deva the Security for Deva.space, Deva.cloud, and Deva.world.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
