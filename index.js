@@ -53,5 +53,8 @@ const SECURITY = new Deva({
     sec_answer(packet) {return;},
   },
   methods: {},
+  onError(err) {
+    console.log('ERR', err);
+  }
 });
 export default SECURITY

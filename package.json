@@ -7,6 +7,7 @@
   "copyright": "2025",
   "description": "The Security Deva the Security for Deva.space, Deva.cloud, and Deva.world.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
