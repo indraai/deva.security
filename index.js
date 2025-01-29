@@ -26,7 +26,6 @@ const info = {
   copyright: pkg.copyright,
 };
 
-
 const SECURITY = new Deva({
   info,
   agent,
