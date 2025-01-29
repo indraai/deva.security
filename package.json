@@ -17,15 +17,16 @@
   "keywords": [
     "Security",
     "Deva",
-    "deva.space",
-    "deva.cloud",
-    "deva.world"
+    "Indra.ai",
+    "Deva.space",
+    "Deva.cloud",
+    "Deva.world"
   ],
   "bugs": {
     "url": "https://github.com/indraai/deva.security/issues"
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.2.21"
+    "@indra.ai/deva": "^1.2.28"
   }
 }
