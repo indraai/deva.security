@@ -47,18 +47,70 @@ const SECURITY = new Deva({
   },
   listeners: {},
   modules: {},
-  deva: {},
+  devas: {},
   func: {
-    sec_question(packet) {return;},
-    sec_answer(packet) {return;},
+    /**************
+    func: view
+    params: opts
+    describe: The view function parses the text parameter to produce the string
+    which calls the correct document file then passes it to the feecting deva
+    for parsing.
+    ***************/
+    file(opts) {
+      this.action('func', 'file');
+      const {text, meta} = opts;
+      const area = meta.params[1] ? meta.params[1] : this.vars.area;
+      const part = meta.params[2] ? meta.params[2].toUpperCase() : this.vars.part;
+      const docName = text.length ? text + '.feecting' : 'main.feecting';
+      const docPath = this.lib.path.join(this.config.dir, area, 'security', docName);
+      try {
+        let doc = this.lib.fs.readFileSync(docPath, 'utf8');
+        if (part) doc = doc.split(`::BEGIN:${part}`)[1].split(`::END:${part}`)[0];
+        this.state('return', 'file')
+        return doc;
+      }
+      catch (err) {
+        return err;
+      }
+    },
   },
-  methods: {},
+  methods: {
+    /**************
+    method: file
+    params: packet
+    describe: The view method replays the request to the view function to return
+    a document from the text parameter.
+    ***************/
+    file(packet) {      
+      this.context('file', packet.q.text);
+      this.action('method', `file:${packet.q.text}`);
+      const agent = this.agent();
+      return new Promise((resolve, reject) => {
+        this.state('get', packet.q.text);
+        const doc = this.func.file(packet.q);
+        this.question(`${this.askChr}feecting parse ${doc}`).then(feecting => {
+          this.state('resolve', `file:${packet.q.text}`);
+          return resolve({
+            text: feecting.a.text,
+            html: feecting.a.html,
+            data: feecting.a.data,
+          });
+        }).catch(err => {
+          this.context('reject', `file:${packet.q.text}`);
+          return this.error(err, packet, reject);
+        })
+      });
+    },    
+    
+  },
   onReady(data, resolve) {
-    this.prompt('ready');
+    this.prompt(this.vars.messages.ready);
     return resolve(data);
   },
-  onError(err) {
-    console.log('ERR', err);
+  onError(err, data, reject) {
+    this.prompt(this.vars.messages.error);
+    console.log(err);
+    return reject(err);
   }
 });
 export default SECURITY

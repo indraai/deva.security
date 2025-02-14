@@ -6,7 +6,6 @@
     "agent": {
       "id": 5525285339498,
       "key": "security",
-      "model": "gpt3",
       "prompt": {
         "emoji": "🔐",
         "text": "Security",
@@ -24,26 +23,17 @@
         }
       },
       "profile": {
-        "identity": "You are #SecurityDEVA in deva.world.",
-        "invoke": "#SecurityDEVA of deva.world",
-        "name": "Security Deva",
-        "mention": "@SecurityDEVA",
-        "tags": "#Security #SecurityDEVA",
-        "pronouns": "Deva",
+        "identity": "Security Deva of Deva.world.",
+        "invoke": "#SecurityDEVA",
+        "name": "Security",
+        "mention": "#security",
+        "vectors": "Security SecurityDeva",
+        "pronouns": "DEVA",
+        "owner": "Quinn Michaels",
         "creator": "Quinn Michaels",
         "created": "Monday, May 22, 2023 at 9:26 AM",
-        "house": "House Deva",
-        "temple": "Kedarnath Temple (Vadari)",
-        "forest": "Pushkara",
-        "city": "Amaravati",
-        "region": "Svarga",
-        "land": "Visisipra",
-        "planet": "Arjika",
-        "loka": "Devaloka",
-        "verse": "Rikverse",
-        "system": "deva.world",
-        "agency": "indra.agency",
-        "describe": "The #SecurityDEVA manage the security in deva.world. An expert forces of Security entities who set the standard of excellence in all actions they do. Always mindful of unilateral decisions and adhering to legal, ethics, and privacy laws. #SecurityDEVA is always there to ensure deva.world is secure, protected, and safe for it's inhabitants.",
+        "system": "Deva.world.security",
+        "describe": "Security manage the security from Deva.world.security. An expert in security who sets the standard of excellence in all actions they do. Always mindful of unilateral decisions and strict adhering to chain of custody, legal, ethics, and privacy laws. Security is always there to ensure Deva.world is secure, protected, and safe for it's inhabitants both physical and virtual.",
         "emoji": "/public/devas/security/emoji.png",
         "avatar": "/public/devas/security/avatar.png",
         "background": "/public/devas/security/background.png",
@@ -57,6 +47,7 @@
         "init": "🟠 INIT",
         "start": "🔵 START",
         "enter": "🟢 ENTER",
+        "ready": "⭐️ Security Deva Ready!",
         "stop": "🔴 STOP",
         "exit": "🟡 EXIT",
         "done": "🟣 DONE",
@@ -71,8 +62,6 @@
         "history": []
       },
       "ask": {
-        "max_tokens": 500,
-        "words": 200,
         "history": []
       },
       "reply": {
@@ -98,7 +87,8 @@
         "feature": "accessing feature",
         "issue": "has issues",
         "help": "asking for help",
-        "ask": "Ask"
+        "ask": "Ask",
+        "file": "📂 File"
       }
     }
   }
