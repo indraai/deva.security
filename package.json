@@ -28,6 +28,6 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.4.2"
+    "@indra.ai/deva": "^1.4.6"
   }
 }
