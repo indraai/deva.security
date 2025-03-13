@@ -71,6 +71,17 @@ export default {
   },
 
   /**************
+  method: today
+  params: packet
+  describe: Return system date for today.
+  ***************/
+  today(packet) {
+    this.feature('security');
+    const theDate = this.lib.formatDate(Date.now(), 'long', true);
+    return Promise.resolve(theDate);
+  },
+
+  /**************
   method: md5 cipher
   params: packet
   describe: Return system md5 hash for the based deva.
