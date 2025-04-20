@@ -28,7 +28,7 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.5.23"
+    "@indra.ai/deva": "^1.5.25"
   },
   "data": {
     "agent": {
@@ -72,7 +72,7 @@
         "init": "🟠 INIT",
         "start": "🔵 START",
         "enter": "🟢 ENTER",
-        "ready": "⭐️ Security Deva Ready!",
+        "ready": "⭐️ READY!",
         "stop": "🔴 STOP",
         "exit": "🟡 EXIT",
         "done": "🟣 DONE",

@@ -1,6 +1,6 @@
 # {{profile.name}}
 
-{{profile.describe}}
+{{profile}}
 
 
 copyright: (c)2025 Quinn Michaels
