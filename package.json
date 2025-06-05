@@ -28,7 +28,7 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.5.35"
+    "@indra.ai/deva": "^1.5.38"
   },
   "data": {
     "agent": {
@@ -51,11 +51,12 @@
         }
       },
       "profile": {
-        "name": "#SecurityDeva",
+        "name": "Security Deva",
+        "hashtag": "#SecurityDeva",
         "title": "Security Deva",
         "subtitle": "Handling security like a professional",
-        "describe": "Security Deva guardian of Deva.world. An expert in security who sets the standard of excellence in all actions they do. Aware of unilateral decisions and strict chain of custody, legal, ethics, and privacy laws.",
-        "tweet": "Guardian of Deva.world. An expert in security who sets the standard of excellence in all actions they do.",
+        "describe": "Expert in security who sets the standard of excellence in strict chain of custody, legal, ethics, and privacy laws.",
+        "tweet": "Security Deva is an expert in security who sets the standard of excellence in strict chain of custody, legal, ethics, and privacy laws.",
         "hashtags": "QuinnMichaels,IndraAI,DevaWorld,SecurityDeva",
         "pronouns": "He, Him",
         "gender": "DEVA",
