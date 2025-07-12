@@ -54,8 +54,9 @@ export default {
   describe: Return a system id to the user from the Log Buddy.
   ***************/
   uid(packet) {
+    const uid = packet.q.text ? true : false
     this.feature('security');
-    const id = this.lib.uid();
+    const id = this.lib.uid(uid);
     return Promise.resolve(id);
   },
 
@@ -93,32 +94,60 @@ export default {
     return Promise.resolve(cipher);
   },
   
-  async signature(packet) {
+  async sign(packet) {
     this.context('signature');
     this.action('method', 'signature');
-    const id = this.lib.uid();
-    const date = this.lib.formatDate(Date.now(), 'long', true);
-    const agent = this.agent();
-    const name = this.client().profile.name;
-    const sigstr = `${id}${name}${date}`;
+    const uid = this.lib.uid(true);
+    const transport = packet.id;
+    
+    let type;
+    const {meta} = packet.q;
+    const {params} = meta;
+
+    if (!params[1] || params[1] === 'client') type = `#${meta.key}.${params.join('.')}`;        
+    else type = `#${meta.key}.${params.join('.')}`;
+    
+    const signer = !params[1] || params[1] === 'client' ? this.client() : this.agent();
+    const created = this.lib.formatDate(Date.now(), 'long', true);
+    const message = packet.q.text || '';
+    const client = this.client();
+    const {profile} = signer;
+    
+    console.log(client.profile.token);
     
     const data = {
-      id,
-      name,
-      md5: this.lib.hash(sigstr, 'md5'),
-      sha256: this.lib.hash(sigstr, 'sha256'),
-      sha512: this.lib.hash(sigstr, 'sha512'),
-      date,
-    }
+      uid,
+      transport,
+      type,
+      signer: signer.id,
+      name: profile.name,
+      caseid: profile.caseid,
+      message,
+      token: client.profile.token,
+      copyright: profile.copyright,
+      created,
+    };
+    data.md5 = this.lib.hash(data, 'md5');
+    data.sha256 = this.lib.hash(data, 'sha256');
+
     const text = [
-      `::begin:signature:${data.id}`,
-      `id: ${id}`,
+      '::::::::::::::::::',
+      `::begin:signature:VectorGuardShield:${data.transport}`,
+      `type: ${type}`,
       `name: ${data.name}`,
-      `date: ${date}`,				
-      data.md5,
-      data.sha256,
-      data.sha512,
-      `::end:signature:${data.id}`,
+      `message: ${data.message}`,
+      `token: ${data.token}`,
+      `---`,
+      `id: ${data.uid}`,
+      `${type}_id: ${data.signer}`,
+      `transport_id: ${data.transport}`,
+      `case_id: ${data.caseid}`,
+      `copyright: ${data.copyright}`,
+      `created: ${data.created}`,
+      `md5: ${data.md5}`,
+      `sha256: ${data.sha256}`,
+      `::end:signature:VectorGuardShield:${data.transport}`,
+      '::::::::::::::::::',
     ].join('\n').trim();
     return {
       text,
