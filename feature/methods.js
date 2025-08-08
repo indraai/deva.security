@@ -107,8 +107,11 @@ export default {
     if (!params[1] || params[1] === 'client') type = `#${meta.key}.${params.join('.')}`;        
     else type = `#${meta.key}.${params.join('.')}`;
     
+    
     const signer = !params[1] || params[1] === 'client' ? this.client() : this.agent();
-    const created = this.lib.formatDate(Date.now(), 'long', true);
+    const signer_type = !params[1] || params[1] === 'client' ? 'client_id' : 'agent_id';
+    const timestamp = Date.now();
+    const created = this.lib.formatDate(timestamp, 'long', true);
     const message = packet.q.text || '';
     const client = this.client();
     const {profile} = signer;
@@ -121,37 +124,44 @@ export default {
       type,
       signer: signer.id,
       name: profile.name,
+      identity: profile.identity || 'not provided',
       caseid: profile.caseid,
       message,
       token: client.profile.token,
       copyright: profile.copyright,
       created,
+      timestamp,
     };
     data.md5 = this.lib.hash(data, 'md5');
     data.sha256 = this.lib.hash(data, 'sha256');
-
+    data.sha512 = this.lib.hash(data, 'sha512');
+    
     const text = [
-      '::::::::::::::::::',
+      '',
       `::begin:signature:VectorGuardShield:${data.transport}`,
       `type: ${type}`,
       `name: ${data.name}`,
+      `identity: ${data.identity}`,
       `message: ${data.message}`,
       `token: ${data.token}`,
       `---`,
       `id: ${data.uid}`,
-      `${type}_id: ${data.signer}`,
+      `${signer_type}: ${data.signer}`,
       `transport_id: ${data.transport}`,
       `case_id: ${data.caseid}`,
       `copyright: ${data.copyright}`,
       `created: ${data.created}`,
+      `timestamp: ${data.timestamp}`,
       `md5: ${data.md5}`,
       `sha256: ${data.sha256}`,
+      `sha512: ${data.sha512}`,
       `::end:signature:VectorGuardShield:${data.transport}`,
-      '::::::::::::::::::',
+      '',
     ].join('\n').trim();
+    const feecting = await this.question(`${this.askChr}feecting parse ${text}`);
     return {
-      text,
-      html: false,
+      text: feecting.a.text,
+      html: feecting.a.html,
       data,
     }	  
   },
