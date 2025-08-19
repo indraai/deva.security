@@ -81,6 +81,32 @@ export default {
     const theDate = this.lib.formatDate(Date.now(), 'long', true);
     return Promise.resolve(theDate);
   },
+  /**************
+  method: time
+  params: packet
+  describe: Return current system hash time.
+  ***************/
+  async time(packet) {
+    this.feature('security');
+    const timestamp = Date.now();
+    const created = this.lib.formatDate(Date.now(), 'long', true);
+    
+    const data = {
+      packet,
+      timestamp, 
+      created,
+    }
+    data.md5 = this.lib.hash(data, 'md5');
+    data.sha256 = this.lib.hash(data, 'sha256');
+    data.sha512 = this.lib.hash(data, 'sha512');
+    
+    const feecting = await this.question(`${this.askChr}feecting parse ${text}`);
+    return {
+      text: feecting.a.text,
+      html: feecting.a.html,
+      data,
+    }	  
+  },
 
   /**************
   method: md5 cipher
@@ -100,55 +126,54 @@ export default {
     const uid = this.lib.uid(true);
     const transport = packet.id;
     
-    let type;
     const {meta} = packet.q;
     const {params} = meta;
+    const opts = this.lib.copy(params);
+    const cmd = opts.shift();
 
-    if (!params[1] || params[1] === 'client') type = `#${meta.key}.${params.join('.')}`;        
-    else type = `#${meta.key}.${params.join('.')}`;
-    
-    
-    const signer = !params[1] || params[1] === 'client' ? this.client() : this.agent();
-    const signer_type = !params[1] || params[1] === 'client' ? 'client_id' : 'agent_id';
+    const signer = !params[1] || params[1] === 'agent' ? this.agent() : this.client();
+    const {profile} = signer;
+        
     const timestamp = Date.now();
     const created = this.lib.formatDate(timestamp, 'long', true);
     const message = packet.q.text || '';
     const client = this.client();
-    const {profile} = signer;
-    
-    console.log(client.profile.token);
-    
+    const agent = this.agent();
+        
     const data = {
       uid,
       transport,
-      type,
-      signer: signer.id,
+      opts: opts.join(' '),
+      client: client.profile,
+      agent: agent.profile,
       name: profile.name,
-      identity: profile.identity || 'not provided',
+      computer: profile.computer,
+      network: profile.network,
       caseid: profile.caseid,
       message,
-      token: client.profile.token,
-      copyright: profile.copyright,
+      religion: profile.religion,
       created,
       timestamp,
+      token: profile.token,
+      copyright: profile.copyright,
     };
     data.md5 = this.lib.hash(data, 'md5');
     data.sha256 = this.lib.hash(data, 'sha256');
     data.sha512 = this.lib.hash(data, 'sha512');
     
     const text = [
-      '',
+      `uid: ${data.uid}`,
+      `write ${data.opts}? if yes then write ${data.message}`,
       `::begin:signature:VectorGuardShield:${data.transport}`,
-      `type: ${type}`,
+      `transport: ${data.transport}`,
+      `caseid: ${data.caseid}`,
+      `agent: ${agent.profile.id}`,
+      `client: ${client.profile.id}`,
       `name: ${data.name}`,
-      `identity: ${data.identity}`,
-      `message: ${data.message}`,
-      `token: ${data.token}`,
-      `---`,
-      `id: ${data.uid}`,
-      `${signer_type}: ${data.signer}`,
-      `transport_id: ${data.transport}`,
-      `case_id: ${data.caseid}`,
+      `religion: ${data.religion}`,
+      `computer: ${data.computer}`,
+      `network: ${data.network}`,
+      `companies: ${JSON.stringify(data.companies)}`,
       `copyright: ${data.copyright}`,
       `created: ${data.created}`,
       `timestamp: ${data.timestamp}`,
@@ -156,7 +181,6 @@ export default {
       `sha256: ${data.sha256}`,
       `sha512: ${data.sha512}`,
       `::end:signature:VectorGuardShield:${data.transport}`,
-      '',
     ].join('\n').trim();
     const feecting = await this.question(`${this.askChr}feecting parse ${text}`);
     return {
