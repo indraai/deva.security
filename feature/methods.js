@@ -72,43 +72,6 @@ export default {
   },
 
   /**************
-  method: today
-  params: packet
-  describe: Return system date for today.
-  ***************/
-  today(packet) {
-    this.feature('security');
-    const theDate = this.lib.formatDate(Date.now(), 'long', true);
-    return Promise.resolve(theDate);
-  },
-  /**************
-  method: time
-  params: packet
-  describe: Return current system hash time.
-  ***************/
-  async time(packet) {
-    this.feature('security');
-    const timestamp = Date.now();
-    const created = this.lib.formatDate(Date.now(), 'long', true);
-    
-    const data = {
-      packet,
-      timestamp, 
-      created,
-    }
-    data.md5 = this.lib.hash(data, 'md5');
-    data.sha256 = this.lib.hash(data, 'sha256');
-    data.sha512 = this.lib.hash(data, 'sha512');
-    
-    const feecting = await this.question(`${this.askChr}feecting parse ${text}`);
-    return {
-      text: feecting.a.text,
-      html: feecting.a.html,
-      data,
-    }	  
-  },
-
-  /**************
   method: md5 cipher
   params: packet
   describe: Return system md5 hash for the based deva.
@@ -120,73 +83,18 @@ export default {
     return Promise.resolve(cipher);
   },
   
-  async sign(packet) {
-    this.context('signature');
-    this.action('method', 'signature');
-    const uid = this.lib.uid(true);
-    const transport = packet.id;
-    
-    const {meta} = packet.q;
-    const {params} = meta;
-    const opts = this.lib.copy(params);
-    const cmd = opts.shift();
-
-    const signer = !params[1] || params[1] === 'agent' ? this.agent() : this.client();
-    const {profile} = signer;
-        
-    const timestamp = Date.now();
-    const created = this.lib.formatDate(timestamp, 'long', true);
-    const message = packet.q.text || '';
-    const client = this.client();
-    const agent = this.agent();
-        
-    const data = {
-      uid,
-      transport,
-      opts: opts.join(' '),
-      client: client.profile,
-      agent: agent.profile,
-      name: profile.name,
-      computer: profile.computer,
-      network: profile.network,
-      caseid: profile.caseid,
-      message,
-      religion: profile.religion,
-      created,
-      timestamp,
-      token: profile.token,
-      copyright: profile.copyright,
-    };
-    data.md5 = this.lib.hash(data, 'md5');
-    data.sha256 = this.lib.hash(data, 'sha256');
-    data.sha512 = this.lib.hash(data, 'sha512');
-    
-    const text = [
-      `uid: ${data.uid}`,
-      `write ${data.opts}? if yes then write ${data.message}`,
-      `::begin:signature:VectorGuardShield:${data.transport}`,
-      `transport: ${data.transport}`,
-      `caseid: ${data.caseid}`,
-      `agent: ${agent.profile.id}`,
-      `client: ${client.profile.id}`,
-      `name: ${data.name}`,
-      `religion: ${data.religion}`,
-      `computer: ${data.computer}`,
-      `network: ${data.network}`,
-      `companies: ${JSON.stringify(data.companies)}`,
-      `copyright: ${data.copyright}`,
-      `created: ${data.created}`,
-      `timestamp: ${data.timestamp}`,
-      `md5: ${data.md5}`,
-      `sha256: ${data.sha256}`,
-      `sha512: ${data.sha512}`,
-      `::end:signature:VectorGuardShield:${data.transport}`,
-    ].join('\n').trim();
-    const feecting = await this.question(`${this.askChr}feecting parse ${text}`);
-    return {
-      text: feecting.a.text,
-      html: feecting.a.html,
-      data,
-    }	  
+  /**************
+  method: today
+  params: packet
+  describe: Return system date for today.
+  ***************/
+  today(packet) {
+    this.feature('security');
+    const theDate = this.lib.formatDate(Date.now(), 'long', true);
+    return Promise.resolve(theDate);
   },
+  
+
+  //TODO: build the write feature so it can write commands into the system.
+  
 }
