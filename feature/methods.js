@@ -66,8 +66,21 @@ export default {
   describe: Return system md5 hash for the based deva.
   ***************/
   hash(packet) {
+    const transport = packet.id;
     this.feature('security');
-    const hash = this.lib.hash(packet.q.text, 'md5');
+    this.action('method', `hash:${transport}`);
+    
+    this.state('set', `meta:${transport}`); //set the meta state for the proxy
+    const {meta} = packet.q; // set the meta information from the packet question.
+    
+    this.state('set', `params:${transport}`); //set the meta state for the proxy
+    const {params} = meta; // set params from the meta information.
+    
+    this.state('set', `algo:${transport}`); //set the meta state for the proxy
+    const algo = params[1] ? params[1] : 'md5'
+    
+    this.state('set', `hash:${transport}`); //set the meta state for the proxy
+    const hash = this.lib.hash(packet.q.text, algo);
     return Promise.resolve(hash);
   },
 
