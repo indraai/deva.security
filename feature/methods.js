@@ -93,6 +93,18 @@ export default {
     const theDate = this.lib.formatDate(Date.now(), 'long', true);
     return Promise.resolve(theDate);
   },
+  /**************
+  method: time
+  params: packet
+  describe: Return system date for today.
+  ***************/
+  time(packet) {
+    this.feature('security');
+    this.action('method', 'time')
+    this.state('get', 'time')
+    const theTime = Date.now();
+    return Promise.resolve(theTime);
+  },
   
 
   //TODO: build the write feature so it can write commands into the system.
