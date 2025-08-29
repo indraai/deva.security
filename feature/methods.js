@@ -61,13 +61,14 @@ export default {
   },
 
   /**************
-  method: md5 hash
+  method: md5, sha256, sha512 hash
   params: packet
-  describe: Return system md5 hash for the based deva.
+  describe: Return system md5, sha256, sha512 hash from value.
   ***************/
   hash(packet) {
     const transport = packet.id;
-    this.feature('security');
+    this.zone('security', `hash:${transport}`);
+    this.feature('security', `hash:${transport}`);
     this.action('method', `hash:${transport}`);
     
     this.state('set', `meta:${transport}`); //set the meta state for the proxy
@@ -81,6 +82,8 @@ export default {
     
     this.state('set', `hash:${transport}`); //set the meta state for the proxy
     const hash = this.lib.hash(packet.q.text, algo);
+    
+    this.state('return', `hash:${transport}`);
     return Promise.resolve(hash);
   },
 
@@ -102,8 +105,13 @@ export default {
   describe: Return system date for today.
   ***************/
   today(packet) {
-    this.feature('security');
+    const transport = packet.id;
+    this.zone('security', `today:${transport}`);
+    this.feature('security', `today:${transport}`);
+    this.action('method', `today:${transport}`);
+    this.state('get', `today:${transport}`);
     const theDate = this.lib.formatDate(Date.now(), 'long', true);
+    this.state('get', `today:${transport}`);
     return Promise.resolve(theDate);
   },
   /**************
@@ -112,10 +120,13 @@ export default {
   describe: Return system date for today.
   ***************/
   time(packet) {
-    this.feature('security');
-    this.action('method', 'time')
-    this.state('get', 'time')
+    const transport = packet.id;
+    this.zone('security', `time:${transport}`);
+    this.feature('security', `time:${transport}`);
+    this.action('method', `time:${transport}`);
+    this.state('get', `time:${transport}`);
     const theTime = Date.now();
+    this.state('return', `time:${transport}`);
     return Promise.resolve(theTime);
   },
   
