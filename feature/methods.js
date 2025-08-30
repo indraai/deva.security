@@ -5,47 +5,9 @@ export default {
   params: packet
   describe: The global security feature that installs with every agent
   ***************/
-  security(packet) {
-    this.context('feature');
-    return new Promise((resolve, reject) => {
-      const security = this.security();
-      const agent = this.agent();
-      const global = [];
-      security.global.forEach((item,index) => {
-        global.push(`::begin:global:${item.key}:${item.id}`);
-        for (let x in item) {
-          global.push(`${x}: ${item[x]}`);
-        }
-        global.push(`::end:global:${item.key}:${this.lib.hash(item)}`);
-      });
-      const concerns = [];
-      security.concerns.forEach((item, index) => {
-        concerns.push(`${index + 1}. ${item}`);
-      })
-      
-      const info = [
-        '::BEGIN:SECURITY',
-        '### Client',
-        `::begin:client:${security.client_id}`,
-        `id: ${security.client_id}`,
-        `client: ${security.client_name}`,
-        '**concerns**',
-        concerns.join('\n'),
-        `::end:client:${this.lib.hash(security)}`,
-        '### Global',
-        global.join('\n'),
-        '::END:SECURITY'
-      ].join('\n');
-      this.question(`${this.askChr}feecting parse ${info}`).then(feecting => {
-        return resolve({
-          text: feecting.a.text,
-          html: feecting.a.html,
-          data: security.concerns,
-        });
-      }).catch(err => {
-        return this.error(err, packet, reject);
-      })
-    });
+  async security(packet) {
+    const security = await this.methods.sign('security', 'default', packet);
+    return security;
   },
 
   /**************
