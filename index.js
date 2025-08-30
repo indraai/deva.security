@@ -43,7 +43,14 @@ const SECURITY = new Deva({
     },
     process(input) {return input.trim();}
   },
-  listeners: {},
+  listeners: {
+    'devacore:question'(packet) {
+    const echo = this.methods.echo('security', 'question', packet.q);
+    },
+    'devacore:answer'(packet) {
+      const echo = this.methods.echo('security', 'answer', packet.a);
+    }
+  },
   modules: {},
   devas: {},
   func: {},
