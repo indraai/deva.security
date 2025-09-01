@@ -45,10 +45,10 @@ const SECURITY = new Deva({
   },
   listeners: {
     'devacore:question'(packet) {
-    const echo = this.methods.echo('security', 'question', packet.q);
+    const echo = this.methods.echo('security', 'q', packet);
     },
     'devacore:answer'(packet) {
-      const echo = this.methods.echo('security', 'answer', packet.a);
+      const echo = this.methods.echo('security', 'a', packet);
     }
   },
   modules: {},
