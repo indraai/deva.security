@@ -19,15 +19,17 @@ export default {
     const uid = packet.q.text ? true : false
     this.feature('security');
     const id = this.lib.uid(uid);
+    const {key} = this.agent();
+    
     const data = [
       '',
-      `::begin:uid:${id.uid}`,
+      `::begin:uid:${key}:${id.uid}`,
       `uid: ${id.uid}`,
       `created: ${id.created}`,
       `md5: ${id.md5}`,
       `sha256: ${id.sha256}`,
       `sha512: ${id.sha512}`,
-      `::end:uid:${id.uid}`,
+      `::end:uid:${key}:${id.uid}`,
     ].join('\n');
     return Promise.resolve(data);
   },
