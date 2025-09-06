@@ -19,7 +19,17 @@ export default {
     const uid = packet.q.text ? true : false
     this.feature('security');
     const id = this.lib.uid(uid);
-    return Promise.resolve(id);
+    const data = [
+      '',
+      `::begin:uid:${id.uid}`,
+      `uid: ${id.uid}`,
+      `created: ${id.created}`,
+      `md5: ${id.md5}`,
+      `sha256: ${id.sha256}`,
+      `sha512: ${id.sha512}`,
+      `::end:uid:${id.uid}`,
+    ].join('\n');
+    return Promise.resolve(data);
   },
 
   /**************
