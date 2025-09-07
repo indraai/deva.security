@@ -1,10 +1,24 @@
 {
-  "id": 6507120243760,
+  "id": "31477276110836980722",
   "name": "@indra.ai/deva.security",
   "version": "0.0.54",
-  "author": "Quinn Michaels",
-  "license": "MIT",
-  "copyright": "2025",
+  "license": "VLA:18942163452364251159 LICENSE.md",
+  "author": {
+    "name": "Quinn A Michaels",
+    "email": "quinn@indra.ai",
+    "url": "https://indra.ai/"
+  },
+  "funding": [
+    {
+      "type": "paypal",
+      "url": "https://paypal.me/rahulaclub"
+    },
+    {
+      "type": "patreon",
+      "url": "https://patreon.com/rahulaclub"
+    }
+  ],
+  "copyright": "(c)Copyright 2025, Quinn A Michaels; All Rights Reserved.",
   "description": "The Security Deva the Security for Deva.space, Deva.cloud, and Deva.world.",
   "main": "index.js",
   "type": "module",
@@ -32,7 +46,7 @@
   },
   "data": {
     "agent": {
-      "id": 5525285339498,
+      "id": "31477276110836980722",
       "key": "security",
       "prompt": {
         "emoji": "🔐",
