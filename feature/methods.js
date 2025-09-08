@@ -203,7 +203,7 @@ export default {
       agent: agent_hash,
       packet: packet_hash,
       laws: laws_hash,
-      warning: agent.warning || client.warning || 'none',
+      warning: client.profile.warning || agent.profile.warning || 'none',
       token,
       concerns,
       meta,
