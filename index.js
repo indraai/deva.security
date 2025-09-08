@@ -1,6 +1,9 @@
-// Copyright (c)2025 Quinn Michaels
+"use strict"
+// ©2025 Quinn A Michaels; All rights reserved. 
+// Legal Signature Required For Lawful Use.
+// Distributed under VLA:36687315706419437672 LICENSE.md
 // Security Deva
-// Security Deva Manages Security in deva.world.
+
 import Deva from '@indra.ai/deva';
 import pkg from './package.json' with {type:'json'};
 const {agent,vars} = pkg.data;

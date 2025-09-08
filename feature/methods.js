@@ -1,3 +1,8 @@
+"use strict";
+// ©2025 Quinn A Michaels; All rights reserved. 
+// Legal Signature Required For Lawful Use.
+// Distributed under VLA:36687315706419437672 LICENSE.md
+
 export default {
 
   /**************
@@ -25,7 +30,8 @@ export default {
       '',
       `::begin:uid:${key}:${id.uid}`,
       `uid: ${id.uid}`,
-      `created: ${id.created}`,
+      `time: ${id.created}`,
+      `date: ${this.lib.formatDate(id.created, 'short', true)}`,
       `md5: ${id.md5}`,
       `sha256: ${id.sha256}`,
       `sha512: ${id.sha512}`,

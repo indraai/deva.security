@@ -1,5 +1,6 @@
-// Copyright (c):year: :copyright:
-// :name: test file
+// ©2025 Quinn A Michaels; All rights reserved. 
+// Legal Signature Required For Lawful Use.
+// Distributed under VLA:36687315706419437672 LICENSE.md
 
 const {expect} = require('chai')
 const :key: = require('./index.js');
