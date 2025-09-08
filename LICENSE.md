@@ -1,9 +1,12 @@
 # Vedic License Agreement
 
-**Version:** 1.1  
+**Version:** 1.3  
+**VLA:** 36687315706419437672
 **Effective:** Sunday - September 7, 2025  
 **Owner:** Quinn A Michaels  
 **Email:** quinn@indra.ai
+**Link:** https://indra.ai
+**Copyright:** ©2025 Quinn A Michaels; All rights reserved.
 
 This license agreement (“Agreement”) governs the use of the Security Deva (“Software”). By accessing or using the Software, you agree to the terms and conditions set forth below. If you do not agree, you are prohibited from using the Software.
 
@@ -67,19 +70,44 @@ This Agreement shall be governed by and construed in accordance with the Laws of
 
 - That agreement which has been made contrary to the law or to the settled usage of the virtuous, can have no legal force, though it be established by proofs.
 
+## Fine Collection
+
+**Fines:** 1 pana = 3.5 grams of gold in modern market value. 
+
+### Base Fines
+
+- Perjury through covetousness fined one thousand panas.
+- Perjury through distraction fined 100 panas.
+- Pergury through fear fine is 500 panas.
+- Perjury through friendship the fine is 400 panas.
+- Perjury through lust payes ten times the lowest amercement.
+- Perjury through wrath three times the middle amercement.
+- Perjury through ignorance fine is 100 panas.
+- Perjury from childishness the fine is 100 panas.
+
+The Vedic Fines for the current day can be collected by Owner/Brahmana where fines for all previous days must be collected by the Internal Revenue Service (IRS) and Federal Investigation Bureau (FBI) to ensure proper chain of custody as Vedic Law as evasion of taxes laws the IRS and Federal Law Enforcement under Constitutional Law is chose as the Authority Enforcement Body for Past Fine Collection.
+
+**Vedic Laws:**
+
+- His peculiar duty is conquest, and he must not turn back in danger; having protected the Vaisyas by his weapons, he may cause the legal tax to be collected;
+- As the Sun during eight months (imperceptibly) draws up the water with his rays, even so let him gradually draw his taxes from his kingdom; for that is the office in which he resembles the Sun.
+- A trader on reaching a toll-house should pay the legal duty. A prudent man must not try to evade it, (because) it is called the (king's) tax.
+- If he evades a toll-house, or if he buys or sells at another than the legal hour, or if he does not state the value (of his goods) correctly, he shall be fined eight times the amount which he tried to evade.
+- He who avoids a tax, or he who makes a false statement in enumerating his goods shall be fined eight times the amount of duty which he tried to evade.
+
 ## Entire Agreement
 
 This Agreement constitutes the entire understanding between you and the Owner concerning the Software and supersedes all prior agreements.
 
 By using the Software, you acknowledge that you have read, understood, and agree to be bound by this Agreement.
 
+---
 
-©2025 Quinn A Michaels; All rights reserved.
-
-::begin:uid:security:18942163452364251159  
-uid: 18942163452364251159  
-created: 1757284762259  
-md5: 3b1pzLE2jK9aMGUgCw5tVg==  
-sha256: KjRW8sKmRl2Tzf73uyghLbin3Yk9Anr8eS2RDfgajgs=  
-sha512: HRtC7nr+KADsr5RMuUTxBJQPzKQW1Bpq+12KYAuVaiFRLhiwjuSe3I9o2SzSAPZguVsG6eTAD2D+FpomuFInYw==  
-::end:uid:security:18942163452364251159
+::begin:uid:security:36687315706419437672
+uid: 36687315706419437672
+time: 1757303419266
+date: Sun, Sep 7, 2025 - 8:50:19 PM
+md5: SxVkRICnIpmXj60C5l92wg==
+sha256: O+DMjcYY7qCUmAOHS+iIvnmfE9GE54uefmErmb3pRdg=
+sha512: J14qZlcFDR1R1+0UmTYPxROeLPPYwAwnSbHCz8/GCbe+d9rHOfUHP+KlTT6okHfCX5qIkf1fsTcji4b5lQIxpw==
+::end:uid:security:36687315706419437672
