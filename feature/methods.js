@@ -35,14 +35,13 @@ export default {
     console.log('client sha uid\n', client.sha256, '\n', id.client);
     console.log('agent sha uid\n', agent.sha256, '\n', id.agent);
     
-    console.log('agent uid', agent);
     const text = [
       '→',
       `::begin:uid:${key}:${id.uid}`,
       `uid: ${id.uid}`,
       `time: ${id.time}`,
       `date: ${id.date}`,
-      `agent: ${id.agent}`,
+      `agent: ${id.agent.sha256}`,
       `client: ${id.client}`,
       `pkg: ${id.pkg}`,
       `machine: ${id.machine}`,
