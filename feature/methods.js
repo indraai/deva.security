@@ -27,9 +27,7 @@ export default {
     const uid = packet.q.text ? true : false
     const id = this.lib.uid(uid);
 
-    const {client} = packet.q;
-    
-    const agent = this.agent();
+    const {client,agent} = packet.q;
     const {key} = agent;
 
     console.log('client sha uid\n', client.sha256, '\n', id.client);
