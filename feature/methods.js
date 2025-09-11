@@ -41,7 +41,7 @@ export default {
       `uid: ${id.uid}`,
       `time: ${id.time}`,
       `date: ${id.date}`,
-      `agent: ${id.agent.sha256}`,
+      `agent: ${id.agent}`,
       `client: ${id.client}`,
       `pkg: ${id.pkg}`,
       `machine: ${id.machine}`,
