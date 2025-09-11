@@ -21,13 +21,21 @@ export default {
   describe: Return a system id to the user from the Log Buddy.
   ***************/
   uid(packet) {
-    console.log('uid packet', packet);
-    const uid = packet.q.text ? true : false
     this.feature('security', `uid:${packet.id.uid}`);
+    this.zone('security', `uid:${packet.id.uid}`);
+
+    const uid = packet.q.text ? true : false
     const id = this.lib.uid(uid);
+
+    const {client} = packet.q;
+    
     const agent = this.agent();
-    console.log('before or after uid');
     const {key} = agent;
+
+    console.log('client sha uid\n', client.sha256, '\n', id.client);
+    console.log('agent sha uid\n', agent.sha256, '\n', id.agent);
+    
+    console.log('agent uid', agent);
     const text = [
       '→',
       `::begin:uid:${key}:${id.uid}`,
@@ -123,7 +131,8 @@ export default {
   
 
   async sign(packet) {
-    console.log('sign packet', packet);
+    console.log('client sha sign', packet.q.client.sha256);
+    console.log('agent sha sign', packet.q.agent.sha256);
 
     const data = this.lib.sign(packet);    
     // Text data that is joined by line breaks and then trimmed.
