@@ -23,13 +23,14 @@ export default {
   uid(packet) {
     this.feature('security', `uid:${packet.id.uid}`);
     this.zone('security', `uid:${packet.id.uid}`);
+    const agent = this.agent();
+    const {key} = agent;
 
     const uid = packet.q.text ? true : false
     const id = this.lib.uid(uid);
 
-    const {client, agent} = packet.q;
-    const {key} = agent;
-    
+    const {client} = packet.q;
+        
     console.log('uid agent', id.agent.sha256);
     console.log('---\npacket agent', agent.sha256);
     console.log('---\nthis agent', this.agent().sha256);
