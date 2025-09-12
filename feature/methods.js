@@ -136,7 +136,7 @@ export default {
     const text = [
       '→',
       `::BEGIN:${data.container}`,
-      `${data.write} #${data.key}.${data.method}.${data.opts}? if true ${data.write} ${data.text}`,
+      `#${data.key}.${data.method}.${data.opts} ${data.text}`,
       '\n---\n',
       `sign:${data.client.fullname}${data.client.emojis}`,
       '\n',
