@@ -33,6 +33,7 @@ export default {
         
     const text = [
       '→',
+      '::::',
       `::begin:uid:${key}:${id.uid}`,
       `uid: ${id.uid}`,
       `time: ${id.time}`,
@@ -46,6 +47,7 @@ export default {
       `sha256: ${id.sha256}`,
       `sha512: ${id.sha512}`,
       `::end:uid:${key}:${id.uid}`,
+      '::::',
     ].join('\n');
     return Promise.resolve({
       text,
