@@ -26,26 +26,19 @@ export default {
     const agent = this.agent();
     const {key} = agent;
 
-    const uid = packet.q.text ? true : false
-
-    console.log('packet agent', packet.q.agent.sha256);
-    console.log('this agent', this.agent().sha256);
-    const id = this.lib.uid(uid);
-    console.log('uid agent', id.agent.sha256);
+    const uuid = packet.q.text ? true : false
+    const id = this.uid(uuid);
 
     const {client} = packet.q;
         
-    // console.log('client sha uid\n', client.sha256, '\n', id.client);
-    // console.log('agent sha uid\n', agent.sha256, '\n', id.agent);
-    
     const text = [
       '→',
       `::begin:uid:${key}:${id.uid}`,
       `uid: ${id.uid}`,
       `time: ${id.time}`,
       `date: ${id.date}`,
-      `agent: ${id.agent.sha256}`,
-      `client: ${id.client.sha256}`,
+      `agent: ${id.agent}`,
+      `client: ${id.client}`,
       `pkg: ${id.pkg}`,
       `machine: ${id.machine}`,
       `warning: ${id.warning}`,
