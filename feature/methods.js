@@ -136,7 +136,7 @@ export default {
     const text = [
       '→',
       `::BEGIN:${data.container}`,
-      `${data.write} #${data.key}.${data.method}${data.opts}? if true ${data.write} ${data.text}`,
+      `${data.write} #${data.key}.${data.method}.${data.opts}? if true ${data.write} ${data.text}`,
       '\n---\n',
       `sign:${data.client.fullname}${data.client.emojis}`,
       '\n',
@@ -150,7 +150,7 @@ export default {
       `caseid: ${data.client.caseid}`,
       `client: ${data.client.sha256}`,
       `agent: ${data.agent.sha256}`,
-      `token: ${data.token}`,
+      `token: ${data.client.token}`,
       `warning: ${data.warning}`,
       `created: ${data.created}`,
       `copyright: ${data.copyright}`,
