@@ -128,10 +128,9 @@ export default {
   
 
   async sign(packet) {
-    console.log('client sha sign', packet.q.client.sha256);
-    console.log('agent sha sign', packet.q.agent.sha256);
-
-    const data = this.lib.sign(packet);    
+    const data = this.sign(packet);    
+    
+    console.log('sign method', data);
     // Text data that is joined by line breaks and then trimmed.
     this.state('set', `${data.key}:${data.method}:text:${data.id.uid}`); // set state to text for output formatting.
     const text = [
@@ -139,21 +138,19 @@ export default {
       `::BEGIN:${data.container}`,
       `${data.write} #${data.key}.${data.method}${data.opts}? if true ${data.write} ${data.text}`,
       '\n---\n',
-      `sign:${data.fullname}${data.emojis}`,
+      `sign:${data.client.fullname}${data.client.emojis}`,
       '\n',
       `::begin:${data.method}:${data.key}:${data.id.uid}`,
       `transport: ${data.id.uid}`,
       `time: ${data.time}`,
-      `expires: ${data.expires}`,
-      `name: ${data.name}`,
-      `fullname: ${data.fullname}`,
-      `company: ${data.company}`,
-      `caseid: ${data.caseid}`,
-      `agent: ${data.agent}`,
-      `client: ${data.client}`,
-      `packet: ${data.packet}`,
+      `expires: ${data.client.expires}`,
+      `name: ${data.client.name}`,
+      `fullname: ${data.client.fullname}`,
+      `company: ${data.client.company}`,
+      `caseid: ${data.client.caseid}`,
+      `client: ${data.client.sha256}`,
+      `agent: ${data.agent.sha256}`,
       `token: ${data.token}`,
-      `laws: ${data.laws}`,
       `warning: ${data.warning}`,
       `created: ${data.created}`,
       `copyright: ${data.copyright}`,
