@@ -46,6 +46,7 @@ export default {
       `md5: ${id.md5}`,
       `sha256: ${id.sha256}`,
       `sha512: ${id.sha512}`,
+      `copyright: ${id.copyright}`,
       `::end:uid:${key}:${id.uid}`,
       '::::',
     ].join('\n');
