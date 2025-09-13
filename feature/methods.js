@@ -38,8 +38,8 @@ export default {
       `uid: ${id.uid}`,
       `time: ${id.time}`,
       `date: ${id.date}`,
-      `agent: ${id.agent}`,
       `client: ${id.client}`,
+      `agent: ${id.agent}`,
       `pkg: ${id.pkg}`,
       `machine: ${id.machine}`,
       `warning: ${id.warning}`,
@@ -130,7 +130,6 @@ export default {
   async sign(packet) {
     const data = this.sign(packet);    
     
-    console.log('sign method', data);
     // Text data that is joined by line breaks and then trimmed.
     this.state('set', `${data.key}:${data.method}:text:${data.id.uid}`); // set state to text for output formatting.
     const text = [
