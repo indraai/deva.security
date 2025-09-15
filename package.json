@@ -42,7 +42,7 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.6.70"
+    "@indra.ai/deva": "^1.6.73"
   },
   "data": {
     "agent": {
