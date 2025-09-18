@@ -1,7 +1,7 @@
 "use strict";
 // ©2025 Quinn A Michaels; All rights reserved. 
 // Legal Signature Required For Lawful Use.
-// Distributed under VLA:65538593067641220245 LICENSE.md
+// Distributed under VLA:51699275776036264337 LICENSE.md
 
 const {expect} = require('chai')
 const :key: = require('./index.js');
