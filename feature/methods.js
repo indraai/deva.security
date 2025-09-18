@@ -34,7 +34,7 @@ export default {
     const text = [
       '→',
       '::::',
-      `::begin:uid:${key}:${id.uid}`,
+      `::begin:${key}:uid:${id.uid}`,
       `uid: ${id.uid}`,
       `time: ${id.time}`,
       `date: ${id.date}`,
@@ -47,7 +47,7 @@ export default {
       `md5: ${id.md5}`,
       `sha256: ${id.sha256}`,
       `sha512: ${id.sha512}`,
-      `::end:uid:${key}:${id.uid}`,
+      `::end:${key}:uid:${id.uid}`,
       '::::',
     ].join('\n');
     return Promise.resolve({
