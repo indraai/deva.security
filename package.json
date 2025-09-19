@@ -58,7 +58,7 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.6.82"
+    "@indra.ai/deva": "^1.6.84"
   },
   "data": {
     "agent": {
@@ -212,6 +212,10 @@
       "footer": "🐷 Footer"
     },
     "states": {
+      "usa": "🇺🇸 United States of America",
+      "england": "🇬🇧 England",
+      "germany": "🇩🇪 Germany",
+      "russia": "🇷🇺 Russia",
       "observe": "🔍 Observe",
       "confidential": "🤐 Confidential",
       "classified": "🔏 Classified",
@@ -245,7 +249,9 @@
       "lawful": "😎 Lawful",
       "unlawful": "😓 Unlawful",
       "innocent": "😇 Innocent",
-      "guilty": "😞 Guilty"
+      "guilty": "😞 Guilty",
+      "wager": "﹩ Wager",
+      "gamble": "₿ Gamble"
     }
   }
 }

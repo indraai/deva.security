@@ -40,7 +40,7 @@ export default {
       `date: ${id.date}`,
       `client: ${id.client}`,
       `agent: ${id.agent}`,
-      `pkg: ${id.pkg}`,
+      `core: ${id.core}`,
       `machine: ${id.machine}`,
       `warning: ${id.warning}`,
       `copyright: ${id.copyright}`,
@@ -49,6 +49,8 @@ export default {
       `sha512: ${id.sha512}`,
       `::end:${key}:uid:${id.uid}`,
       '::::',
+      JSON.stringify(id, null, 2),
+      '::::'
     ].join('\n');
     return Promise.resolve({
       text,
