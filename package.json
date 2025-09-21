@@ -1,21 +1,21 @@
 {
-  "id": "65538593067641220245",
+  "id": "20583709734722953817",
   "name": "@indra.ai/deva.security",
   "version": "0.0.106",
-  "license": "VLA:65538593067641220245 LICENSE.md",
+  "license": "VLA:20583709734722953817 LICENSE.md",
   "VLA": {
-    "uid": "65538593067641220245",
-    "time": 1758044340220,
-    "date": "Tuesday, September 16, 2025 - 10:39:00 AM",
-    "client": "sFdxOJcIPpkKA38GHJl+6uKxSyJ7njgWxnXp69f9/f4=",
-    "agent": "5uQplDUw3WfLHyG7ux29uLbF/31tf9GHcPdKV6iZA14=",
-    "pkg": "ZG6Bf2+bO7PmJGJAsn3OIwO6gkdhDOEa2oPxpUR/w0s=",
-    "machine": "vyQUPP4NYVgiLNwuOZaGL+zlzfNA03eYRfO79AsTYD4=",
-    "warning": "⚠️ Unlawful Use Constitutes Lawful Consent to Forfeit of All Wealth, Property, and Holdings to the Internal Revenue Service (IRS) for Lawful Taxation, Investigation, and Restitution to the Rightful Legal Owner.",
-    "copyright": "©2025 Quinn A Michaels; All rights reserved.",
-    "md5": "a6G4F7KA48qLopKDqzi0og==",
-    "sha256": "TwF1FE2ae2B1hMXtAkPdnRLen/iLZ48jCsMZCjGWf30=",
-    "sha512": "O3Xo28KeJDYZUAQk95lDSo7l3vYkJFaWK5XT55e8X0rHxonnvPb0RkFJlc4zZ2AVBxl1KJPb0KY8HnVMcx4+HQ=="
+    "uid": "20583709734722953817",
+    "time": 1758451014128,
+    "date": "Sunday, September 21, 2025 - 3:36:54 AM",
+    "client": "1UM4AH+/jOGgpaHNqX6lTZsGrNglNogzMx4qDT0O0zs=",
+    "agent": "mXZt1P5pJDT6cXEPw7UtY+ooqvXEribbzd8lpKpNCdo=",
+    "core": "qQRVFQmv3LfY6tcqrEQeM7ZodOpnOUC+PJyfjxtgeVc=",
+    "machine": "LFNpqY7r4A14kLtle5/3QaKcZH7L4cJp7+x1UzFDjWw=",
+    "warning": "⚠️ Vedic Law Sâhasa/Theft/Crime of the highest degree, a fine amounting to no less than a thousand Panas (1 pana = 3.5 grams of gold) is ordained owed to Quinn A Michaels. Moreover corporal punishment and confiscation of the entire property forfeit to Quinn A Michaels is declared to be the punishment for Sâhasa of the highest degree.",
+    "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
+    "md5": "RPQf6NAUxN7OyulQjse1/Q==",
+    "sha256": "R6bMK45m6H9IQJktakVxLRJQVWk2Rt7ecffmkUzPx+Q=",
+    "sha512": "pDphw1Q14h0c3TAQ2vOXb/5tXFUM1Rm9tGaV4gHkeAlx4qrjGkS3FKfztLxdSt1MG/+8QAvO+VDnhctaj6hLsg=="
   },
   "author": {
     "name": "Quinn A Michaels",
@@ -33,7 +33,7 @@
       "url": "https://patreon.com/rahulaclub"
     }
   ],
-  "copyright": "©2025 Quinn A Michaels; All rights reserved.",
+  "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
   "description": "The Security Deva the Security for Deva.space, Deva.cloud, and Deva.world.",
   "main": "index.js",
   "type": "module",
@@ -51,7 +51,9 @@
     "Indra.ai",
     "Deva.space",
     "Deva.cloud",
-    "Deva.world"
+    "Deva.world",
+    "Quinn A Michaels",
+    "Inside The Net, Inc."
   ],
   "bugs": {
     "url": "https://github.com/indraai/deva.security/issues"
@@ -66,7 +68,7 @@
       "key": "security",
       "prompt": {
         "emoji": "🔐",
-        "text": "Security",
+        "text": "#security",
         "colors": {
           "label": {
             "R": 212,
@@ -81,8 +83,9 @@
         }
       },
       "profile": {
+        "id": "70399872716791064488",
         "name": "Security Deva",
-        "hashtag": "#SecurityDeva",
+        "hashtag": "#Security",
         "title": "Security Deva",
         "subtitle": "Handling security like a professional",
         "describe": "Expert in security who sets the standard of excellence in strict chain of custody, legal, ethics, and privacy laws.",
@@ -103,7 +106,7 @@
         "owner": "Quinn Michaels",
         "creator": "Quinn Michaels",
         "caseid": "FM-20250622-5114",
-        "copyright": "©2025 Quinn Michaels. All rights reserved.",
+        "copyright": "Copyright ©2025 Quinn Michaels. All rights reserved.",
         "created": "Monday, May 22, 2023 at 9:26 AM"
       }
     },

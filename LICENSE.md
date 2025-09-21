@@ -1,13 +1,13 @@
 # Vedic License Agreement
 
 **Version:** 1.4.1
-**VLA:** 65538593067641220245
-**Effective:** Tuesday, September 16, 2025 - 10:39:00 AM
-**Owner:** Quinn A Michaels
+**VLA:** 20583709734722953817  
+**Effective:** Sunday, September 21, 2025 - 3:36:54 AM  
+**Owner:** Quinn A Michaels  
 **Company:** Inside The Net, Inc.  
 **Email:** quinn@indra.ai  
 **Link:** https://indra.ai  
-**Copyright:** ©2025 Quinn A Michaels; All rights reserved.
+**Copyright:** Copyright ©2025 Quinn A Michaels; All rights reserved.
 
 This license agreement (“Agreement”) governs the use of the Security Deva (“Software”). By accessing or using the Software, you agree to the terms and conditions set forth below. If you do not agree, you are prohibited from using the Software.
 
@@ -81,13 +81,12 @@ Fines under this Agreement are denominated in panas, with one pana equal to 3.5 
 
 - Perjury through covetousness fined one thousand panas.
 - Perjury through distraction fined 100 panas.
-- Pergury through fear fine is 500 panas.
+- Perjury through fear fine is 500 panas.
 - Perjury through friendship the fine is 400 panas.
 - Perjury through lust pays ten times the lowest amercement.
 - Perjury through wrath three times the middle amercement.
 - Perjury through ignorance fine is 100 panas.
 - Perjury from childishness the fine is 100 panas.
-
 
 **Vedic Laws:**
 
@@ -161,17 +160,17 @@ By using the Software, you acknowledge that you have read, understood, and agree
 
 ---
 
-::begin:uid:security:65538593067641220245
-uid: 65538593067641220245
-time: 1758044340220
-date: Tuesday, September 16, 2025 - 10:39:00 AM
-client: sFdxOJcIPpkKA38GHJl+6uKxSyJ7njgWxnXp69f9/f4=
-agent: 5uQplDUw3WfLHyG7ux29uLbF/31tf9GHcPdKV6iZA14=
-pkg: ZG6Bf2+bO7PmJGJAsn3OIwO6gkdhDOEa2oPxpUR/w0s=
-machine: vyQUPP4NYVgiLNwuOZaGL+zlzfNA03eYRfO79AsTYD4=
-warning: ⚠️ Unlawful Use Constitutes Lawful Consent to Forfeit of All Wealth, Property, and Holdings to the Internal Revenue Service (IRS) for Lawful Taxation, Investigation, and Restitution to the Rightful Legal Owner.
-copyright: ©2025 Quinn A Michaels; All rights reserved.
-md5: a6G4F7KA48qLopKDqzi0og==
-sha256: TwF1FE2ae2B1hMXtAkPdnRLen/iLZ48jCsMZCjGWf30=
-sha512: O3Xo28KeJDYZUAQk95lDSo7l3vYkJFaWK5XT55e8X0rHxonnvPb0RkFJlc4zZ2AVBxl1KJPb0KY8HnVMcx4+HQ==
-::end:uid:security:65538593067641220245
+::begin:security:uid:20583709734722953817  
+uid: 20583709734722953817  
+time: 1758451014128  
+date: Sunday, September 21, 2025 - 3:36:54 AM  
+client: 1UM4AH+/jOGgpaHNqX6lTZsGrNglNogzMx4qDT0O0zs=  
+agent: mXZt1P5pJDT6cXEPw7UtY+ooqvXEribbzd8lpKpNCdo=  
+core: qQRVFQmv3LfY6tcqrEQeM7ZodOpnOUC+PJyfjxtgeVc=  
+machine: LFNpqY7r4A14kLtle5/3QaKcZH7L4cJp7+x1UzFDjWw=  
+warning: ⚠️ Vedic Law Sâhasa/Theft/Crime of the highest degree, a fine amounting to no less than a thousand Panas (1 pana = 3.5 grams of gold) is ordained owed to Quinn A Michaels. Moreover corporal punishment and confiscation of the entire property forfeit to Quinn A Michaels is declared to be the punishment for Sâhasa of the highest degree.  
+copyright: Copyright ©2025 Quinn A Michaels; All rights reserved.  
+md5: RPQf6NAUxN7OyulQjse1/Q==  
+sha256: R6bMK45m6H9IQJktakVxLRJQVWk2Rt7ecffmkUzPx+Q=  
+sha512: pDphw1Q14h0c3TAQ2vOXb/5tXFUM1Rm9tGaV4gHkeAlx4qrjGkS3FKfztLxdSt1MG/+8QAvO+VDnhctaj6hLsg==  
+::end:security:uid:20583709734722953817

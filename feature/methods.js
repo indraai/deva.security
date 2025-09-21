@@ -1,7 +1,7 @@
 "use strict";
-// ©2025 Quinn A Michaels; All rights reserved. 
+// Copyright ©2025 Quinn A Michaels; All rights reserved. 
 // Legal Signature Required For Lawful Use.
-// Distributed under VLA:65538593067641220245 LICENSE.md
+// Distributed under VLA:20583709734722953817 LICENSE.md
 
 export default {
 
@@ -33,7 +33,6 @@ export default {
         
     const text = [
       '→',
-      '::::',
       `::begin:${key}:uid:${id.uid}`,
       `uid: ${id.uid}`,
       `time: ${id.time}`,
@@ -48,9 +47,8 @@ export default {
       `sha256: ${id.sha256}`,
       `sha512: ${id.sha512}`,
       `::end:${key}:uid:${id.uid}`,
-      '::::',
+      '----',
       JSON.stringify(id, null, 2),
-      '::::'
     ].join('\n');
     return Promise.resolve({
       text,
