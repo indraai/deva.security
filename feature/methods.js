@@ -28,9 +28,10 @@ export default {
 
     const uuid = packet.q.text ? true : false
     const id = this.uid(uuid);
-
+    
     const {client} = packet.q;
-        
+    
+    const showJSON = packet.q.meta.params[1] || false;    
     const text = [
       '→',
       `::begin:${key}:uid:${id.uid}`,
@@ -47,11 +48,13 @@ export default {
       `sha256: ${id.sha256}`,
       `sha512: ${id.sha512}`,
       `::end:${key}:uid:${id.uid}`,
-      '----',
-      JSON.stringify(id, null, 2),
-    ].join('\n');
+    ];
+    if (showJSON) {
+      text.push('::::');
+      text.push(JSON.stringify(id, null, 2)); 
+    }
     return Promise.resolve({
-      text,
+      text: text.join('\n'),
       html: false,
       data: id,
     });
