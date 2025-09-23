@@ -112,6 +112,8 @@
       }
     },
     "vars": {
+      "database": false,
+      "log": false,
       "messages": {
         "init": "🟠 INIT",
         "start": "🔵 START",

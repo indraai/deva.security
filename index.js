@@ -89,6 +89,7 @@ const SECURITY = new Deva({
   }, 
   onReady(data, resolve) {
     const {VLA} = this.info();
+
     this.state('get', `mongo:global:${data.id.uid}`);
     const {uri,database, log} = this.security().global.mongo;
     this.state('set', `mongo:client:${data.id.uid}`);
