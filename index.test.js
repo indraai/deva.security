@@ -4,18 +4,18 @@
 // Distributed under VLA:45249771785697968797 LICENSE.md
 
 const {expect} = require('chai')
-const :key: = require('./index.js');
+const SecurityDeva = require('./index.js');
 
-describe(:key:.me.name, () => {
+describe(SecurityDeva.me.name, () => {
   beforeEach(() => {
-    return :key:.init()
+    return SecurityDeva.init()
   });
   it('Check the DEVA Object', () => {
-    expect(:key:).to.be.an('object');
-    expect(:key:).to.have.property('agent');
-    expect(:key:).to.have.property('vars');
-    expect(:key:).to.have.property('listeners');
-    expect(:key:).to.have.property('methods');
-    expect(:key:).to.have.property('modules');
+    expect(SecurityDeva).to.be.an('object');
+    expect(SecurityDeva).to.have.property('agent');
+    expect(SecurityDeva).to.have.property('vars');
+    expect(SecurityDeva).to.have.property('listeners');
+    expect(SecurityDeva).to.have.property('methods');
+    expect(SecurityDeva).to.have.property('modules');
   });
 })
