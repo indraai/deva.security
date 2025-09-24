@@ -51,8 +51,8 @@ const SECURITY = new Deva({
   },
   listeners: {
     // log the answer on complete
-    'devacore:done'(packet) {
-      this.func.write_log('done', packet);
+    'devacore:stop'(packet) {
+      this.func.write_log('stop', packet);
     },
     // log the answer on complete
     'devacore:exit'(packet) {
