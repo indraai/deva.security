@@ -43,10 +43,10 @@ export default {
       `core: ${id.core}`,
       `machine: ${id.machine}`,
       `warning: ${id.warning}`,
-      `copyright: ${id.copyright}`,
       `md5: ${id.md5}`,
       `sha256: ${id.sha256}`,
       `sha512: ${id.sha512}`,
+      `copyright: ${id.copyright}`,
       `::end:${key}:uid:${id.uid}`,
     ];
     if (showJSON) {
