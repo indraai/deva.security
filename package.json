@@ -60,7 +60,7 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.8.6",
+    "@indra.ai/deva": "^1.8.7",
     "mongodb": "^6.20.0"
   },
   "data": {
@@ -134,7 +134,7 @@
       },
       "trigger": "@SECURITY",
       "context": {
-        "uid": "generating uid",
+        "uid": "🆔 Generate uid",
         "status": "getting status",
         "info": "getting info",
         "feature": "accessing feature",

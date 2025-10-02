@@ -21,6 +21,8 @@ export default {
   describe: Return a system id to the user from the Log Buddy.
   ***************/
   uid(packet) {
+    this.belief('security', `uid:${data.id.uid}`)
+    this.context('uid', packet.id.uid);
     this.feature('security', `uid:${packet.id.uid}`);
     this.zone('security', `uid:${packet.id.uid}`);
     const agent = this.agent();
@@ -53,6 +55,8 @@ export default {
       text.push('::::');
       text.push(JSON.stringify(id, null, 2)); 
     }
+
+    this.belief('vedic', `uid:${data.id.uid}`)
     return Promise.resolve({
       text: text.join('\n'),
       html: false,
