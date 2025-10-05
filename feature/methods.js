@@ -20,48 +20,56 @@ export default {
   params: packet
   describe: Return a system id to the user from the Log Buddy.
   ***************/
-  uid(packet) {
-    console.log('\nbelief security\n');
-    this.belief('security', `uid:${packet.id.uid}`)
-    this.context('uid', packet.id.uid);
-    this.feature('security', `uid:${packet.id.uid}`);
-    this.zone('security', `uid:${packet.id.uid}`);
-    const agent = this.agent();
-    const {key} = agent;
-
-    const uuid = packet.q.text ? true : false
-    const id = this.uid(uuid);
-    
-    const {client} = packet.q;
-    
-    const showJSON = packet.q.meta.params[1] || false;    
-    const text = [
-      '→',
-      `::begin:${key}:uid:${id.uid}`,
-      `uid: ${id.uid}`,
-      `time: ${id.time}`,
-      `date: ${id.date}`,
-      `client: ${id.client}`,
-      `agent: ${id.agent}`,
-      `core: ${id.core}`,
-      `machine: ${id.machine}`,
-      `warning: ${id.warning}`,
-      `md5: ${id.md5}`,
-      `sha256: ${id.sha256}`,
-      `sha512: ${id.sha512}`,
-      `copyright: ${id.copyright}`,
-      `::end:${key}:uid:${id.uid}`,
-    ];
-    if (showJSON) {
-      text.push('::::');
-      text.push(JSON.stringify(id, null, 2)); 
-    }
-
-    this.belief('vedic', `uid:${packet.id.uid}`)
-    return Promise.resolve({
-      text: text.join('\n'),
-      html: false,
-      data: id,
+  async uid(packet) {
+    return new Promise((resolve, reject) => {
+      this.belief('security', `uid:${packet.id.uid}`)
+      this.context('uid', packet.id.uid);
+      this.feature('security', `uid:${packet.id.uid}`);
+      this.zone('security', `uid:${packet.id.uid}`);
+      const agent = this.agent();
+      const {key} = agent;
+      
+      const uuid = packet.q.text ? true : false
+      const {id} = packet;
+      
+      const {client} = packet.q;
+      
+      const showJSON = packet.q.meta.params[1] || false;    
+      const text = [
+        `::begin:${key}:uid:${id.uid}`,
+        `uid: ${id.uid}`,
+        `time: ${id.time}`,
+        `date: ${id.date}`,
+        `client: ${id.client}`,
+        `agent: ${id.agent}`,
+        `core: ${id.core}`,
+        `machine: ${id.machine}`,
+        `warning: ${id.warning}`,
+        `md5: ${id.md5}`,
+        `sha256: ${id.sha256}`,
+        `sha512: ${id.sha512}`,
+        `copyright: ${id.copyright}`,
+        `::end:${key}:uid:${id.uid}`,
+      ];
+      if (showJSON) {
+        text.push(`::begin:${key}:uid:json:${id.uid}`);
+        text.push(JSON.stringify(id, null, 2)); 
+        text.push(`::end:${key}:uid:json:${id.uid}`);
+      }
+      
+      this.question(`${this.askChr}feecting parse ${text.join('\n')}`).then(parsed => {
+        this.belief('vedic', `uid:${packet.id.uid}`);
+        this.action('resolve', `uid:${id.uid}`);
+        return resolve({
+          text: parsed.a.text,
+          html: parsed.a.html,
+          data: parsed.a.data,
+        });        
+      }).catch(err => {
+        return this.err(err, packet, reject);
+      });
+      
+      
     });
   },
 
