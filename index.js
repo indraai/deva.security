@@ -52,19 +52,19 @@ const SECURITY = new Deva({
   listeners: {
     // log the answer on complete
     'devacore:stop'(packet) {
-      this.func.write_log('stop', packet);
+      this.func.write_log('stop', this.lib.copy(packet));
     },
     // log the answer on complete
     'devacore:exit'(packet) {
-      this.func.write_log('exit', packet);
+      this.func.write_log('exit', this.lib.copy(packet));
     },
     // log the answer on complete
     'devacore:finish'(packet) {
-      this.func.write_log('finish', packet);
+      this.func.write_log('finish', this.lib.copy(packet));
     },
     // log the answer on complete
     'devacore:complete'(packet) {
-      this.func.write_log('complete', packet);
+      this.func.write_log('complete', this.lib.copy(packet));
     },
   },
   modules: {},
