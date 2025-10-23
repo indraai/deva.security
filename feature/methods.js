@@ -22,28 +22,24 @@ export default {
   ***************/
   async uid(packet) {
     return new Promise((resolve, reject) => {
-      this.belief('security', `uid:${packet.id.uid}`)
       this.context('uid', packet.id.uid);
       this.feature('security', `uid:${packet.id.uid}`);
       this.zone('security', `uid:${packet.id.uid}`);
+      this.belief('security', `uid:${packet.id.uid}`)
+      const {client} = packet.q;
       const agent = this.agent();
       const {key} = agent;
-      
+          
       const uuid = packet.q.text ? true : false
-      const {id} = packet;
-      
-      const {client} = packet.q;
-      
+      const id = this.uid(uuid);
+            
       const showJSON = packet.q.meta.params[1] || false;    
       const text = [
         `::begin:${key}:uid:${id.uid}`,
         `uid: ${id.uid}`,
         `time: ${id.time}`,
         `date: ${id.date}`,
-        `client: ${id.client}`,
-        `agent: ${id.agent}`,
-        `core: ${id.core}`,
-        `machine: ${id.machine}`,
+        `fingerprint: ${id.fingerprint}`,
         `warning: ${id.warning}`,
         `copyright: ${id.copyright}`,
         `md5: ${id.md5}`,
