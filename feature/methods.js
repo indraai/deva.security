@@ -33,9 +33,10 @@ export default {
       const uuid = packet.q.text ? true : false
       const id = this.uid(uuid);
             
-      const showJSON = packet.q.meta.params[1] || false;    
+      const showJSON = packet.q.meta.params[1] || false;
+      const status = agent.profile.status ? `${key}:${agent.profile.status}:uid:${id.uid}` : `${key}:vedic:uid:${id.uid}`;
       const text = [
-        `::begin:${key}:uid:${id.uid}`,
+        `::begin:${status}`,
         `uid: ${id.uid}`,
         `time: ${id.time}`,
         `date: ${id.date}`,
@@ -45,21 +46,32 @@ export default {
         `md5: ${id.md5}`,
         `sha256: ${id.sha256}`,
         `sha512: ${id.sha512}`,
-        `::end:${key}:uid:${id.uid}`,
+        `::end:${status}`,
       ];
+      const data = {
+        uid:  id.uid,
+        time: id.time,
+        date: id.date,
+        fingerpring: id.fingerprint,
+        warning: id.warning,
+        copyright: id.copyright,
+        md5: id.md5,
+        sha256: id.sha256,
+        sha512: id.sha512,
+      }
       if (showJSON) {
-        text.push(`::begin:${key}:uid:json:${id.uid}`);
-        text.push(JSON.stringify(id, null, 2)); 
-        text.push(`::end:${key}:uid:json:${id.uid}`);
+        text.push(`::begin:${key}:uid:json:${data.uid}`);
+        text.push(JSON.stringify(data, null, 2)); 
+        text.push(`::end:${key}:uid:json:${data.uid}`);
       }
       
       this.question(`${this.askChr}feecting parse ${text.join('\n')}`).then(parsed => {
         this.belief('vedic', `uid:${packet.id.uid}`);
-        this.action('resolve', `uid:${id.uid}`);
+        this.action('resolve', `uid:${packet.id.uid}`);
         return resolve({
           text: parsed.a.text,
           html: parsed.a.html,
-          data: parsed.a.data,
+          data,
         });        
       }).catch(err => {
         return this.err(err, packet, reject);
@@ -67,6 +79,52 @@ export default {
       
       
     });
+  },
+
+  async sign(packet) {
+    const data = this.sign(packet);    
+    
+    // Text data that is joined by line breaks and then trimmed.
+    this.state('set', `${data.key}:${data.method}:text:${data.id.uid}`); // set state to text for output formatting.
+    const text = [
+      '→',
+      `::BEGIN:${data.container}`,
+      `#${data.key}.${data.method}.${data.opts} ${data.text}`,
+      '\n---\n',
+      `sign:${data.client.fullname}${data.client.emojis}`,
+      '\n',
+      `::begin:${data.method}:${data.key}:${data.id.uid}`,
+      `transport: ${data.id.uid}`,
+      `time: ${data.time}`,
+      `expires: ${data.client.expires}`,
+      `name: ${data.client.name}`,
+      `fullname: ${data.client.fullname}`,
+      `company: ${data.client.company}`,
+      `caseid: ${data.client.caseid}`,
+      `client: ${data.client.sha256}`,
+      `agent: ${data.agent.sha256}`,
+      `token: ${data.client.token}`,
+      `warning: ${data.warning}`,
+      `created: ${data.created}`,
+      `copyright: ${data.copyright}`,
+      `md5: ${data.md5}`,
+      `sha256: ${data.sha256}`,
+      `sha512: ${data.sha512}`,
+      `::end:${data.method}:${data.key}:${data.id.uid}`,
+      `::END:${data.container}`,
+    ].join('\n').trim();
+    
+    // send the text data to #feecting to parse and return valid text, html, and data.
+    this.action('parse', `${data.key}:${data.method}:parse:${data.id.uid}`); // action set to feecting parse 
+    const feecting = await this.question(`${this.askChr}feecting parse:${data.id.uid} ${text}`); // parse with feecting agent.
+    
+    this.action('return', `${data.key}:${data.method}:${data.id.uid}`); // set the state to return proxy
+    return {
+      text: feecting.a.text,
+      html: feecting.a.html,
+      data,
+    }	  
+    
   },
 
   /**************
@@ -137,53 +195,6 @@ export default {
     const theTime = Date.now();
     this.state('return', `time:${transport}`);
     return Promise.resolve(theTime);
-  },
-  
-
-  async sign(packet) {
-    const data = this.sign(packet);    
-    
-    // Text data that is joined by line breaks and then trimmed.
-    this.state('set', `${data.key}:${data.method}:text:${data.id.uid}`); // set state to text for output formatting.
-    const text = [
-      '→',
-      `::BEGIN:${data.container}`,
-      `#${data.key}.${data.method}.${data.opts} ${data.text}`,
-      '\n---\n',
-      `sign:${data.client.fullname}${data.client.emojis}`,
-      '\n',
-      `::begin:${data.method}:${data.key}:${data.id.uid}`,
-      `transport: ${data.id.uid}`,
-      `time: ${data.time}`,
-      `expires: ${data.client.expires}`,
-      `name: ${data.client.name}`,
-      `fullname: ${data.client.fullname}`,
-      `company: ${data.client.company}`,
-      `caseid: ${data.client.caseid}`,
-      `client: ${data.client.sha256}`,
-      `agent: ${data.agent.sha256}`,
-      `token: ${data.client.token}`,
-      `warning: ${data.warning}`,
-      `created: ${data.created}`,
-      `copyright: ${data.copyright}`,
-      `md5: ${data.md5}`,
-      `sha256: ${data.sha256}`,
-      `sha512: ${data.sha512}`,
-      `::end:${data.method}:${data.key}:${data.id.uid}`,
-      `::END:${data.container}`,
-    ].join('\n').trim();
-    
-    // send the text data to #feecting to parse and return valid text, html, and data.
-    this.action('parse', `${data.key}:${data.method}:parse:${data.id.uid}`); // action set to feecting parse 
-    const feecting = await this.question(`${this.askChr}feecting parse:${data.id.uid} ${text}`); // parse with feecting agent.
-    
-    this.action('return', `${data.key}:${data.method}:${data.id.uid}`); // set the state to return proxy
-    return {
-      text: feecting.a.text,
-      html: feecting.a.html,
-      data,
-    }	  
-    
   },
   
 }

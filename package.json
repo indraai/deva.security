@@ -60,7 +60,7 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.16.2",
+    "@indra.ai/deva": "^1.17.0",
     "mongodb": "^6.20.0"
   },
   "data": {
@@ -106,8 +106,10 @@
         "background": "/devas/security/background.png",
         "owner": "Quinn A Michaels",
         "creator": "Quinn A Michaels",
-        "created": "Monday, May 22, 2023 at 9:26 AM",
-        "copyright": "Copyright ©2025 Quinn Michaels. All rights reserved."
+        "status": "vedic",
+        "uid_warning": "⚠️ If a man, who subsists by the fulfilment of the law, departs from the established rule of the law, the Security Deva shall severely punish him by a fine, because he violated his duty.",
+        "copyright": "Copyright ©2025 Quinn Michaels. All rights reserved.",
+        "created": "Monday, May 22, 2023 at 9:26 AM"
       }
     },
     "vars": {
