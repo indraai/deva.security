@@ -87,21 +87,19 @@ export default {
     // Text data that is joined by line breaks and then trimmed.
     this.state('set', `${data.key}:${data.method}:text:${data.id.uid}`); // set state to text for output formatting.
     const text = [
-      '→',
-      `::BEGIN:${data.container}`,
-      `#${data.key}.${data.method}.${data.opts} ${data.text}`,
+      `write: #${data.key}.${data.method}.${data.opts} ${data.text}`,
       '\n---\n',
-      `sign:${data.client.fullname}${data.client.emojis}`,
+      `sign: ${data.client.fullname}${data.client.emojis}`,
       '\n',
       `::begin:${data.method}:${data.key}:${data.id.uid}`,
-      `transport: ${data.id.uid}`,
+      `uid: ${data.id.uid}`,
       `time: ${data.time}`,
       `expires: ${data.client.expires}`,
+      `fingerprint: ${data.client.sha256}`,
       `name: ${data.client.name}`,
       `fullname: ${data.client.fullname}`,
       `company: ${data.client.company}`,
       `caseid: ${data.client.caseid}`,
-      `client: ${data.client.sha256}`,
       `agent: ${data.agent.sha256}`,
       `token: ${data.client.token}`,
       `warning: ${data.warning}`,
@@ -111,7 +109,6 @@ export default {
       `sha256: ${data.sha256}`,
       `sha512: ${data.sha512}`,
       `::end:${data.method}:${data.key}:${data.id.uid}`,
-      `::END:${data.container}`,
     ].join('\n').trim();
     
     // send the text data to #feecting to parse and return valid text, html, and data.
