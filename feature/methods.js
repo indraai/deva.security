@@ -88,14 +88,13 @@ export default {
     this.state('set', `${data.key}:${data.method}:text:${data.id.uid}`); // set state to text for output formatting.
     const text = [
       `write: #${data.key}.${data.method}.${data.opts} ${data.text}`,
-      '\n---\n',
-      `sign: ${data.client.fullname}${data.client.emojis}`,
       '\n',
       `::begin:${data.method}:${data.key}:${data.id.uid}`,
+      `sign: ${data.client.fullname} ${data.client.emojis}`,
       `uid: ${data.id.uid}`,
       `time: ${data.time}`,
       `expires: ${data.client.expires}`,
-      `fingerprint: ${data.client.sha256}`,
+      `fingerprint: ${data.id.fingerprint}`,
       `name: ${data.client.name}`,
       `fullname: ${data.client.fullname}`,
       `company: ${data.client.company}`,
