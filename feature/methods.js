@@ -34,7 +34,8 @@ export default {
       const id = this.uid(uuid);
             
       const showJSON = packet.q.meta.params[1] || false;
-      const status = agent.profile.status ? `${key}:${agent.profile.status}:uid:${id.uid}` : `${key}:om:uid:${id.uid}`;
+      const stat = this.vars.status || agent.profile.status || 'om';
+      const status = `${key}:${stat}:uid:${id.uid}`;
       const text = [
         `::begin:${status}`,
         `uid: ${id.uid}`,
