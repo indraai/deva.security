@@ -156,9 +156,9 @@ export default {
   params: packet
   describe: Return system md5 hash for the based deva.
   ***************/
-  cipher(packet) {
-    this.feature('security');
-    const data = this.lib.cipher(packet.q.text);
+  encrypt(packet) {
+    this.feature('security', packet.id.uid);
+    const data = this.lib.encrypt(packet.q.text);
     const cipher = `cipher: ${data.encrypted}`;
     return Promise.resolve(cipher);
   },
