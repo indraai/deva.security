@@ -157,9 +157,21 @@ export default {
   describe: Return system md5 hash for the based deva.
   ***************/
   encrypt(packet) {
-    this.feature('security', packet.id.uid);
-    const data = this.lib.encrypt(packet.q.text);
-    const cipher = `cipher: ${data.encrypted}`;
+    this.feature('security', `encrypt:${packet.id.uid}`);
+    const {global,personal} = this.security();
+
+    this.zone('security', `encrypt:${packet.id.uid}`);
+    this.action('encrypt', packet.id.uid);
+
+    this.prompt(JSON.stringify(global, null, 2));
+
+    this.state('data', `encrypt:${packet.id.uid}`); // set state data
+    const data = this.lib.encrypt(packet.q.text, global.encrypt);
+    
+    console.log('encrypted data', data);
+    
+    const cipher = `encrypt: ${data.encrypted}`;
+    
     return Promise.resolve(cipher);
   },
   
