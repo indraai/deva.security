@@ -33,7 +33,7 @@ export default {
       const showJSON = packet.q.meta.params[1] || false;
       const status = `${key}:uid:${id.uid}`;
       const text = [
-        `::begin:${status}`,
+        `${this.box.begin}${status}`,
         `uid: ${id.uid}`,
         `time: ${id.time}`,
         `date: ${id.date}`,
@@ -43,7 +43,7 @@ export default {
         `md5: ${id.md5}`,
         `sha256: ${id.sha256}`,
         `sha512: ${id.sha512}`,
-        `::end:${status}`,
+        `${this.box.end}${status}`,
       ];
       const data = {
         uid:  id.uid,
@@ -57,9 +57,9 @@ export default {
         sha512: id.sha512,
       }
       if (showJSON) {
-        text.push(`::begin:${key}:uid:json:${data.uid}`);
+        text.push(`${this.box.begin}${key}:uid:json:${data.uid}`);
         text.push(JSON.stringify(data, null, 2)); 
-        text.push(`::end:${key}:uid:json:${data.uid}`);
+        text.push(`${this.box.end}${key}:uid:json:${data.uid}`);
       }
       
       this.question(`${this.askChr}feecting parse ${text.join('\n')}`).then(parsed => {
@@ -159,7 +159,7 @@ export default {
     const status = `${agent.key}:${data.algo}:${data.id.uid}`;
     
     const text = [
-      `::begin:${status}`,
+      `${this.box.begin}${status}`,
       `uid: ${data.id.uid}`,
       `algo: ${data.algo}`,
       `text: ${data.text}`,
@@ -167,7 +167,7 @@ export default {
       `time: ${data.time}`,
       `date: ${data.date}`,
       `copyright: ${data.copyright}`,
-      `::end:${status}`,
+      `${this.box.end}${status}`,
     ].join('\n');
 
     this.action('return', `hash:${id.uid}`);
