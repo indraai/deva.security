@@ -22,20 +22,16 @@ export default {
   ***************/
   async uid(packet) {
     return new Promise((resolve, reject) => {
-      this.context('uid', packet.id.uid);
-      this.feature('security', `uid:${packet.id.uid}`);
-      this.zone('security', `uid:${packet.id.uid}`);
-      this.belief('security', `uid:${packet.id.uid}`)
-      const {client} = packet.q;
-      const agent = this.agent();
-      const {key} = agent;
-          
       const uuid = packet.q.text ? true : false
       const id = this.uid(uuid);
-            
+      this.context('uid', packet.id.uid);
+      this.feature('security', `uid:${id.uid}`);
+      this.zone('security', `uid:${id.uid}`);
+      this.belief('security', `uid:${id.uid}`)
+      const {key} = this.agent();
+                      
       const showJSON = packet.q.meta.params[1] || false;
-      const stat = this.vars.status || agent.profile.status || 'om';
-      const status = `${key}:${stat}:uid:${id.uid}`;
+      const status = `${key}:uid:${id.uid}`;
       const text = [
         `::begin:${status}`,
         `uid: ${id.uid}`,
@@ -129,52 +125,182 @@ export default {
   params: packet
   describe: Return system md5, sha256, sha512 hash from value.
   ***************/
-  hash(packet) {
-    const transport = packet.id;
-    this.zone('security', `hash:${transport}`);
-    this.feature('security', `hash:${transport}`);
-    this.action('method', `hash:${transport}`);
+  async hash(packet) {
+    const {id, q} = packet;
+    this.feature('security', `hash:${id.uid}`);
+    const {global, personal} = this.security();
+    const agent = this.agent()
+    const client = this.client();
     
-    this.state('set', `meta:${transport}`); //set the meta state for the proxy
-    const {meta} = packet.q; // set the meta information from the packet question.
+    this.zone('security', `hash:${id.uid}`);
+    this.action('method', `hash:${id.uid}`);
+
+    const {params} = q.meta; // set params from the meta information.
+
+    this.state('set', `hash:algo:${id.uid}`); //set the meta state for the proxy
+    const algo = params[1] || personal.hash || global.hash
     
-    this.state('set', `params:${transport}`); //set the meta state for the proxy
-    const {params} = meta; // set params from the meta information.
+    this.state('set', `hash:${id.uid}`); //set the meta state for the proxy
+    const hash = this.hash(q.text, algo);
     
-    this.state('set', `algo:${transport}`); //set the meta state for the proxy
-    const algo = params[1] ? params[1] : 'md5'
+    const time = Date.now();
+    const date = this.lib.formatDate(time, 'long', true);
+    const copyright = client.profile.copyright || agent.profile.copyright || this.info().copyright
+    const data = {
+      id,
+      algo,
+      text: q.text,
+      hash,
+      time,
+      date,
+      copyright,
+    };
+
+    const status = `${agent.key}:${data.algo}:${data.id.uid}`;
     
-    this.state('set', `hash:${transport}`); //set the meta state for the proxy
-    const hash = this.lib.hash(packet.q.text, algo);
-    
-    this.state('return', `hash:${transport}`);
-    return Promise.resolve(hash);
+    const text = [
+      `::begin:${status}`,
+      `uid: ${data.id.uid}`,
+      `algo: ${data.algo}`,
+      `text: ${data.text}`,
+      `hash: ${data.hash}`,
+      `time: ${data.time}`,
+      `date: ${data.date}`,
+      `copyright: ${data.copyright}`,
+      `::end:${status}`,
+    ].join('\n');
+
+    this.action('return', `hash:${id.uid}`);
+    this.state('valid', `hash:${id.uid}`);
+    this.intent('good', `hash:${id.uid}`);
+    return {
+      text, 
+      html: false,
+      data,
+    };
   },
 
   /**************
-  method: md5 cipher
+  method: encrypt
   params: packet
   describe: Return system md5 hash for the based deva.
   ***************/
-  encrypt(packet) {
-    this.feature('security', `encrypt:${packet.id.uid}`);
+  async encrypt(packet) {
+    const id = this.uid();
+    const {q} = packet;
+    this.feature('security', `encrypt:${id.uid}`);
+    const {global,personal} = this.security();
+    const agent = this.agent();
+    this.zone('security', `encrypt:${id.uid}`);
+    this.action('encrypt', id.uid);
+
+    this.state('set', `encrypt:data:${id.uid}`); // set state data
+    const data = this.lib.encrypt(q.text, global.encrypt);
+    data.id = id;
+    
+    this.action('hash', `encrypt:data:md5:${id.uid}`); // set action hash
+    data.md5 = this.hash(data.encrypted, 'md5');
+    this.action('hash', `encrypt:data:sha256:${id.uid}`); // set action hash
+    data.sha256 = this.hash(data.encrypted, 'sha256');
+    this.action('hash', `encrypt:data:sha512:${id.uid}`); // set action hash
+    data.sha512 = this.hash(data.encrypted, 'sha512');
+
+    const status = `${agent.key}:encrypt:${id.uid}`;
+    
+    this.state('set', `encrypt:text:${id.uid}`)
+    const text = [
+      `::begin:${status}`,
+      `uid: ${id.uid}`,
+      `text: ${q.text}`,
+      `iv: ${data.iv}`,
+      `key: ${data.key}`,
+      `encrypted: ${data.encrypted}`,
+      `time: ${id.time}`,
+      `date: ${id.date}`,
+      `warning: ${id.warning}`,
+      `copyright: ${id.copyright}`,
+      `md5: ${data.md5}`,
+      `sha256: ${data.sha256}`,
+      `sha512: ${data.sha512}`,
+      `::end:${status}`,
+    ].join('\n');
+    
+    this.action('return', `encrypt:${id.uid}`); // set action return
+    this.state('valid', `encrypt:${id.uid}`); // set action return
+    this.intent('good', `encrypt:${id.uid}`); // set action return
+    return {
+      text,
+      html: false,
+      data,
+    };
+  },
+
+  async decrypt(packet) {
+    const id = this.uid();
+    const {q} = packet
+    this.feature('security', `decrypt:${id.uid}`);
+    this.zone('security', `decrypt:${id.uid}`);
     const {global,personal} = this.security();
 
-    this.zone('security', `encrypt:${packet.id.uid}`);
-    this.action('encrypt', packet.id.uid);
+    this.state('set', `decrypt:agent:${id.uid}`); // set state set
+    const agent = this.agent();
+    this.state('set', `decrypt:client:${id.uid}`); // set state set
+    const client = this.client();
 
-    this.prompt(JSON.stringify(global, null, 2));
+    this.state('set', `decrypt:encrypt:${id.uid}`); // set state set
+    const encrypt = {
+      iv: q.meta.params[1],
+      key: q.meta.params[2],
+      encrypted: q.text,
+      algorithm: global.encrypt.algorithm,
+    }
+    
+    this.action('decrypt', id.uid); // set action hash
+    const decrypt = this.lib.decrypt(encrypt);
+    
+    this.state('set', `decrypt:data:${id.uid}`); // set state set
+    const data = {
+      id,
+      agent,
+      decrypt,
+      encrypt,
+    };
 
-    this.state('data', `encrypt:${packet.id.uid}`); // set state data
-    const data = this.lib.encrypt(packet.q.text, global.encrypt);
+    this.action('hash', `decrypt:data:md5:${id.uid}`); // set action hash
+    data.md5 = this.hash(decrypt, 'md5');
+    this.action('hash', `decrypt:data:sha256:${id.uid}`); // set action hash
+    data.sha256 = this.hash(decrypt, 'sha256');
+    this.action('hash', `decrypt:data:sha512:${id.uid}`); // set action hash
+    data.sha512 = this.hash(decrypt, 'sha512');
     
-    console.log('encrypted data', data);
+    const status = `${agent.key}:decrypt:${data.id.uid}`;
     
-    const cipher = `encrypt: ${data.encrypted}`;
+    this.state('set', `decrypt:text:${id.uid}`); // set state set
+    const text = [
+      `::begin:${status}`,
+      `uid: ${data.id.uid}`,
+      `decrypted: ${data.decrypt}`,
+      `time: ${data.id.time}`,
+      `date: ${data.id.date}`,
+      `warning: ${data.id.warning}`,
+      `copyright: ${data.id.copyright}`,
+      `md5: ${data.md5}`,
+      `sha256: ${data.sha256}`,
+      `sha512: ${data.sha512}`,
+      `::end:${status}`,
+    ].join('\n');
     
-    return Promise.resolve(cipher);
+
+    this.action('return', `decrypt:${id.uid}`); // set action return
+    this.state('valid', `decrypt:${id.uid}`); // set action return
+    this.intent('good', `decrypt:${id.uid}`); // set action return
+    return {
+      text,
+      html: false,
+      data,
+    };
   },
-  
+   
   /**************
   method: today
   params: packet
