@@ -86,7 +86,7 @@ export default {
     const text = [
       `write: #${data.key}.${data.method}.${data.opts} ${data.text}`,
       '\n',
-      `::begin:${data.method}:${data.key}:${data.id.uid}`,
+      `${this.box.begin}${data.method}:${data.id.uid}`,
       `sign: ${data.client.fullname} ${data.client.emojis}`,
       `uid: ${data.id.uid}`,
       `time: ${data.time}`,
@@ -104,7 +104,7 @@ export default {
       `md5: ${data.md5}`,
       `sha256: ${data.sha256}`,
       `sha512: ${data.sha512}`,
-      `::end:${data.method}:${data.key}:${data.id.uid}`,
+      `${this.box.end}${data.method}:${data.id.uid}`,
     ].join('\n').trim();
     
     // send the text data to #feecting to parse and return valid text, html, and data.
@@ -126,7 +126,8 @@ export default {
   describe: Return system md5, sha256, sha512 hash from value.
   ***************/
   async hash(packet) {
-    const {id, q} = packet;
+    const id = this.uid();
+    const {q} = packet;
     this.feature('security', `hash:${id.uid}`);
     const {global, personal} = this.security();
     const agent = this.agent()
@@ -143,20 +144,14 @@ export default {
     this.state('set', `hash:${id.uid}`); //set the meta state for the proxy
     const hash = this.hash(q.text, algo);
     
-    const time = Date.now();
-    const date = this.lib.formatDate(time, 'long', true);
-    const copyright = client.profile.copyright || agent.profile.copyright || this.info().copyright
     const data = {
       id,
       algo,
       text: q.text,
       hash,
-      time,
-      date,
-      copyright,
     };
 
-    const status = `${agent.key}:${data.algo}:${data.id.uid}`;
+    const status = `${agent.key}:hash:${data.id.uid}`;
     
     const text = [
       `${this.box.begin}${status}`,
@@ -164,15 +159,16 @@ export default {
       `algo: ${data.algo}`,
       `text: ${data.text}`,
       `hash: ${data.hash}`,
-      `time: ${data.time}`,
-      `date: ${data.date}`,
-      `copyright: ${data.copyright}`,
+      `time: ${data.id.time}`,
+      `date: ${data.id.date}`,
+      `warning: ${data.id.warning}`,
+      `copyright: ${data.id.copyright}`,
       `${this.box.end}${status}`,
     ].join('\n');
 
-    this.action('return', `hash:${id.uid}`);
-    this.state('valid', `hash:${id.uid}`);
-    this.intent('good', `hash:${id.uid}`);
+    this.action('return', `hash:${data.id.uid}`);
+    this.state('valid', `hash:${data.id.uid}`);
+    this.intent('good', `hash:${data.id.uid}`);
     return {
       text, 
       html: false,
@@ -209,7 +205,7 @@ export default {
     
     this.state('set', `encrypt:text:${id.uid}`)
     const text = [
-      `::begin:${status}`,
+      `${this.box.begin}${status}`,
       `uid: ${id.uid}`,
       `text: ${q.text}`,
       `iv: ${data.iv}`,
@@ -222,7 +218,7 @@ export default {
       `md5: ${data.md5}`,
       `sha256: ${data.sha256}`,
       `sha512: ${data.sha512}`,
-      `::end:${status}`,
+      `${this.box.end}${status}`,
     ].join('\n');
     
     this.action('return', `encrypt:${id.uid}`); // set action return
@@ -277,7 +273,7 @@ export default {
     
     this.state('set', `decrypt:text:${id.uid}`); // set state set
     const text = [
-      `::begin:${status}`,
+      `${this.box.begin}:${status}`,
       `uid: ${data.id.uid}`,
       `decrypted: ${data.decrypt}`,
       `time: ${data.id.time}`,
@@ -287,7 +283,7 @@ export default {
       `md5: ${data.md5}`,
       `sha256: ${data.sha256}`,
       `sha512: ${data.sha512}`,
-      `::end:${status}`,
+      `${this.box.end}${status}`,
     ].join('\n');
     
 
@@ -302,19 +298,53 @@ export default {
   },
    
   /**************
-  method: today
+  method: date
   params: packet
   describe: Return system date for today.
   ***************/
-  today(packet) {
-    const transport = packet.id;
-    this.zone('security', `today:${transport}`);
-    this.feature('security', `today:${transport}`);
-    this.action('method', `today:${transport}`);
-    this.state('get', `today:${transport}`);
-    const theDate = this.lib.formatDate(Date.now(), 'long', true);
-    this.state('get', `today:${transport}`);
-    return Promise.resolve(theDate);
+  async date(packet) {
+    const id = this.uid();
+    const {params} = packet.q.meta;
+    const {key} = this.agent();
+    
+    this.zone('security', `date:${id.uid}`);
+    this.feature('security', `date:${id.uid}`);
+    this.action('method', `date:${id.uid}`);
+    
+    const format = params[1] ? params[1] : 'long';
+    const time = params[2] ? packet.q.meta.params[2] : false;
+    
+    this.state('set', `date:${id.uid}`);
+    const date = this.lib.formatDate(Date.now(), format, time);
+    
+    const data = {
+      id,
+      date,
+    }
+
+    this.action('hash', `date:data:md5:${id.uid}`); // set action hash
+    data.md5 = this.hash(date, 'md5');
+    this.action('hash', `date:data:sha256:${id.uid}`); // set action hash
+    data.sha256 = this.hash(date, 'sha256');
+    this.action('hash', `date:data:sha512:${id.uid}`); // set action hash
+    data.sha512 = this.hash(date, 'sha512');
+
+    const text = [
+      `${this.box.begin}${key}:date:${data.id.uid}`,
+      `date: ${data.date}`,
+      `md5: ${data.md5}`,
+      `sha256: ${data.sha256}`,
+      `sha512: ${data.sha512}`,
+      `${this.box.end}${key}:date:${data.id.uid}`
+    ].join('\n');
+    this.action('return', `date:${id.uid}`);
+    this.state('valid', `date:${id.uid}`);
+    this.intent('good', `date:${id.uid}`);
+    return {
+      text,
+      html: false,
+      data,
+    };
   },
   /**************
   method: time
