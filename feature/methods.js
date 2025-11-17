@@ -154,7 +154,7 @@ export default {
     const status = `${agent.key}:hash:${data.id.uid}`;
     
     const text = [
-      `${this.box.begin}${status}`,
+      `${this.box.begin}:${status}`,
       `uid: ${data.id.uid}`,
       `algo: ${data.algo}`,
       `text: ${data.text}`,
@@ -163,7 +163,7 @@ export default {
       `date: ${data.id.date}`,
       `warning: ${data.id.warning}`,
       `copyright: ${data.id.copyright}`,
-      `${this.box.end}${status}`,
+      `${this.box.end}:${status}`,
     ].join('\n');
 
     this.action('return', `hash:${data.id.uid}`);
@@ -205,7 +205,7 @@ export default {
     
     this.state('set', `encrypt:text:${id.uid}`)
     const text = [
-      `${this.box.begin}${status}`,
+      `${this.box.begin}:${status}`,
       `uid: ${id.uid}`,
       `text: ${q.text}`,
       `iv: ${data.iv}`,
@@ -218,7 +218,7 @@ export default {
       `md5: ${data.md5}`,
       `sha256: ${data.sha256}`,
       `sha512: ${data.sha512}`,
-      `${this.box.end}${status}`,
+      `${this.box.end}:${status}`,
     ].join('\n');
     
     this.action('return', `encrypt:${id.uid}`); // set action return
