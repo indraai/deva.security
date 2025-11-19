@@ -33,7 +33,7 @@ export default {
       const showJSON = packet.q.meta.params[1] || false;
       const status = `${key}:uid:${id.uid}`;
       const text = [
-        `${this.box.begin}${status}`,
+        `${this.box.begin}:${status}`,
         `uid: ${id.uid}`,
         `time: ${id.time}`,
         `date: ${id.date}`,
@@ -43,7 +43,7 @@ export default {
         `md5: ${id.md5}`,
         `sha256: ${id.sha256}`,
         `sha512: ${id.sha512}`,
-        `${this.box.end}${status}`,
+        `${this.box.end}:${status}`,
       ];
       const data = {
         uid:  id.uid,
