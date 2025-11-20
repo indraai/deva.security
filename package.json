@@ -1,21 +1,18 @@
 {
-  "id": "45249771785697968797",
+  "id": "32562709245022934531",
   "name": "@indra.ai/deva.security",
   "version": "0.8.0",
-  "license": "VLA:45249771785697968797 LICENSE.md",
+  "license": "VLA:32562709245022934531 LICENSE.md",
   "VLA": {
-    "uid": "45249771785697968797",
-    "time": 1758643241162,
-    "date": "Tuesday, September 23, 2025 - 9:00:41 AM",
-    "client": "1pS65dbhygTdKgK8GIlmVEVPof9rQjSkQno85sNBG8s=",
-    "agent": "81oH68GPdrr+/mgSig0SvB05Kvy1iGhwIxmG1XoB6Co=",
-    "core": "jL9xCS3bvXlUteoxLdoc43OVTdxPDUX5K9N4DkxuBqY=",
-    "machine": "CZAQpbvlzLB08+4gTQ56kevV5PXLiQnAsOWHyveGqKA=",
-    "warning": "⚠️ Vedic Law Sâhasa/Theft/Crime of the highest degree, a fine amounting to no less than a thousand Panas (1 pana = 3.5 grams of gold) is ordained owed to Quinn A Michaels. Moreover corporal punishment and confiscation of the entire property forfeit to Quinn A Michaels is declared to be the punishment for Sâhasa of the highest degree.",
-    "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
-    "md5": "xTXoojG1uaDwmKJkl4rg4g==",
-    "sha256": "gjM/0f+3IEg90nyHWMlLPuXf0U6Q3sLCMkGhfog/kIQ=",
-    "sha512": "rkzx1O7wWI5q3FaYFGluTLq5NqX+Aq/Lcqs14VT19EVgjtahXWlNG8BDaU3odFpvwnuDGUVq7lkpN9fLEw29Zw=="
+    "uid": "32562709245022934531",
+    "time": 1763681481873,
+    "date": "Thursday, November 20, 2025 - 3:31:21 PM",
+    "fingerprint": "B8KHZEafTQBgj7EvRSQo5bU2ivzpmEPNWz3zJ6lUUhs=",
+    "warning": "⚠️ Unlawful use or duplication of this uid constitutes Vedic Sâhasa a crime of the highest degree. A fine amounting to a thousand Panas (1 pana = 3.5 grams of gold) for each instance is ordained, and confiscation of the entire property of the offenders is forfeit to Quinn A Michaels is declared to be the punishment for Sâhasa of the highest degree.",
+    "copyright": "Copyright ©2000-2025 Quinn A Michaels; All rights reserved.",
+    "md5": "DmOtBw0mgyU6SepFVhA0Hw==",
+    "sha256": "QOav2yjnMEoBLFmFIGcyRMzV56i29jeFWwzEbv8fkBQ=",
+    "sha512": "zoSbBz1A8AXkRYNKn/A92017/4AuA1Bm51p6STPz2QfULqec6WEjGqoevxl5wYWq3xwh3N00Uec3UgTtTrz98Q=="
   },
   "author": {
     "name": "Quinn A Michaels",
@@ -33,7 +30,7 @@
       "url": "https://patreon.com/rahulaclub"
     }
   ],
-  "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
+  "copyright": "Copyright ©2000-2025 Quinn A Michaels; All rights reserved.",
   "description": "The Security Deva the Security for Deva.space, Deva.cloud, and Deva.world.",
   "main": "index.js",
   "type": "module",
@@ -53,7 +50,10 @@
     "Deva.cloud",
     "Deva.world",
     "Quinn A Michaels",
-    "Inside The Net, Inc."
+    "Quinn Michaels",
+    "Inside The Net, Inc.",
+    "Throwing Pigment™",
+    "bleuBrain"
   ],
   "bugs": {
     "url": "https://github.com/indraai/deva.security/issues"
@@ -65,7 +65,7 @@
   },
   "data": {
     "agent": {
-      "id": "31477276110836980722",
+      "id": "51843683453278861945",
       "key": "security",
       "prompt": {
         "emoji": "🔐",
@@ -84,9 +84,9 @@
         }
       },
       "profile": {
-        "id": "70399872716791064488",
+        "id": "39637847936764089015",
         "name": "Security Deva",
-        "hashtag": "#Security",
+        "hashtag": "#security",
         "title": "Security Deva",
         "subtitle": "Handling security like a professional",
         "describe": "Expert in security who sets the standard of excellence in strict chain of custody, legal, ethics, and privacy laws.",
@@ -96,7 +96,7 @@
         "gender": "DEVA",
         "style": "Security officer with military precision.",
         "voice": "ash",
-        "system": "Deva.world.security",
+        "system": "Indra.ai.security",
         "layout": "default",
         "color": "rgb(251,177,78)",
         "bgcolor": "rgb(0,0,0)",
@@ -108,7 +108,7 @@
         "creator": "Quinn A Michaels",
         "status": "vedic",
         "warning": "⚠️ If a man, who subsists by the fulfilment of the law, departs from the established rule of the law, the Security Deva shall severely punish him by a fine, because he violated his duty. Security Deva, give us security from that whereof we are afraid. Help us, O Security Deva, let thy succour give us this: drive away foes and enemies. From all the regions of the world let Security Deva send security, The foe-subduer, swift to act. So hold thy spirit fast, hold it for life and not for death, held it for thy security.",
-        "copyright": "Copyright ©2025 Quinn Michaels. All rights reserved.",
+        "copyright": "Copyright ©2000-2025 Quinn Michaels. All rights reserved.",
         "created": "Monday, May 22, 2023 at 9:26 AM"
       }
     },
@@ -119,7 +119,7 @@
         "init": "🟠 INIT",
         "start": "🔵 START",
         "enter": "🟢 ENTER",
-        "ready": "✅ Security Deva Ready",
+        "ready": "⭐️ Security Deva Ready",
         "stop": "🔴 STOP",
         "exit": "🟡 EXIT",
         "done": "🟣 DONE",
