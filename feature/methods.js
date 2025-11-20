@@ -40,16 +40,13 @@ export default {
         `fingerprint: ${id.fingerprint}`,
         `warning: ${id.warning}`,
         `copyright: ${id.copyright}`,
-        `md5: ${id.md5}`,
-        `sha256: ${id.sha256}`,
-        `sha512: ${id.sha512}`,
         `${this.box.end}:${status}`,
       ];
       const data = {
         uid:  id.uid,
         time: id.time,
         date: id.date,
-        fingerpring: id.fingerprint,
+        fingerprint: id.fingerprint,
         warning: id.warning,
         copyright: id.copyright,
         md5: id.md5,
