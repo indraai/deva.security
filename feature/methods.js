@@ -32,7 +32,6 @@ export default {
                       
       const showJSON = packet.q.meta.params[1] || false;
       const status = `${key}:uid:${id.uid}`;
-      const {VLA} = this.info();
 
       const text = [
         `${this.box.begin}:${status}`,
@@ -40,8 +39,8 @@ export default {
         `time: ${id.time}`,
         `date: ${id.date}`,
         `fingerprint: ${id.fingerprint}`,
-        `license: ${VLA.uid}`,
         `warning: ${id.warning}`,
+        `license: ${id.license}`,
         `copyright: ${id.copyright}`,
         `${this.box.end}:${status}`,
       ];
@@ -50,8 +49,8 @@ export default {
         time: id.time,
         date: id.date,
         fingerprint: id.fingerprint,
-        license: VLA.uid,
         warning: id.warning,
+        license: id.license,
         copyright: id.copyright,
       }
       if (showJSON) {
@@ -160,6 +159,7 @@ export default {
       `time: ${data.id.time}`,
       `date: ${data.id.date}`,
       `warning: ${data.id.warning}`,
+      `license: ${data.id.license}`,
       `copyright: ${data.id.copyright}`,
       `${this.box.end}:${status}`,
     ].join('\n');
