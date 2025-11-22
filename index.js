@@ -1,7 +1,7 @@
 "use strict"
 // Copyright ©2000-2025 Quinn A Michaels; All rights reserved. 
 // Legal Signature Required For Lawful Use.
-// Distributed under VLA:32562709245022934531 LICENSE.md
+// Distributed under VLA:40899039373337698066 LICENSE.md
 // Security Deva
 
 import Deva from '@indra.ai/deva';
