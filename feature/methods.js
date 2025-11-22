@@ -38,9 +38,9 @@ export default {
         `uid: ${id.uid}`,
         `time: ${id.time}`,
         `date: ${id.date}`,
-        `fingerprint: ${id.fingerprint}`,
         `warning: ${id.warning}`,
         `license: ${id.license}`,
+        `fingerprint: ${id.fingerprint}`,
         `copyright: ${id.copyright}`,
         `${this.box.end}:${status}`,
       ];
@@ -48,9 +48,9 @@ export default {
         uid:  id.uid,
         time: id.time,
         date: id.date,
-        fingerprint: id.fingerprint,
         warning: id.warning,
         license: id.license,
+        fingerprint: id.fingerprint,
         copyright: id.copyright,
       }
       if (showJSON) {
