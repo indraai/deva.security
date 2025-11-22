@@ -32,12 +32,15 @@ export default {
                       
       const showJSON = packet.q.meta.params[1] || false;
       const status = `${key}:uid:${id.uid}`;
+      const {VLA} = this.info();
+
       const text = [
         `${this.box.begin}:${status}`,
         `uid: ${id.uid}`,
         `time: ${id.time}`,
         `date: ${id.date}`,
         `fingerprint: ${id.fingerprint}`,
+        `license: ${VLA.uid}`,
         `warning: ${id.warning}`,
         `copyright: ${id.copyright}`,
         `${this.box.end}:${status}`,
@@ -47,11 +50,9 @@ export default {
         time: id.time,
         date: id.date,
         fingerprint: id.fingerprint,
+        license: VLA.uid,
         warning: id.warning,
         copyright: id.copyright,
-        md5: id.md5,
-        sha256: id.sha256,
-        sha512: id.sha512,
       }
       if (showJSON) {
         text.push(`${this.box.begin}${key}:uid:json:${data.uid}`);
@@ -327,12 +328,12 @@ export default {
     data.sha512 = this.hash(date, 'sha512');
 
     const text = [
-      `${this.box.begin}${key}:date:${data.id.uid}`,
+      `${this.box.begin}:${key}:date:${data.id.uid}`,
       `date: ${data.date}`,
       `md5: ${data.md5}`,
       `sha256: ${data.sha256}`,
       `sha512: ${data.sha512}`,
-      `${this.box.end}${key}:date:${data.id.uid}`
+      `${this.box.end}$:{key}:date:${data.id.uid}`
     ].join('\n');
     this.action('return', `date:${id.uid}`);
     this.state('valid', `date:${id.uid}`);
