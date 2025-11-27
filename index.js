@@ -76,7 +76,7 @@ const SecurityDeva = new Deva({
   },
   modules: {},
   devas: {
-    vector,
+    // vector,
     // guard,
     // wall,
     // defense,
@@ -113,7 +113,8 @@ const SecurityDeva = new Deva({
     this.action('return', `onInit:${data.id.uid}`);
     return license_check ? this.start(data, resolve) : this.stop(data, resolve);
   }, 
-  async onReady(data, resolve) {
+  
+  onReady(data, resolve) {
     const {VLA} = this.info();
 
     this.state('get', `mongo:global:${data.id.uid}`);
