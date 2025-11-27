@@ -76,7 +76,7 @@ const SecurityDeva = new Deva({
   },
   modules: {},
   devas: {
-    vector,
+    // vector,
     // guard,
     // wall,
     // defense,
@@ -114,7 +114,7 @@ const SecurityDeva = new Deva({
     return license_check ? this.start(data, resolve) : this.stop(data, resolve);
   }, 
   
-  async onReady(data, resolve) {
+  onReady(data, resolve) {
     const {VLA} = this.info();
 
     
