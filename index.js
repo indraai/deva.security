@@ -76,7 +76,7 @@ const SecurityDeva = new Deva({
   },
   modules: {},
   devas: {
-    // vector,
+    vector,
     // guard,
     // wall,
     // defense,
@@ -117,6 +117,7 @@ const SecurityDeva = new Deva({
   onReady(data, resolve) {
     const {VLA} = this.info();
 
+    
     this.state('get', `mongo:global:${data.id.uid}`);
     const {uri,database, log} = this.security().global.mongo;
     this.state('set', `mongo:client:${data.id.uid}`);
@@ -129,7 +130,6 @@ const SecurityDeva = new Deva({
     this.prompt(`${this.vars.messages.ready} > VLA:${VLA.uid}`);
     
     this.action('resolve', `onReady:${data.id.uid}`);
-    this.prompt(`this is the main security`)
     return resolve(data);
   },
   onError(err, data, reject) {
