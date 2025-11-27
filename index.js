@@ -10,6 +10,13 @@ import { MongoClient, ObjectId } from 'mongodb';
 import pkg from './package.json' with {type:'json'};
 const {agent,vars} = pkg.data;
 
+import vector from '/Users/quinnmichaels/Dev/deva.space/devas/deva.vector/index.js';
+import guard from '/Users/quinnmichaels/Dev/deva.space/devas/deva.guard/index.js';
+import wall from '/Users/quinnmichaels/Dev/deva.space/devas/deva.wall/index.js';
+import defense from '/Users/quinnmichaels/Dev/deva.space/devas/deva.defense/index.js';
+import shield from '/Users/quinnmichaels/Dev/deva.space/devas/deva.shield/index.js';
+import proxy from '/Users/quinnmichaels/Dev/deva.space/devas/deva.proxy/index.js';
+
 // set the __dirname
 import {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';    
@@ -68,7 +75,14 @@ const SECURITY = new Deva({
     },
   },
   modules: {},
-  devas: {},
+  devas: {
+    vector,
+    guard,
+    wall,
+    defense,
+    shield,
+    proxy,
+  },
   func: {
     /**************
     func: write_log
