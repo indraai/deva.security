@@ -114,7 +114,7 @@ const SecurityDeva = new Deva({
     return license_check ? this.start(data, resolve) : this.stop(data, resolve);
   }, 
   
-  onReady(data, resolve) {
+  async onReady(data, resolve) {
     const {VLA} = this.info();
 
     
