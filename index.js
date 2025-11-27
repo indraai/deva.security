@@ -37,7 +37,7 @@ const info = {
   copyright: pkg.copyright,
 };
 
-const SECURITY = new Deva({
+const SecurityDeva = new Deva({
   info,
   agent,
   vars,
@@ -77,11 +77,11 @@ const SECURITY = new Deva({
   modules: {},
   devas: {
     vector,
-    guard,
-    wall,
-    defense,
-    shield,
-    proxy,
+    // guard,
+    // wall,
+    // defense,
+    // shield,
+    // proxy,
   },
   func: {
     /**************
@@ -113,7 +113,7 @@ const SECURITY = new Deva({
     this.action('return', `onInit:${data.id.uid}`);
     return license_check ? this.start(data, resolve) : this.stop(data, resolve);
   }, 
-  onReady(data, resolve) {
+  async onReady(data, resolve) {
     const {VLA} = this.info();
 
     this.state('get', `mongo:global:${data.id.uid}`);
@@ -128,6 +128,7 @@ const SECURITY = new Deva({
     this.prompt(`${this.vars.messages.ready} > VLA:${VLA.uid}`);
     
     this.action('resolve', `onReady:${data.id.uid}`);
+    this.prompt(`this is the main security`)
     return resolve(data);
   },
   onError(err, data, reject) {
@@ -136,4 +137,4 @@ const SECURITY = new Deva({
     return reject(err);
   }
 });
-export default SECURITY
+export default SecurityDeva
