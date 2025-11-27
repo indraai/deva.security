@@ -58,7 +58,7 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.29.10",
+    "@indra.ai/deva": "^1.29.11",
     "mongodb": "^6.20.0"
   },
   "data": {
