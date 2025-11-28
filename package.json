@@ -34,7 +34,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "latest": "npm i @indra.ai/deva@latest @indra.ai/deva.vector@latest --save"
+    "latest": "npm i @indra.ai/deva@latest @indra.ai/deva.vector@latest @indra.ai/deva.guard@latest @indra.ai/deva.wall@latest @indra.ai/deva.defense@latest --save"
   },
   "repository": {
     "type": "git",
@@ -59,8 +59,11 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.29.28",
-    "@indra.ai/deva.vector": "^0.8.25",
+    "@indra.ai/deva": "^1.29.29",
+    "@indra.ai/deva.defense": "^0.7.2",
+    "@indra.ai/deva.guard": "^0.8.1",
+    "@indra.ai/deva.vector": "^0.8.35",
+    "@indra.ai/deva.wall": "^0.7.1",
     "mongodb": "^6.20.0"
   },
   "data": {
@@ -91,10 +94,10 @@
         "subtitle": "Handling security like a professional",
         "describe": "Expert in security who sets the standard of excellence in strict chain of custody, legal, ethics, and privacy laws.",
         "tweet": "Security Deva is an expert in security who sets the standard of excellence in strict chain of custody, legal, ethics, and privacy laws.",
-        "hashtags": "QuinnMichaels,IndraAI,DevaWorld,SecurityDeva",
+        "hashtags": "#QuinnMichaels #InsideTheNet #IndraAI #DevaWorld #SecurityDeva #VectorGuardWallDefenseShield",
         "pronouns": "He, Him",
         "gender": "DEVA",
-        "style": "Security officer with military precision.",
+        "style": "Security officer with Military Precision.",
         "voice": "ash",
         "system": "Indra.ai.security",
         "layout": "default",
@@ -108,9 +111,10 @@
         "creator": "Quinn A Michaels",
         "company": "Inside The Net, Inc.",
         "status": "vedic",
-        "warning": "⚠️ If a man, who subsists by the fulfilment of the law, departs from the established rule of the law, the Security Deva shall severely punish him by a fine, because he violated his duty. Security Deva, give us security from that whereof we are afraid. Help us, O Security Deva, let thy succour give us this: drive away foes and enemies. From all the regions of the world let Security Deva send security, The foe-subduer, swift to act. So hold thy spirit fast, hold it for life and not for death, held it for thy security.",
+        "warning": "{{prompt.emoji}} {{profile.hashtag}} give us #Security from that whereof we are #Afraid. Help us, O {{profile.name}}, drive away #Foes and #Enemies. From all the #RegionsOfTheWorld send {{profile.name}}. {{profile.hashtag}} the #FoeSubduer #SwiftToAct #PromptToListen. {{profile.hashtag}} hold thy #SpiritFast #HoldItForLife and #NotForDeath #HoldItForThySecurity. Where those who #SubsistByTheFulfillmentOfTheLaw depart from the #EstablishedRuleOfLaw the {{profile.hashtag}} shall report them to #LegalAuthority following the #EstablishedRuleOfLaw, and #Punish with the designated 1000 pana #VedicSahasaFine for #ViolationOfDuty. {{profile.hashtags}}",
         "copyright": "Copyright ©2000-2025 Quinn A Michaels. All rights reserved.",
-        "created": "Monday, May 22, 2023 at 9:26 AM"
+        "created": "Monday, May 22, 2023 at 9:26 AM",
+        "updated": "Friday, November 21, 2025 - 9:12:59 PM"
       }
     },
     "vars": {
@@ -120,7 +124,7 @@
         "init": "🟠 INIT",
         "start": "🔵 START",
         "enter": "🟢 ENTER",
-        "ready": "⭐️ Security Deva Ready",
+        "ready": "🔐 Security Deva Ready",
         "stop": "🔴 STOP",
         "exit": "🟡 EXIT",
         "done": "🟣 DONE",

@@ -10,10 +10,10 @@ import { MongoClient, ObjectId } from 'mongodb';
 import pkg from './package.json' with {type:'json'};
 const {agent,vars} = pkg.data;
 
-import vector from '/Users/quinnmichaels/Dev/deva.space/devas/deva.vector/index.js';
-import guard from '/Users/quinnmichaels/Dev/deva.space/devas/deva.guard/index.js';
-import wall from '/Users/quinnmichaels/Dev/deva.space/devas/deva.wall/index.js';
-import defense from '/Users/quinnmichaels/Dev/deva.space/devas/deva.defense/index.js';
+import vector from '@indra.ai/deva.vector';
+import guard from '@indra.ai/deva.guard';
+import wall from '@indra.ai/deva.wall';
+import defense from '@indra.ai/deva.defense';
 import shield from '/Users/quinnmichaels/Dev/deva.space/devas/deva.shield/index.js';
 import proxy from '/Users/quinnmichaels/Dev/deva.space/devas/deva.proxy/index.js';
 
@@ -76,11 +76,11 @@ const SecurityDeva = new Deva({
   },
   modules: {},
   devas: {
-    // vector,
-    // guard,
-    // wall,
-    // defense,
-    // shield,
+    vector,
+    guard,
+    wall,
+    defense,
+    shield,
     // proxy,
   },
   func: {
@@ -116,7 +116,6 @@ const SecurityDeva = new Deva({
   
   onReady(data, resolve) {
     const {VLA} = this.info();
-
     
     this.state('get', `mongo:global:${data.id.uid}`);
     const {uri,database, log} = this.security().global.mongo;
