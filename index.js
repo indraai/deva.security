@@ -13,8 +13,8 @@ const {agent,vars} = pkg.data;
 import vector from '@indra.ai/deva.vector';
 import guard from '@indra.ai/deva.guard';
 import wall from '@indra.ai/deva.wall';
+import shield from '@indra.ai/deva.shield';
 import defense from '@indra.ai/deva.defense';
-import shield from '/Users/quinnmichaels/Dev/deva.space/devas/deva.shield/index.js';
 import proxy from '/Users/quinnmichaels/Dev/deva.space/devas/deva.proxy/index.js';
 
 // set the __dirname
@@ -79,9 +79,9 @@ const SecurityDeva = new Deva({
     vector,
     guard,
     wall,
-    defense,
     shield,
-    // proxy,
+    defense,
+    proxy,
   },
   func: {
     /**************

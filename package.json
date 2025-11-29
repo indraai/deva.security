@@ -34,7 +34,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "latest": "npm i @indra.ai/deva@latest @indra.ai/deva.vector@latest @indra.ai/deva.guard@latest @indra.ai/deva.wall@latest @indra.ai/deva.defense@latest --save"
+    "latest": "npm i @indra.ai/deva@latest @indra.ai/deva.vector@latest @indra.ai/deva.guard@latest @indra.ai/deva.wall@latest @indra.ai/deva.shield@latest @indra.ai/deva.defense@latest @indra.ai/deva.proxy@latest --save"
   },
   "repository": {
     "type": "git",
@@ -59,11 +59,13 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.29.29",
-    "@indra.ai/deva.defense": "^0.7.2",
-    "@indra.ai/deva.guard": "^0.8.1",
-    "@indra.ai/deva.vector": "^0.8.35",
-    "@indra.ai/deva.wall": "^0.7.1",
+    "@indra.ai/deva": "^1.29.31",
+    "@indra.ai/deva.defense": "^0.7.3",
+    "@indra.ai/deva.guard": "^0.9.1",
+    "@indra.ai/deva.proxy": "^0.7.0",
+    "@indra.ai/deva.shield": "^0.9.0",
+    "@indra.ai/deva.vector": "^0.9.0",
+    "@indra.ai/deva.wall": "^0.8.0",
     "mongodb": "^6.20.0"
   },
   "data": {

@@ -59,7 +59,7 @@ export default {
         text.push(`${this.box.end}${key}:uid:json:${data.uid}`);
       }
       
-      this.question(`${this.askChr}feecting parse ${text.join('\n')}`).then(parsed => {
+      this.question(`${this.askChr}feecting parse ${text.join('\n')}`, {vars:this.vars}).then(parsed => {
         this.belief('vedic', `uid:${packet.id.uid}`);
         this.action('resolve', `uid:${packet.id.uid}`);
         return resolve({
