@@ -15,7 +15,7 @@ import guard from '@indra.ai/deva.guard';
 import wall from '@indra.ai/deva.wall';
 import shield from '@indra.ai/deva.shield';
 import defense from '@indra.ai/deva.defense';
-import proxy from '/Users/quinnmichaels/Dev/deva.space/devas/deva.proxy/index.js';
+import proxy from '@indra.ai/deva.proxy';
 
 // set the __dirname
 import {dirname} from 'node:path';
