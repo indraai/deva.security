@@ -28,7 +28,7 @@ export default {
       this.feature('security', `uid:${id.uid}`);
       this.zone('security', `uid:${id.uid}`);
       this.belief('security', `uid:${id.uid}`)
-      const {key} = this.agent();
+      const {key,profile,prompt} = this.agent();
                       
       const showJSON = packet.q.meta.params[1] || false;
       const status = `${key}:uid:${id.uid}`;
