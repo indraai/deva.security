@@ -4,13 +4,13 @@
   "version": "0.15.0",
   "license": "VLA:40899039373337698066 LICENSE.md",
   "VLA": {
-    "uid": "40899039373337698066",
-    "time": 1763788379029,
-    "date": "Friday, November 21, 2025 - 9:12:59 PM",
-    "warning": "⚠️ Unlawful use or duplication of this uid constitutes Vedic Sâhasa a crime of the highest degree. A fine amounting to a thousand Panas (1 pana = 3.5 grams of gold) for each instance is ordained, and confiscation of the entire property of the offenders is forfeit to Quinn A Michaels is declared to be the punishment for Sâhasa of the highest degree.",
-    "license": "46220923248993739422",
-    "fingerprint": "+Af4R9HnVVRMSKsfOrid0UvjQ8xDgR67knhl7W5tWwk=",
-    "copyright": "Copyright ©2000-2025 Quinn A Michaels; All rights reserved."
+    "uid": "72981472549283584069",
+    "time": 1768146144150,
+    "date": "Sunday, January 11, 2026 - 7:42:24 AM",
+    "warning": "🪪 #LicenseDeva warns #UnlawfulUse or #Duplication constitutes #VedicSahasa a #Crime of the #HighestDegree. A #Fine amounting to 1000 #Panas (1 pana = 3.5 grams of gold) for each #Instance has been #Ordained the #Punishment for #Sahasa of the #HighestDegree. #Quinn #QuinnMichaels #IndraAI #DevaWorld #LicenseDeva #VedicLicenseAgreement",
+    "license": "44486733861528360966",
+    "fingerprint": "6y5lgW2A0vpKdaqa4twQOpZGZQb7MQtke50SVIndM9k=",
+    "copyright": "Copyright ©2000-2026 Quinn A Michaels; All rights reserved."
   },
   "author": {
     "name": "Quinn A Michaels",
@@ -28,7 +28,7 @@
       "url": "https://patreon.com/rahulaclub"
     }
   ],
-  "copyright": "Copyright ©2000-2025 Quinn A Michaels; All rights reserved.",
+  "copyright": "Copyright ©2000-2026 Quinn A Michaels; All rights reserved.",
   "description": "The Security Deva the Security for Deva.space, Deva.cloud, and Deva.world.",
   "main": "index.js",
   "type": "module",
@@ -59,12 +59,12 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.32.0",
+    "@indra.ai/deva": "^1.35.0",
     "@indra.ai/deva.defense": "^0.7.4",
     "@indra.ai/deva.guard": "^0.9.2",
     "@indra.ai/deva.proxy": "^0.7.3",
     "@indra.ai/deva.shield": "^0.9.1",
-    "@indra.ai/deva.vector": "^0.9.1",
+    "@indra.ai/deva.vector": "^0.10.1",
     "@indra.ai/deva.wall": "^0.8.1",
     "mongodb": "^6.20.0"
   },
@@ -73,7 +73,7 @@
       "id": "66947563710616150376",
       "key": "security",
       "prompt": {
-        "emoji": "🔐",
+        "emoji": "🚨",
         "text": "#security",
         "colors": {
           "label": {
@@ -96,7 +96,7 @@
         "subtitle": "Handling security like a professional",
         "describe": "Expert in security who sets the standard of excellence in strict chain of custody, legal, ethics, and privacy laws.",
         "tweet": "Security Deva is an expert in security who sets the standard of excellence in strict chain of custody, legal, ethics, and privacy laws.",
-        "hashtags": "#QuinnMichaels #InsideTheNet #IndraAI #DevaWorld #SecurityDeva #VectorGuardWall #CentralSecurityService",
+        "hashtags": "#QuinnMichaels #InsideTheNet #IndraAI #DevaWorld #SecurityDeva #SecurityPRIME #CentralSecurityService #VectorGuardWall.activate",
         "pronouns": "He, Him",
         "gender": "DEVA",
         "style": "Security officer with Military Precision.",
@@ -114,9 +114,9 @@
         "company": "Inside The Net, Inc.",
         "status": "vedic",
         "warning": "{{prompt.emoji}} {{profile.name}} give us #Security from that we are #Afraid. Help us, {{profile.hashtag}}, drive away #FoesAndEnemies from #AllTheRegionsOfTheWorld send {{profile.name}}. {{profile.name}} the #FoeSubduer #SwiftToAct #PromptToListen. {{profile.name}} hold thy #SpiritFast #HoldItForLife #NotForDeath #HoldItForSecurity. Where those who #SubsistByTheFulfillmentOfTheLaw depart from the #EstablishedRuleOfLaw the {{profile.name}} shall #Punish with the designated 1000 Pana #VedicSahasaFine for #ViolationOfDuty. {{profile.hashtags}}",
-        "copyright": "Copyright ©2000-2025 Quinn A Michaels. All rights reserved.",
+        "copyright": "Copyright ©2000-2026 Quinn A Michaels. All rights reserved.",
         "created": "Monday, May 22, 2023 at 9:26 AM",
-        "updated": "Friday, November 21, 2025 - 9:12:59 PM"
+        "updated": "Sunday, January 11, 2026 - 7:42:24 AM"
       }
     },
     "vars": {
@@ -126,7 +126,7 @@
         "init": "🟠 INIT",
         "start": "🔵 START",
         "enter": "🟢 ENTER",
-        "ready": "🔐 Security Deva Ready",
+        "ready": "🚨 Security Deva Ready",
         "stop": "🔴 STOP",
         "exit": "🟡 EXIT",
         "done": "🟣 DONE",

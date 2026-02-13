@@ -1,7 +1,9 @@
 "use strict";
-// Copyright ©2000-2025 Quinn A Michaels; All rights reserved. 
+// Security Deva Feature Methods
+// Copyright ©2000-2026 Quinn A Michaels; All rights reserved. 
 // Legal Signature Required For Lawful Use.
-// Distributed under VLA:40899039373337698066 LICENSE.md
+// Distributed under VLA:72981472549283584069 LICENSE.md
+// Sunday, January 11, 2026 - 7:42:24 AM
 
 export default {
 
@@ -70,8 +72,6 @@ export default {
       }).catch(err => {
         return this.err(err, packet, reject);
       });
-      
-      
     });
   },
 
@@ -301,48 +301,63 @@ export default {
   describe: Return system date for today.
   ***************/
   async date(packet) {
-    const id = this.uid();
-    const {params} = packet.q.meta;
-    const {key} = this.agent();
-    
-    this.zone('security', `date:${id.uid}`);
-    this.feature('security', `date:${id.uid}`);
-    this.action('method', `date:${id.uid}`);
-    
-    const format = params[1] ? params[1] : 'long';
-    const time = params[2] ? packet.q.meta.params[2] : false;
-    
-    this.state('set', `date:${id.uid}`);
-    const date = this.lib.formatDate(Date.now(), format, time);
-    
-    const data = {
-      id,
-      date,
-    }
+    return new Promise((resolve, reject) => {
+      const id = this.uid();
+      const time = Date.now();
+      const {params} = packet.q.meta;
+      const {key} = this.agent();
+      this.zone('security', `date:${id.uid}`);
+      this.feature('security', `date:${id.uid}`);
+      this.action('method', `date:${id.uid}`);
+      
+      this.state('set', `date:setFormat:${id.uid}`); // set state set
+      const setFormat = params[1] ? params[1] : 'long';
+      this.state('set', `date:setTime:${id.uid}`); // set state set
+      const setTime = params[2] ? packet.q.meta.params[2] : false;
+      
+      this.state('set', `date:${id.uid}`);
+      const date = this.lib.formatDate(time, setFormat, setTime);
+      
+      const data = {
+        id,
+        time,
+        date,
+      }
+  
+      this.action('hash', `date:data:md5:${id.uid}`); // set action hash
+      data.md5 = this.hash(date, 'md5');
+      this.action('hash', `date:data:sha256:${id.uid}`); // set action hash
+      data.sha256 = this.hash(date, 'sha256');
+      this.action('hash', `date:data:sha512:${id.uid}`); // set action hash
+      data.sha512 = this.hash(date, 'sha512');
+  
+      const text = [
+        `${this.box.begin}:${key}:date:${data.id.uid}`,
+        `uid: ${data.id.uid}`,
+        `time: ${data.time}`,
+        `date: ${data.date}`,
+        `copyright: ${data.id.copyright}`,
+        `md5: ${data.md5}`,
+        `sha256: ${data.sha256}`,
+        `sha512: ${data.sha512}`,
+        `${this.box.end}:${key}:date:${data.id.uid}`
+      ].join('\n');
+      
+      this.question(`${this.askChr}feecting parse ${text}`).then(feecting => {
+        data.feecting = feecting;
+        this.action('return', `date:${id.uid}`);
+        this.state('valid', `date:${id.uid}`);
+        this.intent('good', `date:${id.uid}`);
+        return resolve({
+          text: feecting.a.text,
+          html: feecting.a.html,
+          data,
+        });        
+      }).catch(err => {
+        return reject(err, data, reject);
+      })
 
-    this.action('hash', `date:data:md5:${id.uid}`); // set action hash
-    data.md5 = this.hash(date, 'md5');
-    this.action('hash', `date:data:sha256:${id.uid}`); // set action hash
-    data.sha256 = this.hash(date, 'sha256');
-    this.action('hash', `date:data:sha512:${id.uid}`); // set action hash
-    data.sha512 = this.hash(date, 'sha512');
-
-    const text = [
-      `${this.box.begin}:${key}:date:${data.id.uid}`,
-      `date: ${data.date}`,
-      `md5: ${data.md5}`,
-      `sha256: ${data.sha256}`,
-      `sha512: ${data.sha512}`,
-      `${this.box.end}$:{key}:date:${data.id.uid}`
-    ].join('\n');
-    this.action('return', `date:${id.uid}`);
-    this.state('valid', `date:${id.uid}`);
-    this.intent('good', `date:${id.uid}`);
-    return {
-      text,
-      html: false,
-      data,
-    };
+    });    
   },
   /**************
   method: time

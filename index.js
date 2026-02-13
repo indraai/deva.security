@@ -1,8 +1,9 @@
 "use strict"
-// Copyright ©2000-2025 Quinn A Michaels; All rights reserved. 
-// Legal Signature Required For Lawful Use.
-// Distributed under VLA:40899039373337698066 LICENSE.md
 // Security Deva
+// Copyright ©2000-2026 Quinn A Michaels; All rights reserved. 
+// Legal Signature Required For Lawful Use.
+// Distributed under VLA:72981472549283584069 LICENSE.md
+// Sunday, January 11, 2026 - 7:42:24 AM
 
 import Deva from '@indra.ai/deva';
 import { MongoClient, ObjectId } from 'mongodb';
@@ -122,9 +123,9 @@ const SecurityDeva = new Deva({
     this.state('set', `mongo:client:${data.id.uid}`);
     this.modules.client = new MongoClient(uri);
     this.state('set', `mongo:database:${data.id.uid}`);
-    this.vars.database = database;
+    this.vars.database = `${database}-${VLA.uid}`;
     this.state('set', `mongo:log:${data.id.uid}`);
-    this.vars.log = log;
+    this.vars.log = `${log}-${VLA.uid}`;
 
     this.prompt(`${this.vars.messages.ready} > VLA:${VLA.uid}`);
     
