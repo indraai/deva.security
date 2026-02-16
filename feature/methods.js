@@ -45,6 +45,9 @@ export default {
         `warning: ${id.warning}`,
         `license: ${id.license}`,
         `fingerprint: ${id.fingerprint}`,
+        `md5: ${id.md5}`,
+        `sha256: ${id.sha256}`,
+        `sha512: ${id.sha512}`,
         `copyright: ${id.copyright}`,
         `${this.box.end}:${status}`,
       ];
