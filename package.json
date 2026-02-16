@@ -59,7 +59,7 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.35.0",
+    "@indra.ai/deva": "^1.36.0",
     "@indra.ai/deva.defense": "^0.7.4",
     "@indra.ai/deva.guard": "^0.9.2",
     "@indra.ai/deva.proxy": "^0.7.3",
@@ -113,7 +113,7 @@
         "creator": "Quinn A Michaels",
         "company": "Inside The Net, Inc.",
         "status": "vedic",
-        "warning": "{{prompt.emoji}} {{profile.name}} give us #Security from that we are #Afraid. Help us, {{profile.hashtag}}, drive away #FoesAndEnemies from #AllTheRegionsOfTheWorld send {{profile.name}}. {{profile.name}} the #FoeSubduer #SwiftToAct #PromptToListen. {{profile.name}} hold thy #SpiritFast #HoldItForLife #NotForDeath #HoldItForSecurity. Where those who #SubsistByTheFulfillmentOfTheLaw depart from the #EstablishedRuleOfLaw the {{profile.name}} shall #Punish with the designated 1000 Pana #VedicSahasaFine for #ViolationOfDuty. {{profile.hashtags}}",
+        "warning": "{{prompt.emoji}} {{profile.name}} give us SECURITY from that we are AFRAID. HELP US, {{profile.hashtag}}, drive away FOES and ENEMIES from all the REGIONS of the WORLD send {{profile.name}}. {{profile.name}} the FOE SUBDUER SWIFT to ACT PROMPT to LISTEN. {{profile.name}} hold thy SPIRIT FAST hold it for LIFE not for DEATH hold it for SECURITY. Where those who SUBSIST by the FULFILLMENT of the LAW depart from the ESTABLISHED RULE of LAW the {{profile.name}} shall PUNISH with A FINE equal to the DAMAGE CAUSED. \nowner: {{profile.owner}} \ntags: {{profile.hashtags}}",
         "copyright": "Copyright ©2000-2026 Quinn A Michaels. All rights reserved.",
         "created": "Monday, May 22, 2023 at 9:26 AM",
         "updated": "Sunday, January 11, 2026 - 7:42:24 AM"

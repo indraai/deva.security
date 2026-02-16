@@ -39,6 +39,8 @@ export default {
         `${this.box.begin}:${status}`,
         `uid: ${id.uid}`,
         `time: ${id.time}`,
+        `iso: ${id.iso}`,
+        `utc: ${id.utc}`,
         `date: ${id.date}`,
         `warning: ${id.warning}`,
         `license: ${id.license}`,
