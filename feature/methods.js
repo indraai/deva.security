@@ -58,9 +58,9 @@ export default {
       ];
       
       if (showJSON) {
-        text.push(`${this.box.begin}${key}:uid:json:${data.uid}`);
+        text.push(`${this.box.begin}${key}:uid:json:${id.uid}`);
         text.push(JSON.stringify(id, null, 2)); 
-        text.push(`${this.box.end}${key}:uid:json:${data.uid}`);
+        text.push(`${this.box.end}${key}:uid:json:${id.uid}`);
       }
       
       this.question(`${this.askChr}feecting parse ${text.join('\n')}`, {vars:this.vars}).then(parsed => {
