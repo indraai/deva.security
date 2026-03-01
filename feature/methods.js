@@ -69,7 +69,7 @@ export default {
         return resolve({
           text: parsed.a.text,
           html: parsed.a.html,
-          data,
+          data: id,
         });        
       }).catch(err => {
         return this.err(err, packet, reject);

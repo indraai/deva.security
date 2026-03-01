@@ -59,7 +59,7 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.37.0",
+    "@indra.ai/deva": "^1.37.2",
     "@indra.ai/deva.defense": "^0.7.5",
     "@indra.ai/deva.guard": "^0.10.0",
     "@indra.ai/deva.proxy": "^0.8.0",
