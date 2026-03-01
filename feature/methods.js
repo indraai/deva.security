@@ -35,6 +35,7 @@ export default {
       const showJSON = packet.q.meta.params[1] || false;
       const status = `${key}:uid:${id.uid}`;
 
+      this.state('set', `${key}:uid:text:${id.uid}`); // set state set
       const text = [
         `${this.box.begin}:${status}`,
         `uid: ${id.uid}`,
@@ -43,26 +44,22 @@ export default {
         `utc: ${id.utc}`,
         `date: ${id.date}`,
         `warning: ${id.warning}`,
+        `tags: ${id.tags}`,
+        `owner: ${id.owner}`,
+        `creator: ${id.creator}`,
         `license: ${id.license}`,
+        `salute: ${id.salute}`,
         `fingerprint: ${id.fingerprint}`,
+        `copyright: ${id.copyright}`,
         `md5: ${id.md5}`,
         `sha256: ${id.sha256}`,
         `sha512: ${id.sha512}`,
-        `copyright: ${id.copyright}`,
         `${this.box.end}:${status}`,
       ];
-      const data = {
-        uid:  id.uid,
-        time: id.time,
-        date: id.date,
-        warning: id.warning,
-        license: id.license,
-        fingerprint: id.fingerprint,
-        copyright: id.copyright,
-      }
+      
       if (showJSON) {
         text.push(`${this.box.begin}${key}:uid:json:${data.uid}`);
-        text.push(JSON.stringify(data, null, 2)); 
+        text.push(JSON.stringify(id, null, 2)); 
         text.push(`${this.box.end}${key}:uid:json:${data.uid}`);
       }
       
