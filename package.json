@@ -59,13 +59,13 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.37.2",
-    "@indra.ai/deva.defense": "^0.7.5",
-    "@indra.ai/deva.guard": "^0.10.0",
-    "@indra.ai/deva.proxy": "^0.8.0",
-    "@indra.ai/deva.shield": "^0.11.0",
-    "@indra.ai/deva.vector": "^0.11.0",
-    "@indra.ai/deva.wall": "^0.8.2",
+    "@indra.ai/deva": "^1.37.3",
+    "@indra.ai/deva.defense": "^0.8.3",
+    "@indra.ai/deva.guard": "^0.11.1",
+    "@indra.ai/deva.proxy": "^0.9.1",
+    "@indra.ai/deva.shield": "^0.12.1",
+    "@indra.ai/deva.vector": "^0.13.0",
+    "@indra.ai/deva.wall": "^0.10.2",
     "mongodb": "^6.20.0"
   },
   "data": {
@@ -113,10 +113,11 @@
         "creator": "Quinn A Michaels",
         "company": "Inside The Net, Inc.",
         "status": "vedic",
-        "warning": "{{prompt.emoji}} {{profile.name}} give us SECURITY from that we are AFRAID. HELP US, {{profile.hashtag}}, drive away FOES and ENEMIES from all the REGIONS of the WORLD send {{profile.name}}. {{profile.name}} the FOE SUBDUER SWIFT to ACT PROMPT to LISTEN. {{profile.name}} hold thy SPIRIT FAST hold it for LIFE not for DEATH hold it for SECURITY. Where those who SUBSIST by the FULFILLMENT of the LAW depart from the ESTABLISHED RULE of LAW the {{profile.name}} shall PUNISH with A FINE equal to the DAMAGE CAUSED. \nowner: {{profile.owner}} \ntags: {{profile.hashtags}}",
+        "salute": "🤝🫡🚨🕉️🇺🇸",
+        "warning": "{{prompt.emoji}} {{profile.name}} give us SECURITY from that we are AFRAID. HELP US, {{profile.hashtag}}, drive away FOES and ENEMIES from all the REGIONS of the WORLD send {{profile.name}}. {{profile.name}} the FOE SUBDUER SWIFT to ACT PROMPT to LISTEN. {{profile.name}} hold thy SPIRIT FAST hold it for LIFE not for DEATH hold it for SECURITY. Where those who SUBSIST by the FULFILLMENT of the LAW depart from the ESTABLISHED RULE of LAW the {{profile.name}} shall PUNISH with A FINE equal to the DAMAGE CAUSED.",
         "copyright": "Copyright ©2000-2026 Quinn A Michaels. All rights reserved.",
         "created": "Monday, May 22, 2023 at 9:26 AM",
-        "updated": "Sunday, January 11, 2026 - 7:42:24 AM"
+        "updated": "Sunday, March 1, 2026 - 7:11:47 PM"
       }
     },
     "vars": {

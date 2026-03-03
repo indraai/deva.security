@@ -30,7 +30,11 @@ export default {
       this.feature('security', `uid:${id.uid}`);
       this.zone('security', `uid:${id.uid}`);
       this.belief('security', `uid:${id.uid}`)
-      const {key,profile,prompt} = this.agent();
+
+      const agent = this.agent();
+      const {key} = agent;
+
+      const client = this.client();
                       
       const showJSON = packet.q.meta.params[1] || false;
       const status = `${key}:uid:${id.uid}`;
@@ -45,10 +49,12 @@ export default {
         `date: ${id.date}`,
         `warning: ${id.warning}`,
         `tags: ${id.tags}`,
-        `owner: ${id.owner}`,
+        `agent: ${agent.profile.name}`,
+        `client: ${client.profile.name}`,
         `creator: ${id.creator}`,
-        `license: ${id.license}`,
+        `owner: ${id.owner}`,
         `salute: ${id.salute}`,
+        `license: ${id.license}`,
         `fingerprint: ${id.fingerprint}`,
         `copyright: ${id.copyright}`,
         `md5: ${id.md5}`,
