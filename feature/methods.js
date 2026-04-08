@@ -44,8 +44,8 @@ export default {
         `${this.box.begin}:${status}`,
         `uid: ${id.uid}`,
         `time: ${id.time}`,
-        `iso: ${id.iso}`,
         `utc: ${id.utc}`,
+        `iso: ${id.iso}`,
         `date: ${id.date}`,
         `warning: ${id.warning}`,
         `tags: ${id.tags}`,
@@ -91,7 +91,7 @@ export default {
     const text = [
       `write: #${data.key}.${data.method}.${data.opts} ${data.text}`,
       '\n',
-      `${this.box.begin}${data.method}:${data.id.uid}`,
+      `${this.box.begin}:${data.method}:${data.id.uid}`,
       `sign: ${data.client.fullname} ${data.client.emojis}`,
       `uid: ${data.id.uid}`,
       `time: ${data.time}`,
@@ -130,56 +130,66 @@ export default {
   params: packet
   describe: Return system md5, sha256, sha512 hash from value.
   ***************/
-  async hash(packet) {
+  async hash(packet) {    
     const id = this.uid();
     const {q} = packet;
     this.feature('security', `hash:${id.uid}`);
-    const {global, personal} = this.security();
-    const agent = this.agent()
-    const client = this.client();
-    
+    this.belief('security', `hash:${id.uid}`)
     this.zone('security', `hash:${id.uid}`);
     this.action('method', `hash:${id.uid}`);
 
-    const {params} = q.meta; // set params from the meta information.
+    return new Promise((resolve, reject) => {
+      const {global, personal} = this.security();
 
-    this.state('set', `hash:algo:${id.uid}`); //set the meta state for the proxy
-    const algo = params[1] || personal.hash || global.hash
-    
-    this.state('set', `hash:${id.uid}`); //set the meta state for the proxy
-    const hash = this.hash(q.text, algo);
-    
-    const data = {
-      id,
-      algo,
-      text: q.text,
-      hash,
-    };
-
-    const status = `${agent.key}:hash:${data.id.uid}`;
-    
-    const text = [
-      `${this.box.begin}:${status}`,
-      `uid: ${data.id.uid}`,
-      `algo: ${data.algo}`,
-      `text: ${data.text}`,
-      `hash: ${data.hash}`,
-      `time: ${data.id.time}`,
-      `date: ${data.id.date}`,
-      `warning: ${data.id.warning}`,
-      `license: ${data.id.license}`,
-      `copyright: ${data.id.copyright}`,
-      `${this.box.end}:${status}`,
-    ].join('\n');
-
-    this.action('return', `hash:${data.id.uid}`);
-    this.state('valid', `hash:${data.id.uid}`);
-    this.intent('good', `hash:${data.id.uid}`);
-    return {
-      text, 
-      html: false,
-      data,
-    };
+      const agent = this.agent()
+      const client = this.client();
+        
+      const {params} = q.meta; // set params from the meta information.
+  
+      this.state('set', `hash:${id.uid}`); //set the meta state for the proxy
+      const algo = params[1] || personal.hash || global.hash
+      
+      this.state('set', `hash:${id.uid}`); //set the meta state for the proxy
+      const hash = this.hash(q.text, algo);
+      
+      const data = {
+        id,
+        algo,
+        text: q.text,
+        hash,
+      };
+  
+      const status = `${agent.key}:hash:${data.id.uid}`;
+      
+      const text = [
+        `${this.box.begin}:${status}`,
+        `uid: ${data.id.uid}`,
+        `time: ${data.id.time}`,
+        `utc: ${data.id.utc}`,
+        `iso: ${data.id.iso}`,
+        `date: ${data.id.date}`,
+        `text: ${data.text}`,
+        `${data.algo}: ${data.hash}`,
+        `license: ${data.id.license}`,
+        // `warning: ${data.id.warning}`,
+        `copyright: ${data.id.copyright}`,
+        `${this.box.end}:${status}`,
+      ].join('\n');
+  
+      this.question(`${this.askChr}feecting parse ${text}`, {vars:this.vars}).then(parsed => {
+        this.belief('vedic', `hash:${id.uid}`);
+        this.state('valid', `hash:${id.uid}`);
+        this.action('resolve', `hash:${id.uid}`);
+        this.intent('good', `hash:${id.uid}`);
+        return resolve({
+          text: parsed.a.text,
+          html: parsed.a.html,
+          data,
+        });        
+      }).catch(err => {
+        return this.err(err, packet, reject);
+      });
+    });
   },
 
   /**************
@@ -332,12 +342,8 @@ export default {
         date,
       }
   
-      this.action('hash', `date:data:md5:${id.uid}`); // set action hash
-      data.md5 = this.hash(date, 'md5');
       this.action('hash', `date:data:sha256:${id.uid}`); // set action hash
       data.sha256 = this.hash(date, 'sha256');
-      this.action('hash', `date:data:sha512:${id.uid}`); // set action hash
-      data.sha512 = this.hash(date, 'sha512');
   
       const text = [
         `${this.box.begin}:${key}:date:${data.id.uid}`,
@@ -345,9 +351,7 @@ export default {
         `time: ${data.time}`,
         `date: ${data.date}`,
         `copyright: ${data.id.copyright}`,
-        `md5: ${data.md5}`,
         `sha256: ${data.sha256}`,
-        `sha512: ${data.sha512}`,
         `${this.box.end}:${key}:date:${data.id.uid}`
       ].join('\n');
       
