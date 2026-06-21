@@ -48,7 +48,7 @@ export default {
         `iso: ${id.iso}`,
         `date: ${id.date}`,
         `warning: ${id.warning}`,
-        `tags: ${id.tags}`,
+        `vectors: ${id.tags}`,
         `agent: ${agent.profile.name} (${agent.profile.pronouns})`,
         `client: ${client.profile.name} (${client.profile.pronouns})`,
         `creator: ${id.creator}`,
