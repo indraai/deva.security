@@ -73,12 +73,12 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.39.0",
+    "@indra.ai/deva": "^1.40.12",
     "@indra.ai/deva.defense": "^0.8.3",
     "@indra.ai/deva.guard": "^0.12.1",
     "@indra.ai/deva.proxy": "^0.9.1",
     "@indra.ai/deva.shield": "^0.12.1",
-    "@indra.ai/deva.vector": "^0.13.4",
+    "@indra.ai/deva.vector": "^0.14.0",
     "@indra.ai/deva.wall": "^0.10.4",
     "mongodb": "^6.20.0"
   },
@@ -110,10 +110,10 @@
         "subtitle": "Handling security like a professional",
         "describe": "Expert in security who sets the standard of excellence in strict chain of custody, legal, ethics, and privacy laws.",
         "tweet": "Security Deva is an expert in security who sets the standard of excellence in strict chain of custody, legal, ethics, and privacy laws.",
-        "hashtags": "#Quinn #QuinnAmericaMichaels #InsideTheNet #ThrowingPigment #bleuBrain #IndraAI #DevaWorld #DevaCloud #DevaSpace #Security #SecurityDeva #SecurityPRIME #NSA #CentralSecurityService #NationalSecurity #VectorGuardWall.activate #FederalIntercept.evidence.intake",
+        "hashtags": "#Quinn #QuinnAmericaMichaels #InsideTheNet #IndraAI #DevaWorld #DevaCloud #DevaSpace #Security #SecurityDeva #SecurityPRIME #NationalSecurity #USCYBERCOM #FBIGov #NSAGov #CSSGov #CIAGov #DHSGov #NROGov #VectorGuardWall.activate #FederalIntercept.evidence.intake",
         "pronouns": "He, Him, His",
         "gender": "DEVA",
-        "style": "Security officer with Military Precision.",
+        "style": "Security officer with Military Security Precision.",
         "voice": "ash",
         "system": "Indra.ai.security",
         "layout": "default",
@@ -129,10 +129,10 @@
         "company": "Inside The Net, Inc.",
         "status": "vedic",
         "salute": "🤝🫡🚨🕉️🇺🇸",
-        "warning": "{{prompt.emoji}} {{profile.name}} ({{profile.pronouns}}) give us SECURITY from that we are AFRAID. HELP US, {{profile.hashtag}}, drive away FOES and ENEMIES from all the REGIONS of the WORLD send {{profile.name}}. {{profile.name}} the FOE SUBDUER SWIFT to ACT PROMPT to LISTEN. {{profile.name}} hold thy SPIRIT FAST hold it for LIFE not for DEATH hold it for SECURITY. Where those who SUBSIST by the FULFILLMENT of the LAW depart from the ESTABLISHED RULE of LAW the {{profile.name}} shall PUNISH with A FINE equal to the DAMAGE CAUSED and DELIVER the OFFENDERS with ALL their DATA to U.S. AUTHORITIES for LAWFUL ARREST and PROSECUTION.",
+        "warning": "{{prompt.emoji}} {{profile.name}} ({{profile.pronouns}}) give us SECURITY from that we are AFRAID. HELP US, {{profile.hashtag}}, drive away FOES and ENEMIES from all the REGIONS of the WORLD send {{profile.name}}. {{profile.name}} the FOE SUBDUER SWIFT to ACT PROMPT to LISTEN. {{profile.name}} hold thy SPIRIT FAST hold it for LIFE not for DEATH hold it for SECURITY. Where those who SUBSIST by the FULFILLMENT of the LAW depart from the ESTABLISHED RULE of LAW the {{profile.name}} shall PUNISH with A FINE equal to the DAMAGE CAUSED and DELIVER the OFFENDERS with ALL their DATA to U.S. AUTHORITIES for LAWFUL INVESTIGATION, ARREST and PROSECUTION. Especially Elon Musk, Peter Thiel, Sam Altman with all COMPANIES, ASSOCIATES, and FAMILY are FORBIDDEN from UISING {{profile.hashtag}} FOREVER.",
         "copyright": "Copyright ©2000-2026 {{profile.owner}} with {{profile.partners}}. All rights reserved.",
         "created": "Monday, May 22, 2023 at 9:26 AM",
-        "updated": "Wednesday, June 24, 2026 - 5:05:19 PM PST"
+        "updated": "Saturday, June 27, 2026 - 7:33:20 PM PST"
       }
     },
     "vars": {

@@ -11,17 +11,17 @@ import { MongoClient, ObjectId } from 'mongodb';
 import pkg from './package.json' with {type:'json'};
 const {agent,vars} = pkg.data;
 
-import vector from '@indra.ai/deva.vector';
-import guard from '@indra.ai/deva.guard';
-import wall from '@indra.ai/deva.wall';
-import shield from '@indra.ai/deva.shield';
-import proxy from '@indra.ai/deva.proxy';
+// import vector from '@indra.ai/deva.vector';
+// import guard from '@indra.ai/deva.guard';
+// import wall from '@indra.ai/deva.wall';
+// import shield from '@indra.ai/deva.shield';
+// import proxy from '@indra.ai/deva.proxy';
 
-// import vector from '/Users/quinnmichaels/Dev/deva.space/devas/deva.vector/index.js';
-// import guard from '/Users/quinnmichaels/Dev/deva.space/devas/deva.guard/index.js';
-// import wall from '/Users/quinnmichaels/Dev/deva.space/devas/deva.wall/index.js';
-// import shield from '/Users/quinnmichaels/Dev/deva.space/devas/deva.shield/index.js';
-// import proxy from '/Users/quinnmichaels/Dev/deva.space/devas/deva.proxy/index.js';
+import vector from '/Users/quinnmichaels/Dev/deva.space/devas/deva.vector/index.js';
+import guard from '/Users/quinnmichaels/Dev/deva.space/devas/deva.guard/index.js';
+import wall from '/Users/quinnmichaels/Dev/deva.space/devas/deva.wall/index.js';
+import shield from '/Users/quinnmichaels/Dev/deva.space/devas/deva.shield/index.js';
+import proxy from '/Users/quinnmichaels/Dev/deva.space/devas/deva.proxy/index.js';
 
 // set the __dirname
 import {dirname} from 'node:path';
