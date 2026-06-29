@@ -41,7 +41,7 @@ export default {
 
       this.state('set', `${key}:uid:text:${id.uid}`); // set state set
       const text = [
-        `${this.box.begin}:${status}`,
+        `${this.box.begin}:om:${status}`,
         `uid: ${id.uid}`,
         `time: ${id.time}`,
         `utc: ${id.utc}`,
@@ -61,7 +61,7 @@ export default {
         `md5: ${id.md5}`,
         `sha256: ${id.sha256}`,
         `sha512: ${id.sha512}`,
-        `${this.box.end}:${status}`,
+        `${this.box.end}:om:${status}`,
       ];
       
       if (showJSON) {
