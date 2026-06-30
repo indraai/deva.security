@@ -1,7 +1,7 @@
 "use strict"
 // Security Deva
 // Copyright ©2000-2026 Quinn America Michaels; All rights reserved. 
-// Legal Signature Required For Lawful Use.
+// Owner Signature Required For Lawful Use.
 // Distributed under VLA:29409938028001373115 LICENSE.md
 // Wednesday, June 24, 2026 - 5:05:19 PM PST
 
@@ -11,13 +11,11 @@ import { MongoClient, ObjectId } from 'mongodb';
 import pkg from './package.json' with {type:'json'};
 const {agent,vars} = pkg.data;
 
-// import vector from '@indra.ai/deva.vector';
 // import guard from '@indra.ai/deva.guard';
 // import wall from '@indra.ai/deva.wall';
 // import shield from '@indra.ai/deva.shield';
 // import proxy from '@indra.ai/deva.proxy';
 
-import vector from '/Users/quinnmichaels/Dev/deva.space/devas/deva.vector/index.js';
 import guard from '/Users/quinnmichaels/Dev/deva.space/devas/deva.guard/index.js';
 import wall from '/Users/quinnmichaels/Dev/deva.space/devas/deva.wall/index.js';
 import shield from '/Users/quinnmichaels/Dev/deva.space/devas/deva.shield/index.js';
@@ -82,7 +80,6 @@ const SecurityDeva = new Deva({
   },
   modules: {},
   devas: {
-    vector,
     guard,
     wall,
     shield,
