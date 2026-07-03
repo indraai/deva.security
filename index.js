@@ -1,9 +1,9 @@
 "use strict"
 // Security Deva
-// Copyright ©2000-2026 Quinn America Michaels; All rights reserved. 
+// Copyright ©2000-2026 Quinn Arjuna Michaels; All rights reserved. 
 // Owner Signature Required For Lawful Use.
-// Distributed under VLA:29409938028001373115 LICENSE.md
-// Wednesday, June 24, 2026 - 5:05:19 PM PST
+// Distributed under VLA:29583655374173910120 LICENSE.md
+// Friday, July 3, 2026 - 3:45:20 PM PST
 
 import Deva from '@indra.ai/deva';
 import { MongoClient, ObjectId } from 'mongodb';
@@ -16,10 +16,10 @@ const {agent,vars} = pkg.data;
 // import shield from '@indra.ai/deva.shield';
 // import proxy from '@indra.ai/deva.proxy';
 
-import guard from '/Users/quinnmichaels/Dev/deva.space/devas/deva.guard/index.js';
-import wall from '/Users/quinnmichaels/Dev/deva.space/devas/deva.wall/index.js';
-import shield from '/Users/quinnmichaels/Dev/deva.space/devas/deva.shield/index.js';
-import proxy from '/Users/quinnmichaels/Dev/deva.space/devas/deva.proxy/index.js';
+// import guard from '/Users/quinnmichaels/Dev/deva.space/devas/deva.guard/index.js';
+// import wall from '/Users/quinnmichaels/Dev/deva.space/devas/deva.wall/index.js';
+// import shield from '/Users/quinnmichaels/Dev/deva.space/devas/deva.shield/index.js';
+// import proxy from '/Users/quinnmichaels/Dev/deva.space/devas/deva.proxy/index.js';
 
 // set the __dirname
 import {dirname} from 'node:path';
@@ -80,10 +80,10 @@ const SecurityDeva = new Deva({
   },
   modules: {},
   devas: {
-    guard,
-    wall,
-    shield,
-    proxy,
+  //   guard,
+  //   wall,
+  //   shield,
+  //   proxy,
   },
   func: {
     /**************

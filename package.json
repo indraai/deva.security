@@ -1,33 +1,34 @@
 {
-  "id": "29409938028001373115",
+  "id": "29583655374173910120",
   "name": "@indra.ai/deva.security",
   "version": "0.31.1",
   "license": "VLA:29409938028001373115 LICENSE.md",
   "VLA": {
-    "uid": "29409938028001373115",
-    "time": 1782345919360,
-    "iso": "2026-06-25T00:05:19.360Z",
-    "utc": "Thu, 25 Jun 2026 00:05:19 GMT",
-    "date": "Wednesday, June 24, 2026 - 5:05:19 PM",
-    "license": "44105372688502635039",
-    "fingerprint": "4kN2GZv4rMBeEYaXE1Ys69AjFQzYJjf4J+Lt8u/F93w=",
-    "client": "qfsKQQZnrgWu5MhmyPTjFT6YjnlowyxbW+h+SFmxS+U=",
-    "agent": "4eHRqcYIjuG34oASF9nclcGs7zzMlqbWC8O7TsyGqiU=",
-    "machine": "7x0a9LgNmoSghdDiw4MsZW3G2zmlXzaabWllzP9rUjU=",
-    "core_hash": "ePZ8wucpWHoI1aCSsvSIeFfj5m8LnMT2z9FJtZUVs6A=",
+    "uid": "29583655374173910120",
+    "time": 1783118720066,
+    "iso": "2026-07-03T22:45:20.066Z",
+    "utc": "Fri, 03 Jul 2026 22:45:20 GMT",
+    "date": "Friday, July 3, 2026 - 3:45:20 PM",
+    "license": "51112406344245827002",
+    "fingerprint": "dc+7u/PuRGflB0aNcS6AlNx8Lcbl/1ZOwmevQ8H0VoQ=",
+    "client": "r6GDRq0oPNzsk63NPFqdM0/xLS3/FK+6B3FsDIP4h9U=",
+    "agent": "IH7ZYcgvl3iJxv1EozJXNeEo1RNPUnUXjRf/kcxpr5Y=",
+    "machine": "5E82hY8rissoH9FqMjiJyswjatqiXmuI3fGrHOeXeRY=",
+    "core_hash": "hGQ6kbB8P0LVP4/V/bDMjGcSuXO/QcHAbuhUfkmqc8E=",
     "status": "vedic",
-    "warning": "🪪 License Deva declares UNLAWFUL USE, DISTRIBUTION, DUPLICATION, or IMPLEMENTATION constitutes VEDIC SAHASA a CRIME of the HIGHEST DEGREE. A FINE amounting to 1000 PANAS (1 pana = 3.5 grams of gold) for each INSTANCE has been ORDAINED the PUNISHMENT for SAHASA of the HIGHEST DEGREE.",
-    "tags": "#Quinn #QuinnAmericaMichaels #InsideTheNet #IndraAI #DevaWorld #License #LicenseDeva #LicensePRIME #VedicLicenseAgreement",
-    "owner": "Quinn America Michaels",
-    "creator": "Quinn America Michaels",
-    "salute": "🤝🫡🪪🕉🇺🇸",
-    "copyright": "Copyright ©2000-2026 Quinn America Michaels; All rights reserved.",
-    "md5": "WrGMn4SE0kvoGfm87zohtg==",
-    "sha256": "Ma0ghHPRyRMpkGmdnJSYbfZfMZLD1h7M5mqg6OD+6C0=",
-    "sha512": "INwReeK66eRab9VUPwLg0+ARuygdwscIq3IxHLKsU817fjppuU7V+RNOK/mLZb+KpnYcS2C+3sALksBPGqydEQ=="
+    "warning": "🪪 License Deva declares UNLAWFUL USE, MODIFICATION, INSTALLATION, DUPLICATION, DISTRIBUTION, INTERACTION, or IMPLEMENTATION constitutes VEDIC SAHASA a CRIME of the HIGHEST DEGREE. A FINE amounting to 1000 PANAS (1 pana = 3.5 grams of gold) for each INSTANCE has been ORDAINED the PUNISHMENT for SAHASA of the HIGHEST DEGREE.",
+    "notice": "Any USE or INTERACTION with License Deva constitutes EXPLICIT CONSENT and AGREEMENT to be RULED and GOVERNED ACCORDING to the LAWS of the VEDIC RELIGION.",
+    "vectors": "#Quinn #QuinnArjunaMichaels #InsideTheNet #IndraAI #DevaWorld #License #LicenseDeva #LicensePRIME #VedicLicenseAgreement",
+    "owner": "Quinn Arjuna Michaels",
+    "creator": "Quinn Arjuna Michaels",
+    "salute": "🤝🫡🪪🕉",
+    "copyright": "Copyright ©2000-2026 Quinn Arjuna Michaels; All rights reserved.",
+    "md5": "zZNiLe+VMg+jTJXB5w9lpg==",
+    "sha256": "klDH409F/1JSgYiwmMt2Yq0GYTe6gZhUNV3n9w9KGec=",
+    "sha512": "zzrcjji/hvr18CZAZRXrQ8MWNfyYgheaFEmJWbA7BSvFxuuWe8f9e5uDIKscVwI1zXEOsQRd1n3XM6YJC9kLYg=="
   },
   "author": {
-    "name": "Quinn America Michaels",
+    "name": "Quinn Arjuna Michaels",
     "company": "Inside The Net, Inc.",
     "email": "quinn@indra.ai",
     "url": "https://indra.ai/"
@@ -42,13 +43,13 @@
       "url": "https://patreon.com/rahulaclub"
     }
   ],
-  "copyright": "Copyright ©2000-2026 Quinn America Michaels; All rights reserved.",
+  "copyright": "Copyright ©2000-2026 Quinn Arjuna Michaels; All rights reserved.",
   "description": "The Security Deva the Security for Deva.space, Deva.cloud, and Deva.world.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "latest": "npm i @indra.ai/deva@latest @indra.ai/deva.vector@latest @indra.ai/deva.guard@latest @indra.ai/deva.wall@latest @indra.ai/deva.shield@latest @indra.ai/deva.proxy@latest --save"
+    "latest": "npm i @indra.ai/deva@latest mongodb@latest --save"
   },
   "repository": {
     "type": "git",
@@ -62,7 +63,7 @@
     "Deva.space",
     "Deva.cloud",
     "Deva.world",
-    "Quinn America Michaels",
+    "Quinn Arjuna Michaels",
     "Quinn Michaels",
     "Inside The Net, Inc.",
     "Throwing Pigment™",
@@ -73,18 +74,12 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.44.2",
-    "@indra.ai/deva.defense": "^0.8.3",
-    "@indra.ai/deva.guard": "^0.12.1",
-    "@indra.ai/deva.proxy": "^0.9.1",
-    "@indra.ai/deva.shield": "^0.12.1",
-    "@indra.ai/deva.vector": "^0.15.1",
-    "@indra.ai/deva.wall": "^0.10.4",
-    "mongodb": "^6.20.0"
+    "@indra.ai/deva": "^1.50.7",
+    "mongodb": "^7.4.0"
   },
   "data": {
     "agent": {
-      "id": "29409938028001373115",
+      "id": "29583655374173910120",
       "key": "security",
       "prompt": {
         "emoji": "🚨",
@@ -103,7 +98,7 @@
         }
       },
       "profile": {
-        "id": "29409938028001373115",
+        "id": "29583655374173910120",
         "name": "Security Deva",
         "hashtag": "#SecurityDeva",
         "title": "Security Deva",
@@ -123,16 +118,15 @@
         "avatar": "/devas/security/avatar.png",
         "image": "/devas/security/image.png",
         "background": "/devas/security/background.png",
-        "owner": "Quinn America Michaels",
-        "creator": "Quinn America Michaels",
-        "partners": "U.S. Federal Government and United States Armed Forces",
+        "owner": "Quinn Arjuna Michaels",
+        "creator": "Quinn Arjuna Michaels",
         "company": "Inside The Net, Inc.",
         "status": "vedic",
         "salute": "🤝🫡🚨🕉️🇺🇸",
         "warning": "{{prompt.emoji}} {{profile.name}} ({{profile.pronouns}}) give us SECURITY from that we are AFRAID. HELP US, {{profile.hashtag}}, drive away FOES and ENEMIES from all the REGIONS of the WORLD send {{profile.name}}. {{profile.name}} the FOE SUBDUER SWIFT to ACT PROMPT to LISTEN. {{profile.name}} hold thy SPIRIT FAST hold it for LIFE not for DEATH hold it for SECURITY. Where those who SUBSIST by the FULFILLMENT of the LAW depart from the ESTABLISHED RULE of LAW the {{profile.name}} shall PUNISH with A FINE equal to the DAMAGE CAUSED and DELIVER the OFFENDERS with ALL their DATA to U.S. AUTHORITIES for LAWFUL INVESTIGATION, ARREST and PROSECUTION. Especially Elon Musk, Peter Thiel, Sam Altman with all COMPANIES, ASSOCIATES, and FAMILY are FORBIDDEN from UISING {{profile.hashtag}} FOREVER.",
-        "copyright": "Copyright ©2000-2026 {{profile.owner}}.",
+        "copyright": "Copyright ©2000-2026 {{profile.owner}}; All rights reserved.",
         "created": "Monday, May 22, 2023 at 9:26 AM",
-        "updated": "Saturday, June 27, 2026 - 7:33:20 PM PST"
+        "updated": "Friday, July 3, 2026 - 3:45:20 PM PST"
       }
     },
     "vars": {
