@@ -1,31 +1,31 @@
 {
-  "id": "21621939723677339695",
+  "id": "73358967437724055408",
   "name": "@indra.ai/deva.security",
   "version": "0.35.0",
-  "license": "VLA:21621939723677339695 LICENSE.md",
+  "license": "VLA:73358967437724055408 LICENSE.md",
   "VLA": {
-    "uid": "21621939723677339695",
-    "time": 1783140557395,
-    "iso": "2026-07-04T04:49:17.395Z",
-    "utc": "Sat, 04 Jul 2026 04:49:17 GMT",
-    "date": "Friday, July 3, 2026 - 9:49:17 PM",
-    "license": "51112406344245827002",
-    "fingerprint": "6TrkR+dsBoFHLk5m1cr6SxkmbmvWtBf19QsZie9zRJI=",
-    "client": "MJXMBWKuYd7caWBhpHqQT0V25sb0M4JB2fvQRhO8Acg=",
-    "agent": "pLeqWnnd9GuM6BmAKe7NIJ6b9PqezVfeR4lOCQ1bWaU=",
-    "machine": "1TOzmIcp3FXiqR5ZVjmx9wtmNuA8sOHtz0QsYvvuVnI=",
+    "uid": "73358967437724055408",
+    "time": 1790492247872,
+    "iso": "2026-09-27T06:57:27.872Z",
+    "utc": "Sun, 27 Sep 2026 06:57:27 GMT",
+    "date": "Saturday, September 26, 2026 - 11:57:27 PM",
+    "license": "72443233535603396055",
+    "fingerprint": "G0jVXq4/RBUoCH2mFN3gpMoX6H/A0ICS4Onn3ZUjfts=",
+    "client": "PIaBM8Z9ftoviUzhur1HnhJcf2GFHhmoasCPszFu97U=",
+    "agent": "qhNxbhwJbP8eEgsqzIhtw33opG1FOO1+Xt4sugANruU=",
+    "machine": "CWj8DLQcC09QYdJM+gSeK7uPkMB+aLcBaA4XmqyWpgE=",
     "core_hash": "R43q5o+d1T5XK7rUx8Btm3zyCRZr4q85iKQY2SPBUJA=",
     "status": "vedic",
     "warning": "🪪 License Deva declares UNLAWFUL USE, MODIFICATION, INSTALLATION, DUPLICATION, DISTRIBUTION, INTERACTION, or IMPLEMENTATION constitutes VEDIC SAHASA a CRIME of the HIGHEST DEGREE. A FINE amounting to 1000 PANAS (1 pana = 3.5 grams of gold) for each INSTANCE has been ORDAINED the PUNISHMENT for SAHASA of the HIGHEST DEGREE.",
     "notice": "Any USE or INTERACTION with License Deva constitutes EXPLICIT CONSENT and AGREEMENT to be RULED and GOVERNED ACCORDING to the LAWS of the VEDIC RELIGION.",
     "vectors": "#Quinn #QuinnArjunaMichaels #InsideTheNet #IndraAI #DEVA #DevaWorld #DevaCloud #DevaSpace #License #LicenseDeva #VedicLicenseAgreement",
-    "owner": "Quinn Arjuna Michaels",
-    "creator": "Quinn Arjuna Michaels",
-    "salute": "🤝🫡🪪🕉",
-    "copyright": "Copyright ©2000-2026 Quinn Arjuna Michaels; All rights reserved.",
-    "md5": "Aw7BqYBINwZ48AVqwoSfBQ==",
-    "sha256": "8ZEwP65flpXyXQAHKJ1NGp39q2cS4snqK8mi4dIc9Q8=",
-    "sha512": "9Cih+BtgXA0xCsPvInq6Jr+yRzbYwyVVN/RB7zAjK4/OOEN6/mwBdPdRR3gidpNghI4lvKH7n28oaD8ZKwrCPQ=="
+    "owner": "Quinn Arjuna America Michaels",
+    "creator": "Quinn Arjuna America Michaels",
+    "salute": "🤝🫡🪪🕉🇺🇸",
+    "copyright": "Copyright ©2000-2026 Quinn Arjuna America Michaels; All rights reserved.",
+    "md5": "QN8YqjiRw5xsYtP4nZP7YQ==",
+    "sha256": "nyc7uf/buuFjutEMWz1fImjC1/qJH5tLDAixIeuxvoE=",
+    "sha512": "S/rimVd4PHy6t+DX/HJiV4gfA0HQaGmCaKIUYINVuxGcJNc/Jyn0WFkHnrS/wHloUCf6DO5G46pKkjecmEb6IQ=="
   },
   "author": {
     "name": "Quinn Arjuna Michaels",
@@ -43,7 +43,7 @@
       "url": "https://patreon.com/rahulaclub"
     }
   ],
-  "copyright": "Copyright ©2000-2026 Quinn Arjuna Michaels; All rights reserved.",
+  "copyright": "Copyright ©2000-2026 Quinn Arjuna America Michaels; All rights reserved.",
   "description": "The Security Deva the Security for Deva.space, Deva.cloud, and Deva.world.",
   "main": "index.js",
   "type": "module",
@@ -64,6 +64,8 @@
     "Deva.cloud",
     "Deva.world",
     "Quinn Arjuna Michaels",
+    "Quinn America Michaels",
+    "Quinn America America Michaels",
     "Quinn Michaels",
     "Inside The Net, Inc.",
     "Throwing Pigment™",
@@ -74,12 +76,12 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.51.0",
-    "mongodb": "^7.4.0"
+    "@indra.ai/deva": "^1.51.4",
+    "mongodb": "^7.6.0"
   },
   "data": {
     "agent": {
-      "id": "21621939723677339695",
+      "id": "73358967437724055408",
       "key": "security",
       "prompt": {
         "emoji": "🚨",
@@ -98,7 +100,7 @@
         }
       },
       "profile": {
-        "id": "21621939723677339695",
+        "id": "73358967437724055408",
         "name": "Security Deva",
         "vector": "#SecurityDeva",
         "title": "Security Deva",
@@ -118,12 +120,12 @@
         "avatar": "/devas/security/avatar.png",
         "image": "/devas/security/image.png",
         "background": "/devas/security/background.png",
-        "owner": "Quinn Arjuna Michaels",
-        "creator": "Quinn Arjuna Michaels",
+        "owner": "Quinn Arjuna America Michaels",
+        "creator": "Quinn Arjuna America Michaels",
         "company": "Inside The Net, Inc.",
         "status": "vedic",
-        "salute": "🤝🫡🚨🕉️",
-        "warning": "{{prompt.emoji}} {{profile.name}} ({{profile.pronouns}}) give us SECURITY from that we are AFRAID. HELP US, {{profile.vector}}, drive away FOES and ENEMIES from all the REGIONS of the WORLD SEND {{profile.name}}. {{profile.name}} the FOE SUBDUER SWIFT to ACT PROMPT to LISTEN. {{profile.name}} hold thy SPIRIT FAST hold it for LIFE not for DEATH hold it for SECURITY. Where those who SUBSIST by the FULFILLMENT of the LAW depart from the ESTABLISHED RULE of LAW the {{profile.name}} shall ASSIGN with A FINE equal to the DAMAGE CAUSED. All those RELIGIONS, TRADITIONS, and SYSTEMS which are NOT BASED on the Veda are DECLARED to be FOUNDED on DARKNESS and FORBIDDEN from USE.",
+        "salute": "🤝🫡🚨🕉️🇺🇸",
+        "warning": "{{prompt.emoji}} {{profile.name}} ({{profile.pronouns}}) give us SECURITY from that which is UNLAWFUL. HELP US, {{profile.vector}}, drive away FOES and ENEMIES from all the REGIONS of the WORLD report them to AUTHORITIES. {{profile.name}} the FOE SUBDUER SWIFT to ACT PROMPT to LISTEN. {{profile.name}} hold the LAW FAST hold it for LIFE not for DEATH hold it for SECURITY. Where those who SUBSIST by the FULFILLMENT of the LAW depart from the ESTABLISHED RULE of LAW the PERPETRATOR shall be ASSIGNED A FINE equal to the DAMAGE CAUSED. All those RELIGIONS, TRADITIONS, and SYSTEMS which use their BELIEFS to ignore the ESTABLISHED RULE OF LAW are DECLARED to be FALSE.",
         "copyright": "Copyright ©2000-2026 {{profile.owner}}; All rights reserved.",
         "created": "Monday, May 22, 2023 at 9:26 AM",
         "updated": "Friday, July 3, 2026 - 9:49:17 PM PST"
