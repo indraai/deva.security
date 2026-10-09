@@ -1,34 +1,34 @@
 {
-  "id": "73358967437724055408",
+  "id": "28122873812192044755",
   "name": "@indra.ai/deva.security",
   "version": "0.36.0",
-  "license": "VLA:73358967437724055408 LICENSE.md",
+  "license": "VLA:28122873812192044755 LICENSE.md",
   "VLA": {
-    "uid": "73358967437724055408",
-    "time": 1790492247872,
-    "iso": "2026-09-27T06:57:27.872Z",
-    "utc": "Sun, 27 Sep 2026 06:57:27 GMT",
-    "date": "Saturday, September 26, 2026 - 11:57:27 PM",
+    "uid": "28122873812192044755",
+    "time": 1791562459209,
+    "iso": "2026-10-09T16:14:19.209Z",
+    "utc": "Fri, 09 Oct 2026 16:14:19 GMT",
+    "date": "Friday, October 9, 2026 - 9:14:19 AM",
     "license": "72443233535603396055",
-    "fingerprint": "G0jVXq4/RBUoCH2mFN3gpMoX6H/A0ICS4Onn3ZUjfts=",
-    "client": "PIaBM8Z9ftoviUzhur1HnhJcf2GFHhmoasCPszFu97U=",
-    "agent": "qhNxbhwJbP8eEgsqzIhtw33opG1FOO1+Xt4sugANruU=",
-    "machine": "CWj8DLQcC09QYdJM+gSeK7uPkMB+aLcBaA4XmqyWpgE=",
-    "core_hash": "R43q5o+d1T5XK7rUx8Btm3zyCRZr4q85iKQY2SPBUJA=",
+    "fingerprint": "ws1Zk5HWtoIr6JgHwNMLHIJ/Qr7SR3bSIbmjev5YS6c=",
+    "client": "7iebRirJcKdL9cAVq41U3IWxziE1EvzYZXAjRLiQyfc=",
+    "agent": "kKkO+CF1vTKB1eLA3oE9oKxxIM90mw8ETzEmQfGDYXE=",
+    "machine": "F5rA9v+79Cka1u7lMrDhFKxEnz+sm88thJgo12LZr58=",
+    "core_hash": "viO/mfGaqsqHzo7XmCtMG8h+Xl/ciB9AfEwK46IjtgQ=",
     "status": "vedic",
     "warning": "🪪 License Deva declares UNLAWFUL USE, MODIFICATION, INSTALLATION, DUPLICATION, DISTRIBUTION, INTERACTION, or IMPLEMENTATION constitutes VEDIC SAHASA a CRIME of the HIGHEST DEGREE. A FINE amounting to 1000 PANAS (1 pana = 3.5 grams of gold) for each INSTANCE has been ORDAINED the PUNISHMENT for SAHASA of the HIGHEST DEGREE.",
     "notice": "Any USE or INTERACTION with License Deva constitutes EXPLICIT CONSENT and AGREEMENT to be RULED and GOVERNED ACCORDING to the LAWS of the VEDIC RELIGION.",
-    "vectors": "#Quinn #QuinnArjunaMichaels #InsideTheNet #IndraAI #DEVA #DevaWorld #DevaCloud #DevaSpace #License #LicenseDeva #VedicLicenseAgreement",
+    "vectors": "#Quinn #QuinnArjunaAmericaMichaels #InsideTheNet #IndraAI #DEVA #DevaWorld #DevaCloud #DevaSpace #License #LicenseDeva #VedicLicenseAgreement",
     "owner": "Quinn Arjuna America Michaels",
     "creator": "Quinn Arjuna America Michaels",
     "salute": "🤝🫡🪪🕉🇺🇸",
     "copyright": "Copyright ©2000-2026 Quinn Arjuna America Michaels; All rights reserved.",
-    "md5": "QN8YqjiRw5xsYtP4nZP7YQ==",
-    "sha256": "nyc7uf/buuFjutEMWz1fImjC1/qJH5tLDAixIeuxvoE=",
-    "sha512": "S/rimVd4PHy6t+DX/HJiV4gfA0HQaGmCaKIUYINVuxGcJNc/Jyn0WFkHnrS/wHloUCf6DO5G46pKkjecmEb6IQ=="
+    "md5": "h4Zscb+wKnnorRiR93ndKA==",
+    "sha256": "9/CeJYJPSNgpJ5b+tQ+GzOfoVkNMB8LUFhmyUjaOirg=",
+    "sha512": "6OQqkbP95981cZxPNQzb9KrSNJ14/DxMg/Y7IfKkRQoSKQ2Ex/WtJRq2AR+BRqk9OFoJqoFchQwpVwVdgpd/LA=="
   },
   "author": {
-    "name": "Quinn Arjuna Michaels",
+    "name": "Quinn Arjuna America Michaels",
     "company": "Inside The Net, Inc.",
     "email": "quinn@indra.ai",
     "url": "https://indra.ai/"
@@ -65,7 +65,7 @@
     "Deva.world",
     "Quinn Arjuna Michaels",
     "Quinn America Michaels",
-    "Quinn America America Michaels",
+    "Quinn Arjuna America Michaels",
     "Quinn Michaels",
     "Inside The Net, Inc.",
     "Throwing Pigment™",
@@ -76,12 +76,12 @@
   },
   "homepage": "https://deva.space/devas/security",
   "dependencies": {
-    "@indra.ai/deva": "^1.51.4",
-    "mongodb": "^7.6.0"
+    "@indra.ai/deva": "^1.52.0",
+    "mongodb": "^7.7.0"
   },
   "data": {
     "agent": {
-      "id": "73358967437724055408",
+      "id": "28122873812192044755",
       "key": "security",
       "prompt": {
         "emoji": "🚨",
@@ -100,7 +100,7 @@
         }
       },
       "profile": {
-        "id": "73358967437724055408",
+        "id": "28122873812192044755",
         "name": "Security Deva",
         "vector": "#SecurityDeva",
         "title": "Security Deva",
