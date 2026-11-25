@@ -357,7 +357,7 @@ export default {
 					data,
 				});        
 			}).catch(err => {
-				return this.err(err, data, reject);
+				return this.err(err, packet, reject);
 			})
 
 		});    

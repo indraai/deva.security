@@ -1,6 +1,6 @@
 # Security Deva
 
-Security Deva is the security agent for Indra.ai and Deva.world. Its agent key is `security`. It keeps a chain-of-custody log of `devacore:finish` and `devacore:complete` packets in a MongoDB log database, and it ships the security feature methods that the feature loader binds at runtime: `security`, `uid`, `sign`, `hash`, `encrypt`, `decrypt`, `date`, and `time`. Commands talk to it directly with `/uid` or, from another Deva, with `#security uid`.
+Security Deva is the security agent for Indra.ai and Deva.world. Its agent key is `security`. It keeps a chain-of-custody log of `devacore:finish` and `devacore:complete` packets in a MongoDB log database, and it ships the security feature methods that the feature loader binds at runtime: `uid`, `sign`, `hash`, `encrypt`, `decrypt`, `date`, and `time`. Commands talk to it directly with `/uid` or, from another Deva, with `#security uid`.
 
 ## Requirements
 
