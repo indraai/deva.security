@@ -6,7 +6,7 @@
 // Wednesday, November 25, 2026 - 9:44:25 AM PST
 
 import Deva from '@indra.ai/deva';
-import { MongoClient, ObjectId } from 'mongodb';
+import { MongoClient } from 'mongodb';
 
 import pkg from './package.json' with {type:'json'};
 const {agent,vars} = pkg.data;
@@ -80,8 +80,8 @@ const SecurityDeva = new Deva({
   onReady(data, resolve) {
     const {VLA} = this.info();
     const {uri, database, log} = this.security().global?.mongo || {};
-    this.vars.database = database; // set the main database
-    this.vars.log = log; // set the logging database
+    if (database) this.vars.database = database; // set the main database
+    if (log) this.vars.log = log; // set the logging database
     if (uri) this.modules.client = new MongoClient(uri); // build the client if uri is set
     this.prompt(`${this.vars.messages.ready} > VLA:${VLA.uid}`);
     return resolve(data);

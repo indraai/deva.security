@@ -127,7 +127,7 @@ Talk to Security Deva with `/uid` when it is the current agent, or with `#securi
 
 ## Feature methods
 
-`feature/methods.js` exports `security`, `uid`, `sign`, `hash`, `encrypt`, `decrypt`, `date`, and `time`. The feature loader binds them at runtime from `client.features.security.methods` onto the Deva's `methods`. `index.js` itself ships `methods: {}`. The `security(packet)` method is the global security feature that installs with every agent.
+`feature/methods.js` exports `uid`, `sign`, `hash`, `encrypt`, `decrypt`, `date`, and `time`. The feature loader binds them at runtime from `client.features.security.methods` onto the Deva's `methods`. `index.js` itself ships `methods: {}`. The `security(packet)` method is the global security feature that installs with every agent.
 
 ## Help
 
