@@ -8,16 +8,6 @@
 export default {
 
   /**************
-  method: security
-  params: packet
-  describe: The global security feature that installs with every agent
-  ***************/
-  async security(packet) {
-    const security = await this.methods.sign('security', 'default', packet);
-    return security;
-  },
-
-  /**************
   method: uid
   params: packet
   describe: Return a system id to the user from the Log Buddy.
@@ -367,7 +357,7 @@ export default {
           data,
         });        
       }).catch(err => {
-        return reject(err, data, reject);
+        return this.err(err, data, reject);
       })
 
     });    

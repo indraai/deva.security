@@ -37,7 +37,7 @@ const SecurityDeva = new Deva({
   vars,
   utils: {
     translate(input) {return input.trim();},
-    parse(input) {return output.trim();},
+    parse(input) {return input.trim();},
     process(input) {return input.trim();}
   },
   listeners: {
@@ -63,10 +63,16 @@ const SecurityDeva = new Deva({
     ***************/
     async write_log(type, packet) {
       let result = false;
-      const database = this.modules.client.db(this.vars.log);
-      const collection = database.collection(type);
-      result = await collection.insertOne(packet);
-      return result;
+      if (!this.modules.client) return;        
+      try {
+        const database = this.modules.client.db(this.vars.log);
+        const collection = database.collection(type);
+        result = await collection.insertOne(packet);
+        return result;
+      } 
+      catch (err) {
+        return this.err(err, packet);
+      }
     },
     
   },
