@@ -1,25 +1,15 @@
 "use strict"
 // Security Deva
-// Copyright ©2000-2026 Quinn Arjuna America Michaels; All rights reserved. 
+// Copyright ©2000-2026 Quinn Michaels; All rights reserved. 
 // Owner Signature Required For Lawful Use.
-// Distributed under VLA:28122873812192044755 LICENSE.md
-// Friday, October 9, 2026 - 9:14:19 AM PST
+// Distributed under VLA:15266350905933520771 LICENSE.md
+// Wednesday, November 25, 2026 - 9:44:25 AM PST
 
 import Deva from '@indra.ai/deva';
 import { MongoClient, ObjectId } from 'mongodb';
 
 import pkg from './package.json' with {type:'json'};
 const {agent,vars} = pkg.data;
-
-// import guard from '@indra.ai/deva.guard';
-// import wall from '@indra.ai/deva.wall';
-// import shield from '@indra.ai/deva.shield';
-// import proxy from '@indra.ai/deva.proxy';
-
-// import guard from '/Users/quinnmichaels/Dev/deva.space/devas/deva.guard/index.js';
-// import wall from '/Users/quinnmichaels/Dev/deva.space/devas/deva.wall/index.js';
-// import shield from '/Users/quinnmichaels/Dev/deva.space/devas/deva.shield/index.js';
-// import proxy from '/Users/quinnmichaels/Dev/deva.space/devas/deva.proxy/index.js';
 
 // set the __dirname
 import {dirname} from 'node:path';
@@ -47,17 +37,7 @@ const SecurityDeva = new Deva({
   vars,
   utils: {
     translate(input) {return input.trim();},
-    parse(input, route=false) {
-      // with the parse method we are going to take the input with a
-      // values object to provide the personalization
-      let output = input;
-      if (route) for (let x in route) {
-        const key = `::${x}::`;
-        const value = route[x];
-        output = output.replace(key, value);
-      }
-      return output.trim();
-    },
+    parse(input) {return output.trim();},
     process(input) {return input.trim();}
   },
   listeners: {
@@ -79,12 +59,7 @@ const SecurityDeva = new Deva({
     },
   },
   modules: {},
-  devas: {
-  //   guard,
-  //   wall,
-  //   shield,
-  //   proxy,
-  },
+  devas: {},
   func: {
     /**************
     func: write_log
@@ -106,37 +81,25 @@ const SecurityDeva = new Deva({
     },
     
   },
-  methods: {},
-  onInit(data, resolve) {
-    const {personal} = this.license(); // get the license config
-    const agent_license = this.info().VLA; // get agent license
-    const license_check = this.license_check(personal, agent_license); // check license
-    // return this.start if license_check passes otherwise stop.
-    this.action('return', `onInit:${data.id.uid}`);
-    return license_check ? this.start(data, resolve) : this.stop(data, resolve);
-  }, 
-  
+  methods: {},  
   onReady(data, resolve) {
     const {VLA} = this.info();
-    
-    this.state('get', `mongo:global:${data.id.uid}`);
-    const {uri,database, log} = this.security().global.mongo;
-    this.state('set', `mongo:client:${data.id.uid}`);
-    this.modules.client = new MongoClient(uri);
-    this.state('set', `mongo:database:${data.id.uid}`);
-    this.vars.database = `${database}-${VLA.uid}`;
-    this.state('set', `mongo:log:${data.id.uid}`);
-    this.vars.log = `${log}-${VLA.uid}`;
-
+    const {uri, database, log} = this.security().global?.mongo || {};
+    this.vars.database = database; // set the main database
+    this.vars.log = log; // set the logging database
+    if (uri) this.modules.client = new MongoClient(uri); // build the client if uri is set
     this.prompt(`${this.vars.messages.ready} > VLA:${VLA.uid}`);
-    
-    this.action('resolve', `onReady:${data.id.uid}`);
     return resolve(data);
+  },
+  onStop(data, resolve) {
+    const {client} = this.modules;
+    if (!client) return this.close(data, resolve);
+    return client.close().then(() => this.close(data, resolve)); // close the database before shutdown
   },
   onError(err, data, reject) {
     this.prompt(this.vars.messages.error);
-    console.log(err);
-    return reject(err);
+    console.error(err);
+    return reject ? reject(err) : Promise.reject(err);
   }
 });
 export default SecurityDeva

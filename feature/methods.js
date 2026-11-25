@@ -1,9 +1,9 @@
 "use strict";
 // Security Deva Feature Methods
-// Copyright ©2000-2026 Quinn Arjuna America Michaels; All rights reserved. 
+// Copyright ©2000-2026 Quinn Michaels; All rights reserved. 
 // Owner Signature Required For Lawful Use.
-// Distributed under VLA:28122873812192044755 LICENSE.md
-// Friday, October 9, 2026 - 9:14:19 AM PST
+// Distributed under VLA:15266350905933520771 LICENSE.md
+// Wednesday, November 25, 2026 - 9:44:25 AM PST
 
 export default {
 
@@ -65,9 +65,9 @@ export default {
       ];
       
       if (showJSON) {
-        text.push(`${this.box.begin}${key}:uid:json:${id.uid}`);
+        text.push(`${this.box.begin}:${key}:uid:json:${id.uid}`);
         text.push(JSON.stringify(id, null, 2)); 
-        text.push(`${this.box.end}${key}:uid:json:${id.uid}`);
+        text.push(`${this.box.end}:${key}:uid:json:${id.uid}`);
       }
       
       this.question(`${this.askChr}feecting parse ${text.join('\n')}`, {vars:this.vars}).then(parsed => {
@@ -347,13 +347,13 @@ export default {
       data.sha256 = this.hash(date, 'sha256');
   
       const text = [
-        `${this.box.begin}:${key}:date:${data.id.uid}`,
+        `${this.box.begin}:om:${key}:date:${data.id.uid}`,
         `uid: ${data.id.uid}`,
         `time: ${data.time}`,
         `date: ${data.date}`,
         `copyright: ${data.id.copyright}`,
         `sha256: ${data.sha256}`,
-        `${this.box.end}:${key}:date:${data.id.uid}`
+        `${this.box.end}:om:${key}:date:${data.id.uid}`
       ].join('\n');
       
       this.question(`${this.askChr}feecting parse ${text}`).then(feecting => {
