@@ -41,20 +41,14 @@ const SecurityDeva = new Deva({
     process(input) {return input.trim();}
   },
   listeners: {
-    // log the answer on complete
-    'devacore:stop'(packet) {
-      this.func.write_log('stop', this.lib.copy(packet));
-    },
-    // log the answer on complete
-    'devacore:exit'(packet) {
-      this.func.write_log('exit', this.lib.copy(packet));
-    },
-    // log the answer on complete
+    // log the answer on finish
     'devacore:finish'(packet) {
+      if (!this._active) return;
       this.func.write_log('finish', this.lib.copy(packet));
     },
     // log the answer on complete
     'devacore:complete'(packet) {
+      if (!this._active) return;
       this.func.write_log('complete', this.lib.copy(packet));
     },
   },
@@ -69,15 +63,10 @@ const SecurityDeva = new Deva({
     ***************/
     async write_log(type, packet) {
       let result = false;
-      try {
-        const database = this.modules.client.db(this.vars.log);
-        const collection = database.collection(type);
-        result = await collection.insertOne(packet);
-      } catch (e) {
-        return this.err(e, packet, false);
-      } finally {
-        return result;
-      }
+      const database = this.modules.client.db(this.vars.log);
+      const collection = database.collection(type);
+      result = await collection.insertOne(packet);
+      return result;
     },
     
   },
