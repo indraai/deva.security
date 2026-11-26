@@ -322,7 +322,7 @@ export default {
 			this.state('set', `date:setFormat:${id.uid}`); // set state set
 			const setFormat = params[1] ? params[1] : 'long';
 			this.state('set', `date:setTime:${id.uid}`); // set state set
-			const setTime = params[2] && params[2] !== "false" ? true : false;
+			const setTime = params[2] && params[2].toLowerCase() !== "false" ? true : false;
 			
 			this.state('set', `date:formatDate:${id.uid}`);
 			const date = this.lib.formatDate(time, setFormat, setTime);
