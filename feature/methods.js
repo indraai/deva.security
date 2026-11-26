@@ -334,7 +334,7 @@ export default {
 			}
 	
 			this.action('hash', `date:data:sha256:${id.uid}`); // set action hash
-			data.sha256 = this.hash(date, 'sha256');
+			data.sha256 = this.hash(data, 'sha256');
 	
 			const text = [
 				`${this.box.begin}:om:${key}:date:${data.id.uid}`,
