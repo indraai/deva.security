@@ -322,9 +322,9 @@ export default {
 			this.state('set', `date:setFormat:${id.uid}`); // set state set
 			const setFormat = params[1] ? params[1] : 'long';
 			this.state('set', `date:setTime:${id.uid}`); // set state set
-			const setTime = params[2] ? packet.q.meta.params[2] : false;
+			const setTime = params[2] && params[2 !== "false"] ? params[2] : false;
 			
-			this.state('set', `date:${id.uid}`);
+			this.state('set', `date:formatDate:${id.uid}`);
 			const date = this.lib.formatDate(time, setFormat, setTime);
 			
 			const data = {
@@ -333,7 +333,7 @@ export default {
 				date,
 			}
 	
-			this.action('hash', `date:data:sha256:${id.uid}`); // set action hash
+			this.action('hash', `date:hash:sha256:${id.uid}`); // set action hash
 			data.sha256 = this.hash(data, 'sha256');
 	
 			const text = [
