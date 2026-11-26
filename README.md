@@ -138,7 +138,7 @@ Help lives in Feecting files. `help/main.feecting` is the main help page, with t
 | Name | Kind | What it does |
 | --- | --- | --- |
 | `write_log` | func | Inserts a packet into a named collection in the log database, as described above. It lives in `index.js`. |
-| `security`, `uid`, `sign`, `hash`, `encrypt`, `decrypt`, `date`, `time` | feature methods | The commands in `feature/methods.js`, bound at runtime. |
+| `uid`, `sign`, `hash`, `encrypt`, `decrypt`, `date`, `time` | feature methods | The commands in `feature/methods.js`, bound at runtime. |
 | `translate`, `parse`, `process` | utils | Each returns its input trimmed. |
 | `onReady` | lifecycle | Builds the MongoDB client from the security feature's `global.mongo` and prompts the ready message. |
 | `onStop` | lifecycle | Closes the MongoDB client, if there is one, then calls `this.close(data, resolve)`. |
