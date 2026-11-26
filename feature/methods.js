@@ -14,7 +14,7 @@ export default {
 	***************/
 	async uid(packet) {
 		return new Promise((resolve, reject) => {
-			const uuid = packet.q.text ? true : false
+			const uuid = packet.q.meta.params[1] ? true : false
 			const id = this.uid(uuid);
 			this.context('uid', packet.id.uid);
 			this.feature('security', `uid:${id.uid}`);
